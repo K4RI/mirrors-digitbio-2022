@@ -1,0 +1,21 @@
+mediterraneen Ptot_25_LOW P1000_25_LOW P1000_30_LOW harvest_25_LOW -> seed_yield_HIGH
+Ptot_25_LOW P1000_25_LOW P1000_30_LOW harvest_25_LOW -> seed_yield_HIGH
+mediterraneen P1000_25_LOW P1000_30_LOW harvest_25_LOW -> seed_yield_HIGH
+mediterraneen Ptot_25_LOW P1000_30_LOW harvest_25_LOW -> seed_yield_HIGH
+mediterraneen Ptot_25_LOW P1000_25_LOW harvest_25_LOW -> seed_yield_HIGH
+P1000_25_LOW P1000_30_LOW harvest_25_LOW -> seed_yield_HIGH
+Ptot_25_LOW P1000_30_LOW harvest_25_LOW -> seed_yield_HIGH
+Ptot_25_LOW P1000_25_LOW harvest_25_LOW -> seed_yield_HIGH
+mediterraneen P1000_30_LOW harvest_25_LOW -> seed_yield_HIGH
+mediterraneen P1000_25_LOW harvest_25_LOW -> seed_yield_HIGH
+mediterraneen Ptot_25_LOW harvest_25_LOW -> seed_yield_HIGH
+P1000_25_LOW harvest_25_LOW -> seed_yield_HIGH
+Ptot_25_LOW harvest_25_LOW -> seed_yield_HIGH
+mediterraneen harvest_25_LOW -> seed_yield_HIGH
+mediterraneen P300_25_LOW -> seed_yield_HIGH
+mediterraneen P600_25_LOW -> seed_yield_HIGH
+P300_25_LOW P600_25_LOW -> seed_yield_HIGH
+P600_25_LOW P1000_30_LOW -> lipids_HIGH
+Montego -> PMG_LOW
+P300_25_LOW -> seed_yield_HIGH
+Alpaga -> PMG_HIGH

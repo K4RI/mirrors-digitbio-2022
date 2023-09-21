@@ -1,0 +1,24 @@
+--- Règles Ergo : ---
+P600_25-30, P600_<5, P300_20-25, P300_>25, Pharv_>25 -> proteins, lipids ;; (score Ergo= 0.012)
+P600_25-30, genotype, P600_<5 -> lipids ;; (score Ergo= 0.007)
+
+--- Règles Origo : ---
+P600_25-30, genotype, P600_<5 -> lipids ;; (score Origo= 0.460)
+Pharvt_>30 -> seed_yield ;; (score Origo= 0.030)
+
+--- Règles DC : ---
+P1000_>20, P300_20-25, Ptot_>20, P300_>25 -> proteins, lipids ;; (score DC= 0.241)
+P600_25-30, P600_<5, P300_20-25, P300_>25, Pharv_>25 -> proteins, lipids ;; (score DC= 0.139)
+climate, genotype -> lipids ;; (score DC= 0.095)
+P600_25-30, genotype, P600_<5 -> lipids ;; (score DC= 0.023)
+
+
+--- Règles communes : ---
+P600_25-30, genotype, P600_<5 -> lipids ;; (ergo=0.007, origo=0.460, dc=0.023)
+
+
+--------------------
+--------------------
+SCORE ERGO : 2/3 (66.7%)
+SCORE ORIGO : 2/3 (66.7%)
+SCORE DC : 4/4 (100.0%)

@@ -1,0 +1,20 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python : Fichier actuel",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args" : ["./data/adult/adult.dat", "output_pack.txt"] // closure.py
+            //"args" : ["./data/adult/adult.dat", "2", "output_pack.txt"] // fptree.py
+            //"args" : ["./data/icdm/icdm.dat"] // itempack.py, itempackgreedy.py,
+
+        }
+    ]
+}

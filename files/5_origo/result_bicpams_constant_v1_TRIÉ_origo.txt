@@ -1,0 +1,34 @@
+--- Règles Ergo : ---
+genotype, P300_25, P600_25, P1000_30 -> PMG ;; (size=33, score Ergo= 0.185)
+genotype, P600_25 -> PMG ;; (size=34, score Ergo= 0.106)
+P300_25, P1000_30, harvest_25 -> PMG ;; (size=24, score Ergo= 0.009)
+P300_25, P1000_30 -> seed_nb ;; (size=25, score Ergo= 0.007)
+
+--- Règles Origo : ---
+P300_25, P1000_30 -> seed_nb ;; (size=25, score Origo= 0.318)
+P300_25, P1000_30, harvest_25 -> PMG ;; (size=24, score Origo= 0.131)
+
+--- Règles DC : ---
+genotype, P600_25 -> PMG ;; (size=34, score DC= 0.126)
+genotype, P300_25, P600_25, P1000_30 -> PMG ;; (size=33, score DC= 0.110)
+P300_25, P1000_30, harvest_25 -> PMG ;; (size=24, score DC= 0.025)
+P300_25, P600_25, P1000_30 -> seed_yield ;; (size=24, score DC= 0.021)
+P300_25, P600_25, P1000_30 -> proteins ;; (size=22, score DC= 0.016)
+P300_25, P1000_30 -> seed_yield ;; (size=24, score DC= 0.007)
+genotype, P300_25, P600_25, P1000_30 -> lipids ;; (size=29, score DC= 0.003)
+P300_25, P1000_30 -> PMG ;; (size=24, score DC= 0.002)
+P600_25, P1000_30 -> seed_yield ;; (size=22, score DC= 0.001)
+P300_25, P1000_30 -> seed_nb ;; (size=25, score DC= 0.000)
+climate, P600_25, P1000_30 -> lipids ;; (size=32, score DC= 0.000)
+
+
+--- Règles communes : ---
+P300_25, P1000_30 -> seed_nb ;; (size=25)
+P300_25, P1000_30, harvest_25 -> PMG ;; (size=24)
+
+
+--------------------
+--------------------
+SCORE ERGO : 4/6 (66.7%)
+SCORE ORIGO : 2/7 (28.6%)
+SCORE DC : 11/13 (84.6%)

@@ -1,0 +1,21 @@
+--- Règles Ergo : ---
+genotype, P600_25-30 -> PMG ;; (size=34, score Ergo= 0.106)
+
+--- Règles Origo : ---
+
+
+--- Règles DC : ---
+P300_>25, P300_25-30, P1000_>30 -> PMG ;; (size=37, score DC= 0.002)
+P600_25-30, P1000_>30 -> lipids ;; (size=35, score DC= 0.001)
+genotype, P600_25-30 -> PMG ;; (size=34, score DC= 0.126)
+
+
+--- Règles communes : ---
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 1/1 (100.0%)
+SCORE ORIGO : 0/1 (0.0%)
+SCORE DC : 3/3 (100.0%)

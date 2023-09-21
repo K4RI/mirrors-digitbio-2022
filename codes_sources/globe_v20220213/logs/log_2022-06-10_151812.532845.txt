@@ -1,0 +1,223 @@
+BEGIN LOGGING FOR FILE: data\globe25_302.txt
+Ranked Edge between Nodes: 0 and 1
+[1.08978528]: [0],[8.58287953]
+Added to q: [-8.58287953] : [461.90309273]
+Ranked Edge between Nodes: 0 and 2
+[1.03986184]: [0],[0]
+Ranked Edge between Nodes: 0 and 3
+[0.92640613]: [39.81569762],[0]
+Added to q: [-39.81569762] : [501.20354154]
+Ranked Edge between Nodes: 0 and 4
+[1.09599772]: [0],[0]
+Ranked Edge between Nodes: 0 and 5
+[1.03492757]: [0],[2.64995525]
+Added to q: [-2.64995525] : [502.82514757]
+Ranked Edge between Nodes: 0 and 6
+[1.]: [1.13686838e-13],[0]
+Added to q: [-1.13686838e-13] : [541.01923915]
+Ranked Edge between Nodes: 0 and 7
+[1.]: [1.13686838e-13],[0]
+Added to q: [-1.13686838e-13] : [541.01923915]
+Ranked Edge between Nodes: 0 and 8
+[1.04416261]: [0],[1.98845944]
+Added to q: [-1.98845944] : [251.42039758]
+Ranked Edge between Nodes: 0 and 9
+[1.04416261]: [0],[1.98845944]
+Added to q: [-1.98845944] : [251.42039758]
+Ranked Edge between Nodes: 0 and 10
+[1.00069305]: [0],[4.4047254]
+Added to q: [-4.4047254] : [499.38955944]
+Ranked Edge between Nodes: 0 and 11
+[1.01582126]: [0],[0]
+Ranked Edge between Nodes: 0 and 12
+[1.00769411]: [0],[0]
+Ranked Edge between Nodes: 0 and 13
+[1.]: [0],[1.70530257e-13]
+Added to q: [-1.70530257e-13] : [143.41284262]
+Ranked Edge between Nodes: 0 and 14
+[1.]: [0],[1.70530257e-13]
+Added to q: [-1.70530257e-13] : [143.41284262]
+Ranked Edge between Nodes: 0 and 15
+[1.]: [2.27373675e-13],[5.68434189e-14]
+Added to q: [-1.70530257e-13] : [541.01923915]
+Added to q: [1.70530257e-13] : [252.7580104]
+Ranked Edge between Nodes: 0 and 16
+[1.07048855]: [0],[0]
+Ranked Edge between Nodes: 0 and 17
+[1.]: [2.27373675e-13],[0]
+Added to q: [-2.27373675e-13] : [541.01923915]
+Ranked Edge between Nodes: 0 and 18
+[0.97586499]: [13.0575031],[0]
+Added to q: [-13.0575031] : [527.96173605]
+Ranked Edge between Nodes: 0 and 19
+[0.98679985]: [7.14153506],[0]
+Added to q: [-7.14153506] : [533.87770409]
+Ranked Edge between Nodes: 0 and 20
+[1.08938822]: [0],[0]
+Ranked Edge between Nodes: 0 and 21
+[1.04700112]: [0],[0]
+Ranked Edge between Nodes: 0 and 22
+[1.]: [0],[0]
+Ranked Edge between Nodes: 0 and 23
+[1.]: [1.13686838e-13],[5.68434189e-14]
+Added to q: [-5.68434189e-14] : [541.01923915]
+Added to q: [5.68434189e-14] : [460.62772912]
+Ranked Edge between Nodes: 0 and 24
+[1.03670744]: [0],[5.68434189e-14]
+Added to q: [-5.68434189e-14] : [428.8990627]
+Ranked Edge between Nodes: 0 and 25
+[1.09004747]: [0],[5.68434189e-14]
+Added to q: [-5.68434189e-14] : [277.28164708]
+Ranked Edge between Nodes: 0 and 26
+[1.]: [2.27373675e-13],[0]
+Added to q: [-2.27373675e-13] : [541.01923915]
+Ranked Edge between Nodes: 0 and 27
+[1.]: [0],[0]
+Ranked Edge between Nodes: 0 and 28
+[1.]: [0],[0]
+Ranked Edge between Nodes: 0 and 29
+[1.]: [1.13686838e-13],[0]
+Added to q: [-1.13686838e-13] : [541.01923915]
+Ranked Edge between Nodes: 0 and 30
+[1.]: [1.13686838e-13],[0]
+Added to q: [-1.13686838e-13] : [541.01923915]
+Ranked Edge between Nodes: 1 and 2
+[1.06068818]: [0],[0]
+Ranked Edge between Nodes: 1 and 3
+[1.06029092]: [0],[0]
+Ranked Edge between Nodes: 1 and 4
+[1.]: [2.27373675e-13],[0]
+Added to q: [-2.27373675e-13] : [470.48597227]
+Ranked Edge between Nodes: 1 and 5
+[0.99664223]: [1.57978359],[0]
+Added to q: [-1.57978359] : [468.90618867]
+Ranked Edge between Nodes: 1 and 6
+[1.04261934]: [0],[0]
+Ranked Edge between Nodes: 1 and 7
+[1.07765477]: [0],[0]
+Ranked Edge between Nodes: 1 and 8
+[1.]: [0],[0]
+Ranked Edge between Nodes: 1 and 9
+[1.]: [0],[0]
+Ranked Edge between Nodes: 1 and 10
+[0.95002712]: [23.51154036],[0]
+Added to q: [-23.51154036] : [446.9744319]
+Ranked Edge between Nodes: 1 and 11
+[0.87565922]: [58.50059216],[73.78482474]
+Added to q: [15.28423258] : [411.9853801]
+Added to q: [-15.28423258] : [380.89574641]
+Ranked Edge between Nodes: 1 and 12
+[0.86806316]: [62.07443432],[85.46704977]
+Added to q: [23.39261545] : [408.41153794]
+Added to q: [-23.39261545] : [363.80648862]
+Ranked Edge between Nodes: 1 and 13
+[1.]: [0],[0]
+Ranked Edge between Nodes: 1 and 14
+[1.]: [0],[0]
+Ranked Edge between Nodes: 1 and 15
+[1.]: [1.70530257e-13],[1.13686838e-13]
+Added to q: [-5.68434189e-14] : [470.48597227]
+Added to q: [5.68434189e-14] : [252.7580104]
+Ranked Edge between Nodes: 1 and 16
+[1.]: [1.70530257e-13],[0]
+Added to q: [-1.70530257e-13] : [470.48597227]
+Ranked Edge between Nodes: 1 and 17
+[1.]: [1.70530257e-13],[0]
+Added to q: [-1.70530257e-13] : [470.48597227]
+Ranked Edge between Nodes: 1 and 18
+[1.]: [0],[0]
+Ranked Edge between Nodes: 1 and 19
+[1.05143961]: [0],[0]
+Ranked Edge between Nodes: 1 and 20
+[1.]: [0],[0]
+Ranked Edge between Nodes: 1 and 21
+[1.09139593]: [0],[5.68434189e-14]
+Added to q: [-5.68434189e-14] : [476.94510459]
+Ranked Edge between Nodes: 1 and 22
+[1.06227607]: [0],[0]
+Ranked Edge between Nodes: 1 and 23
+[1.]: [5.68434189e-14],[5.68434189e-14]
+Added to q: [0.] : [470.48597227]
+Added to q: [-0.] : [460.62772912]
+Ranked Edge between Nodes: 1 and 24
+[1.09752337]: [0],[5.68434189e-14]
+Added to q: [-5.68434189e-14] : [428.8990627]
+Ranked Edge between Nodes: 1 and 25
+[1.]: [1.70530257e-13],[0]
+Added to q: [-1.70530257e-13] : [470.48597227]
+Ranked Edge between Nodes: 1 and 26
+[1.]: [1.70530257e-13],[0]
+Added to q: [-1.70530257e-13] : [470.48597227]
+Ranked Edge between Nodes: 1 and 27
+[1.]: [0],[0]
+Ranked Edge between Nodes: 1 and 28
+[1.]: [1.70530257e-13],[0]
+Added to q: [-1.70530257e-13] : [470.48597227]
+Ranked Edge between Nodes: 1 and 29
+[1.]: [5.68434189e-14],[0]
+Added to q: [-5.68434189e-14] : [470.48597227]
+Ranked Edge between Nodes: 1 and 30
+[1.]: [1.70530257e-13],[0]
+Added to q: [-1.70530257e-13] : [470.48597227]
+Ranked Edge between Nodes: 2 and 3
+[0.76851933]: [114.3860728],[157.08366704]
+Added to q: [42.69759424] : [379.76349261]
+Added to q: [-42.69759424] : [313.29117577]
+Ranked Edge between Nodes: 2 and 4
+[1.]: [0],[0]
+Ranked Edge between Nodes: 2 and 5
+[1.03692255]: [0],[0]
+Ranked Edge between Nodes: 2 and 6
+[1.]: [0],[0]
+Ranked Edge between Nodes: 2 and 7
+[1.08507548]: [0],[0]
+Ranked Edge between Nodes: 2 and 8
+[1.05915059]: [0],[0]
+Ranked Edge between Nodes: 2 and 9
+[1.05915059]: [0],[0]
+Ranked Edge between Nodes: 2 and 10
+[1.]: [0],[0]
+Ranked Edge between Nodes: 2 and 11
+[1.04054788]: [0],[0]
+Ranked Edge between Nodes: 2 and 12
+[1.04933559]: [0],[0]
+Ranked Edge between Nodes: 2 and 13
+[1.]: [0],[0]
+Ranked Edge between Nodes: 2 and 14
+[1.]: [0],[0]
+Ranked Edge between Nodes: 2 and 15
+[1.]: [1.13686838e-13],[0]
+Added to q: [-1.13686838e-13] : [494.14956541]
+Ranked Edge between Nodes: 2 and 16
+[1.05441903]: [0],[0]
+Ranked Edge between Nodes: 2 and 17
+[1.08403195]: [0],[0]
+Ranked Edge between Nodes: 2 and 18
+[0.95756651]: [20.96848992],[0]
+Added to q: [-20.96848992] : [473.18107549]
+Ranked Edge between Nodes: 2 and 19
+[0.98362506]: [8.09166971],[0]
+Added to q: [-8.09166971] : [486.0578957]
+Ranked Edge between Nodes: 2 and 20
+[1.07644784]: [0],[0]
+Ranked Edge between Nodes: 2 and 21
+[1.]: [0],[5.68434189e-14]
+Added to q: [-5.68434189e-14] : [476.94510459]
+Ranked Edge between Nodes: 2 and 22
+[1.]: [0],[5.68434189e-14]
+Added to q: [-5.68434189e-14] : [372.44519515]
+Ranked Edge between Nodes: 2 and 23
+[0.89857324]: [50.11998784],[61.21750108]
+Added to q: [11.09751324] : [444.02957756]
+Added to q: [-11.09751324] : [399.41022804]
+Ranked Edge between Nodes: 2 and 24
+[0.95434107]: [22.56234286],[42.23859903]
+Added to q: [19.67625617] : [471.58722255]
+Added to q: [-19.67625617] : [386.66046367]
+Ranked Edge between Nodes: 2 and 25
+[1.]: [0],[0]
+Ranked Edge between Nodes: 2 and 26
+[1.]: [0],[0]
+Ranked Edge between Nodes: 2 and 27
+[1.]: [0],[0]
+Ranked Edge between Nodes: 2 and 28

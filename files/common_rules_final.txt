@@ -1,0 +1,12 @@
+------ v1 ------
+bicpams_constant / bicpams_additive :
+  - P300_25, P1000_30 -> seed_nb ;; taille cluster=25
+  - P300_25, P1000_30, harvest_25 -> PMG ;; taille cluster=24
+
+coron / bicpams_additive :
+  - P300_25, P600_25 -> seed_yield ;; supp=53, conf=67.09%
+
+
+------ v2 ------
+coron / bicpams_additive :
+  - Ptot_20-25, P1000_>20, P1000_>30 -> seed_nb ;; supp=51, conf=64.56%

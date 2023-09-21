@@ -1,0 +1,77 @@
+------ Origo v1 ------
+bicpams_constant / bicpams_additive :
+  - P300_25, P1000_30 -> seed_nb
+  - P300_25, P1000_30, harvest_25 -> PMG
+
+coron / bicpams_additive :
+  - P300_25, P600_25 -> seed_yield
+
+
+------ Origo v2 ------
+coron / bicpams_additive :
+  - P300_>25, P300_25-30 -> seed_yield
+  - Ptot_20-25, P1000_>20, P1000_>30 -> seed_nb
+
+
+------ Ergo v1 ------
+bicpams_constant / bicpams_additive :
+  - P300_25, P1000_30 -> seed_nb
+  - genotype, P300_25, P600_25, P1000_30 -> PMG
+  - P300_25, P1000_30, harvest_25 -> PMG
+  - genotype, P600_25 -> PMG
+
+coron / bicpams_additive :
+  - P300_25, P600_25 -> seed_yield
+
+
+------ Ergo v2 ------
+coron / bicpams_additive :
+  - Ptot_>20, Ptot_20-25, P1000_>30 -> seed_nb
+  - Ptot_20-25, P1000_>20, P1000_>30 -> seed_nb
+  - Ptot_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+
+
+------ DC v1 ------
+bicpams_constant / bicpams_additive :
+  - P300_25, P1000_30 -> seed_nb
+  - P300_25, P1000_30, harvest_25 -> PMG
+  - genotype, P600_25 -> PMG
+  - P600_25, P1000_30 -> seed_yield
+  - genotype, P300_25, P600_25, P1000_30 -> PMG
+  - P300_25, P600_25, P1000_30 -> seed_yield
+  - P300_25, P600_25, P1000_30 -> proteins
+
+coron / bicpams_additive :
+  - climate, P300_25 -> seed_yield
+  - P600_25, P1000_30 -> lipids
+  - P300_25, P600_25 -> seed_yield
+
+
+------ DC v2 ------
+bicpams_constant / bicpams_additive :
+  - P600_25-30, P1000_>30 -> lipids
+
+coron / bicpams_additive :
+  - Ptot_>20, Ptot_20-25, P1000_>30 -> seed_nb
+  - P600_25-30, P1000_>30 -> lipids
+  - Ptot_20-25, P1000_>20, P1000_>30 -> seed_nb
+  - Ptot_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+
+coron / bicpams_constant :
+  - P600_25-30, P1000_>30 -> lipids
+
+
+------ communes v1 ------
+bicpams_constant / bicpams_additive :
+  - P300_25, P1000_30 -> seed_nb
+  - P300_25, P1000_30, harvest_25 -> PMG
+
+coron / bicpams_additive :
+  - P300_25, P600_25 -> seed_yield
+
+
+------ communes v2 ------
+coron / bicpams_additive :
+  - Ptot_20-25, P1000_>20, P1000_>30 -> seed_nb
+
+

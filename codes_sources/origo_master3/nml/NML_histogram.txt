@@ -1,0 +1,41 @@
+
+
+This is how to compile the code (with the free gcc compiler in Linux):
+
+gcc -o NML_histogram NML_histogram.c -Wall -lm -O2
+
+
+An example how to call the program from the command line:
+
+./NML_histogram iris2.dat 10 0.1 0.2
+
+The parameters are: name of the datafile, max number of bins to
+consider, accuracy of the data (epsilon), accuracy of the potential
+cut points (delta). The datafile simply contains the numbers separated
+by white spaces. Epsilon is typically chosen based on the accuracy of
+the numbers in the datafile. It can also be something larger, if,
+for example, one thinks that not all the decimals are significant
+in practice. The code rounds the numbers to the nearest integer
+multiple of epsilon.
+
+The parameter delta determines the minimum bin width and it should be
+equal or larger than epsilon. The algorithm takes time
+O(max_number_of_bins * (range / delta)^2), so if delta is very small,
+the algorithm can run very slowly.
+
+Output of the example above:
+
+N 150
+Optimal value of SC: 446.98586114
+Number of bins: 6
+Cut points:
+1.950000,2.150000,2.750000,3.150000,3.550000,3.950000,4.450000
+
+First there is the number of data points N, then the value of the
+stochastic complexity score for the optimal solution (smaller is
+better), the optimal number of bins (K), and finally the cut points:
+
+min, (K-1) cut points, max,
+
+where min and max are computed from the data.
+

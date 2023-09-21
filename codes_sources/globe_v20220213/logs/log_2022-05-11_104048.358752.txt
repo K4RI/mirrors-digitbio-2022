@@ -1,0 +1,33 @@
+BEGIN LOGGING FOR FILE: data/p2/experiment14.txt
+Ranked Edge between Nodes: 0 and 1
+[1.]: [0],[0]
+Ranked Edge between Nodes: 0 and 2
+[0.93893093]: [1112.13802569],[1578.61978128]
+Added to q: [466.4817556] : [17099.01288148]
+Added to q: [-466.4817556] : [16221.11199108]
+Ranked Edge between Nodes: 1 and 2
+[0.99756803]: [44.56774544],[0]
+Added to q: [-44.56774544] : [18281.23622164]
+Considering Edge from : 0 to: 2 costing: [-466.4817556]
+*******Added edge from 0 to 2 with cost: [-466.4817556]
+Function Id was: 3
+Considering Edge from : 1 to: 2 costing: [-2478.81670181]
+*******Added edge from 1 to 2 with cost: [-2478.81670181]
+Function Id was: 3
+Considering Edge from : 2 to: 1 costing: [-44.56774544]
+stale node
+Edge is cyclic
+Considering Edge from : 2 to: 0 costing: [466.4817556]
+total flips: 0
+##################
+Begin Pruning....
+Considering Node: 0
+Finished Node: 0
+***************************
+Considering Node: 1
+Finished Node: 1
+***************************
+Considering Node: 2
+Finished Node: 2
+***************************
+END LOGGING FOR FILE: data/p2/experiment14.txt

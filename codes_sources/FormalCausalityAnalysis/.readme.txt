@@ -1,0 +1,7 @@
+C'est bien l'approche du papier de 2021 qui utilise Ergo et CCA.
+
+Il y a plein de fichiers dans le zip mais tout le code est dans le fichier Python FCaA.
+
+C'est un peu ad hoc : il faut charger les données à la main (exemples fait à l'arrache en haut du fichier, le seul exemple non commenté c'est les données de Lethicia qui sont aussi dans le zip) puis appeler la fonction NextClosureCausality(data,file) qui écrit les résultats dans un fichier donné en dur dans le corps de la fonction (ici "Expe_agro_07.txt").
+
+La fonction prend la matrice des données (data) et le fichier de données. C'est parce qu'on fait appel à un programme externe qui prend un fichier en paramètre...

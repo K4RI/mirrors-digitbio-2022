@@ -1,0 +1,6 @@
+Chemnitz_data:
+    * X consists of sin(phi_wind), cos(phi_wind), T (3)
+    * Y consists of ozone, sulfur dioxid, dust, CO, NO_2, NO_x (7)
+    * only use 1:1440 -- there are no more
+    * X -> Y
+    * Our result: (score 06.01.17) Result: X->Y with epsilon = 0.008506

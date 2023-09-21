@@ -1,0 +1,40 @@
+--- Règles Ergo : ---
+climate, P300_25 -> seed_yield ;; (supp=57, conf=60.00%, score Ergo= 0.019)
+P300_25, P600_25 -> seed_yield ;; (supp=53, conf=67.09%, score Ergo= 0.007)
+
+--- Règles Origo : ---
+climate, P300_25 -> seed_yield ;; (supp=57, conf=60.00%, score Origo= 2.421)
+P300_25, P600_25 -> seed_yield ;; (supp=53, conf=67.09%, score Origo= 0.131)
+P300_25 -> seed_yield ;; (supp=70, conf=61.40%, score Origo= 0.131)
+
+--- Règles DC : ---
+P300_25, P600_25 -> seed_yield ;; (supp=53, conf=67.09%, score DC= 0.031)
+climate, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.027)
+climate, Ptot_25, P1000_25, P1000_30, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.025)
+climate, P600_25 -> seed_yield ;; (supp=51, conf=64.56%, score DC= 0.019)
+climate, Ptot_25, P1000_25, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.015)
+climate, P1000_25, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.011)
+climate, Ptot_25, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.011)
+climate, P1000_30, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.008)
+Ptot_25, P1000_25, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.007)
+P1000_25, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.007)
+Ptot_25, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.007)
+climate, P1000_25, P1000_30, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.007)
+climate, Ptot_25, P1000_30, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.007)
+Ptot_25, P1000_30, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.003)
+climate, P300_25 -> seed_yield ;; (supp=57, conf=60.00%, score DC= 0.002)
+Ptot_25, P1000_25, P1000_30, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.001)
+P1000_25, P1000_30, harvest_25 -> seed_yield ;; (supp=52, conf=61.18%, score DC= 0.001)
+P600_25, P1000_30 -> lipids ;; (supp=53, conf=60.23%, score DC= 0.001)
+
+
+--- Règles communes : ---
+climate, P300_25 -> seed_yield ;; (supp=57, conf=60.00%)
+P300_25, P600_25 -> seed_yield ;; (supp=53, conf=67.09%)
+
+
+--------------------
+--------------------
+SCORE ERGO : 2/6 (33.3%)
+SCORE ORIGO : 3/4 (75.0%)
+SCORE DC : 18/18 (100.0%)

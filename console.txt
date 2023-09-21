@@ -1,0 +1,9313 @@
+Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 22:22:05) on Windows (64 bits).
+This is the Pyzo interpreter with integrated event loop for ASYNCIO.
+Type 'help' for help, type '?' for a list of *magic* commands.
+
+>>> (executing file "main.py")
+
+Preprocessing du tableur...
+Lecture de 'RAPSODYN_Zachary_20220414\DATA\rapsodyn_temp_25_30.csv'
+...terminé !
+
+Part. I - Tri des règles d'inférence...
+Lecture de 'files/1_cfca/Expe_agro_Zac_v1.txt'
+16 règles initiales
+1 règles retenues
+Écrites dans 'files/1_cfca/Expe_agro_Zac_v1 TRIÉ.txt'
+...terminé !
+
+Part. IIa - Pre-processing pour BicPAMS...
+Sauvegardé dans 'files/2a_bicpams/bicpams25_30.txt'
+...terminé !
+
+Part. IIa - Récupération et tri des biclusters...
+Lecture de 'files/2a_bicpams/result_bicpams_additive_v1.htm'
+383 biclusters inférés
+285 biclusters non-doublons
+207 biclusters retenus
+Sauvegardé dans 'files/2a_bicpams/result_bicpams_additive_v1_TRIÉ.docx'
+...terminé !
+
+Part. IIa - Récupération et tri des biclusters...
+Lecture de 'files/2a_bicpams/result_bicpams_constant_v1.htm'
+41 biclusters inférés
+40 biclusters non-doublons
+15 biclusters retenus
+Sauvegardé dans 'files/2a_bicpams/result_bicpams_constant_v1_TRIÉ.docx'
+...terminé !
+
+Part. IIb - Traduction du tableur binarisé en + - ...
+Lecture de 'RAPSODYN_Zachary_20220414\DATA\rapsodyn_binary.csv'
+Sauvegardé dans 'files/2b_pypingen/pypingen_binary.txt'
+...terminé !
+
+Part IIc - Binarisation du tableur...
+Sauvegardé dans 'files/2c_coron/binary_new_v1.csv'
+...terminé !
+
+Part IIc - Transformation en fichier Coron...
+Lecture de 'files/2c_coron/binary_new_v1.csv'
+Sauvegardé dans 'files/2c_coron/rapsodynCoron_v1.rcf'
+...terminé !
+
+Part IIc - Exécution de Coron...
+Lecture de 'rapsodynCoron_v1.rcf'
+> Start: getting itemsets from Coron... It can take some time.
+> Number of itemsets taken over from Coron: 129
+> Stop:  getting itemsets from Coron. Elapsed time: 0.100 sec.
+> Start: generating rules...
+> Stop:  generating rules. Elapsed time: 0.200 sec.
+> Getting itemsets from Coron: 0.100 sec.
+> Generating rules:            0.200 sec.
+> Trie accesses: 528
+1040 règles extraites
+Sauvegardé dans 'files/2c_coron/coron1.log'
+...terminé !
+
+Part IIc - Tri des règles...
+Lecture de 'files/2c_coron/coron1.log'
+"23|24|25|26|27|28|29|30|31|32"
+901 règles après tri gauche
+22 règles après tri droit
+Sauvegardé dans'files/2c_coron/coron_rules_v1.txt'
+Noms sauvegardés dans'files/2c_coron/coron_ruleNames_v1.txt'
+...terminé !
+
+Part. IV - Pre-processing du tableur pour Globe...
+Lecture de 'RAPSODYN_Zachary_20220414\DATA\rapsodyn_temp_25_30.csv'
+Sauvegardé dans 'files/4_globe/globe25_30.txt'
+...terminé !
+
+Part. IV - Lancement de l'algorithme Globe...
+Lecture de 'files/4_globe/globe25_30.txt'
+Sauvegardé dans 'files/4_globe/globe_output_v1.log'
+...terminé !
+
+Part. IV - Affichage du diagramme causal de Globe...
+Lecture de 'files/4_globe/globe_output_v1.log'
+0- Ptot_25
+1- Ptot_30
+2- P300_25
+3- P600_25
+4- P1000_25
+5- P1000_30
+6- harvest_25
+7- harvest_30
+8- seed_yield
+9- seed_nb
+10- PMG
+11- lipids
+12- proteins
+Image sauvegardée dans 'files/4_globe/globefig_v1.png'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/2a_cfca/Expe_agro_Zac_v1 TRIÉ.txt'
+47.826 secondes.
+
+>>> (executing file "main.py")
+
+Preprocessing du tableur...
+Lecture de 'RAPSODYN_Zachary_20220414\DATA\rapsodyn_temp_25_30.csv'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/1_cfca/Expe_agro_Zac_v1 TRIÉ.txt'
+Nombre de règles : 1
+
+----------1/1----------
+0 -> 12
+climate -> PMG
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 0/1 (0.0%)
+SCORE ORIGO : 0/0 (0.0%)
+SCORE DC : 1/1 (100.0%)
+Sauvegardé dans 'files/5_origo/Expe_agro_Zac_v1 TRIÉ_origo.txt'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/1_cfca/Expe_agro_Zac_v1.txt'
+Nombre de règles : 16
+
+----------1/16----------
+12 -> 4 6
+PMG -> P300_25, P1000_25
+
+ERGO : ✗ -0.0834
+ORIGO : ✗ -0.7717
+DC : ✗ -0.0335
+
+----------2/16----------
+11 -> 12
+seed_nb -> PMG
+
+ERGO : ✗ -0.0163
+ORIGO : ✓ 0.0449
+DC : ? 0.0000
+
+----------3/16----------
+10 13 14 -> 11
+seed_yield, lipids, proteins -> seed_nb
+
+ERGO : ✓ 0.0357
+ORIGO : ✗ -0.1235
+DC : ✓ 0.0517
+
+----------4/16----------
+9 10 -> 8 2 3
+harvest_30, seed_yield -> harvest_25, Ptot_25, Ptot_30
+
+ERGO : ✓ 0.1101
+ORIGO : ✗ -0.0166
+DC : ✓ 0.2012
+
+----------5/16----------
+8 -> 9 3
+harvest_25 -> harvest_30, Ptot_30
+
+ERGO : ✗ -0.0380
+ORIGO : ✗ -0.0191
+DC : ? 0.0000
+
+----------6/16----------
+10 13 7 -> 11 6
+seed_yield, lipids, P1000_30 -> seed_nb, P1000_25
+
+ERGO : ✓ 0.0702
+ORIGO : ✓ 6.4944
+DC : ✗ -0.1115
+
+----------7/16----------
+9 7 -> 8 2 3
+harvest_30, P1000_30 -> harvest_25, Ptot_25, Ptot_30
+
+ERGO : ✗ -0.2373
+ORIGO : ✗ -5.6472
+DC : ✓ 0.0283
+
+----------8/16----------
+6 -> 0 4
+P1000_25 -> climate, P300_25
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------9/16----------
+9 5 -> 8 2 3
+harvest_30, P600_25 -> harvest_25, Ptot_25, Ptot_30
+
+ERGO : ✗ -0.0504
+ORIGO : ✓ 4.2042
+DC : ✗ -0.1208
+
+----------10/16----------
+13 5 14 7 -> 3 6
+lipids, P600_25, proteins, P1000_30 -> Ptot_30, P1000_25
+
+ERGO : ✓ 0.0819
+ORIGO : ✓ 1.0323
+DC : ✗ -0.0433
+
+----------11/16----------
+4 -> 0
+P300_25 -> climate
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------12/16----------
+3 -> 9 2
+Ptot_30 -> harvest_30, Ptot_25
+
+ERGO : ✗ -0.1498
+ORIGO : ✗ -0.0796
+DC : ✗ -0.1330
+
+----------13/16----------
+2 -> 0 8 9
+Ptot_25 -> climate, harvest_25, harvest_30
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------14/16----------
+0 -> 12
+climate -> PMG
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------15/16----------
+0 1 4 6 12 -> 2 11 13
+climate, genotype, P300_25, P1000_25, PMG -> Ptot_25, seed_nb, lipids
+
+ERGO : ✗ -0.0483
+ORIGO : ✗ -0.4388
+DC : ✗ -0.0838
+
+----------16/16----------
+0 1 2 3 4 6 8 9 11 12 13 -> 10 5 14 7
+climate, genotype, Ptot_25, Ptot_30, P300_25, P1000_25, harvest_25, harvest_30, seed_nb, PMG, lipids -> seed_yield, P600_25, proteins, P1000_30
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 4/14 (28.6%)
+SCORE ORIGO : 4/11 (36.4%)
+SCORE DC : 4/12 (33.3%)
+Sauvegardé dans 'files/5_origo/Expe_agro_Zac_v1_origo.txt'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/2a_bicpams/result_bicpams_additive_v1_TRIÉ.docx'
+Nombre de règles : 207
+
+----------1/207----------
+0 1 4 5 7 -> 12
+climate, genotype, P300_25, P600_25, P1000_30 -> PMG
+(size=34)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------2/207----------
+0 1 4 5 7 -> 13
+climate, genotype, P300_25, P600_25, P1000_30 -> lipids
+(size=30)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------3/207----------
+3 4 7 8 9 -> 12
+Ptot_30, P300_25, P1000_30, harvest_25, harvest_30 -> PMG
+(size=27)
+
+ERGO : ✓ 0.0075
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0203
+
+----------4/207----------
+2 4 6 7 -> 12
+Ptot_25, P300_25, P1000_25, P1000_30 -> PMG
+(size=27)
+
+ERGO : ✓ 0.0843
+ORIGO : ✓ 3.6489
+DC : ✓ 0.0570
+
+----------5/207----------
+0 4 6 7 -> 11
+climate, P300_25, P1000_25, P1000_30 -> seed_nb
+(size=27)
+
+ERGO : ✗ -0.0177
+ORIGO : ✓ 0.2849
+DC : ? 0.0000
+
+----------6/207----------
+0 1 4 5 7 8 -> 12
+climate, genotype, P300_25, P600_25, P1000_30, harvest_25 -> PMG
+(size=19)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------7/207----------
+4 6 7 -> 12
+P300_25, P1000_25, P1000_30 -> PMG
+(size=31)
+
+ERGO : ✓ 0.0877
+ORIGO : ✓ 1.1867
+DC : ✓ 0.0343
+
+----------8/207----------
+1 4 7 -> 11
+genotype, P300_25, P1000_30 -> seed_nb
+(size=30)
+
+ERGO : ✓ 0.0715
+ORIGO : ✓ 3.4291
+DC : ✓ 0.0850
+
+----------9/207----------
+0 4 5 6 7 -> 10
+climate, P300_25, P600_25, P1000_25, P1000_30 -> seed_yield
+(size=20)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------10/207----------
+1 4 7 -> 13
+genotype, P300_25, P1000_30 -> lipids
+(size=29)
+
+ERGO : ✓ 0.0390
+ORIGO : ✗ -0.0158
+DC : ✓ 0.0802
+
+----------11/207----------
+0 4 5 7 -> 14
+climate, P300_25, P600_25, P1000_30 -> proteins
+(size=22)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------12/207----------
+1 4 6 7 -> 12
+genotype, P300_25, P1000_25, P1000_30 -> PMG
+(size=22)
+
+ERGO : ✓ 0.1775
+ORIGO : ✓ 5.6615
+DC : ✓ 0.1444
+
+----------13/207----------
+1 4 7 9 -> 12
+genotype, P300_25, P1000_30, harvest_30 -> PMG
+(size=22)
+
+ERGO : ✓ 0.1284
+ORIGO : ✗ -0.8287
+DC : ✓ 0.2218
+
+----------14/207----------
+0 4 6 7 -> 14
+climate, P300_25, P1000_25, P1000_30 -> proteins
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------15/207----------
+3 4 7 8 9 -> 10
+Ptot_30, P300_25, P1000_30, harvest_25, harvest_30 -> seed_yield
+(size=18)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0333
+
+----------16/207----------
+0 7 -> 12
+climate, P1000_30 -> PMG
+(size=35)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------17/207----------
+5 7 -> 13
+P600_25, P1000_30 -> lipids
+(size=35)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0006
+
+----------18/207----------
+1 4 -> 12
+genotype, P300_25 -> PMG
+(size=34)
+
+ERGO : ✓ 0.1161
+ORIGO : ✗ -0.0158
+DC : ✓ 0.2089
+
+----------19/207----------
+4 7 9 -> 11
+P300_25, P1000_30, harvest_30 -> seed_nb
+(size=25)
+
+ERGO : ✓ 0.0160
+ORIGO : ✓ 0.6919
+DC : ✓ 0.0012
+
+----------20/207----------
+2 3 8 9 -> 12
+Ptot_25, Ptot_30, harvest_25, harvest_30 -> PMG
+(size=20)
+
+ERGO : ✗ -0.0108
+ORIGO : ✗ -2.9369
+DC : ✓ 0.0074
+
+----------21/207----------
+3 8 9 -> 13
+Ptot_30, harvest_25, harvest_30 -> lipids
+(size=25)
+
+ERGO : ✓ 0.0180
+ORIGO : ✓ 2.4185
+DC : ✓ 0.2464
+
+----------22/207----------
+1 3 4 7 9 -> 13
+genotype, Ptot_30, P300_25, P1000_30, harvest_30 -> lipids
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.2711
+
+----------23/207----------
+4 6 7 -> 13
+P300_25, P1000_25, P1000_30 -> lipids
+(size=24)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0043
+
+----------24/207----------
+0 4 5 7 -> 13
+climate, P300_25, P600_25, P1000_30 -> lipids
+(size=19)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------25/207----------
+1 6 7 -> 11
+genotype, P1000_25, P1000_30 -> seed_nb
+(size=23)
+
+ERGO : ✓ 0.0685
+ORIGO : ✓ 3.4291
+DC : ✓ 0.1018
+
+----------26/207----------
+4 8 9 -> 12
+P300_25, harvest_25, harvest_30 -> PMG
+(size=23)
+
+ERGO : ✓ 0.0091
+ORIGO : ✗ -0.1982
+DC : ✓ 0.0162
+
+----------27/207----------
+0 1 4 7 -> 12
+climate, genotype, P300_25, P1000_30 -> PMG
+(size=18)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------28/207----------
+1 5 7 -> 12 13 14
+genotype, P600_25, P1000_30 -> PMG, lipids, proteins
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.2643
+
+----------29/207----------
+0 4 5 7 -> 11
+climate, P300_25, P600_25, P1000_30 -> seed_nb
+(size=18)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------30/207----------
+1 4 7 -> 10
+genotype, P300_25, P1000_30 -> seed_yield
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0052
+
+----------31/207----------
+3 8 9 -> 10
+Ptot_30, harvest_25, harvest_30 -> seed_yield
+(size=22)
+
+ERGO : ✓ 0.0010
+ORIGO : ✓ 0.1338
+DC : ✓ 0.0513
+
+----------32/207----------
+4 6 7 -> 11
+P300_25, P1000_25, P1000_30 -> seed_nb
+(size=22)
+
+ERGO : ✓ 0.0151
+ORIGO : ✓ 0.2849
+DC : ✓ 0.0070
+
+----------33/207----------
+4 6 7 -> 10
+P300_25, P1000_25, P1000_30 -> seed_yield
+(size=22)
+
+ERGO : ✗ -0.0045
+ORIGO : ✗ -2.7381
+DC : ✓ 0.0075
+
+----------34/207----------
+5 7 -> 10
+P600_25, P1000_30 -> seed_yield
+(size=29)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0010
+
+----------35/207----------
+1 4 7 -> 10 11
+genotype, P300_25, P1000_30 -> seed_yield, seed_nb
+(size=17)
+
+ERGO : ? -0.0002
+ORIGO : ✓ 3.0629
+DC : ✗ -0.1755
+
+----------36/207----------
+1 4 7 9 -> 14
+genotype, P300_25, P1000_30, harvest_30 -> proteins
+(size=17)
+
+ERGO : ✗ -0.0015
+ORIGO : ✗ -0.5866
+DC : ✓ 0.0830
+
+----------37/207----------
+4 7 8 -> 14
+P300_25, P1000_30, harvest_25 -> proteins
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0054
+
+----------38/207----------
+3 7 8 9 -> 14
+Ptot_30, P1000_30, harvest_25, harvest_30 -> proteins
+(size=16)
+
+ERGO : ✗ -0.0148
+ORIGO : ✗ -4.0656
+DC : ✓ 0.0103
+
+----------39/207----------
+2 3 8 9 -> 14
+Ptot_25, Ptot_30, harvest_25, harvest_30 -> proteins
+(size=16)
+
+ERGO : ✓ 0.0301
+ORIGO : ✗ -0.0936
+DC : ✓ 0.0602
+
+----------40/207----------
+2 4 6 7 9 -> 14
+Ptot_25, P300_25, P1000_25, P1000_30, harvest_30 -> proteins
+(size=13)
+
+ERGO : ✓ 0.0867
+ORIGO : ✓ 3.9491
+DC : ✓ 0.0801
+
+----------41/207----------
+4 7 -> 10 11
+P300_25, P1000_30 -> seed_yield, seed_nb
+(size=19)
+
+ERGO : ✗ -0.0042
+ORIGO : ✓ 0.2849
+DC : ✗ -0.2007
+
+----------42/207----------
+1 7 -> 10 11
+genotype, P1000_30 -> seed_yield, seed_nb
+(size=19)
+
+ERGO : ✗ -0.0030
+ORIGO : ✓ 3.6047
+DC : ✗ -0.0054
+
+----------43/207----------
+4 7 -> 12 13
+P300_25, P1000_30 -> PMG, lipids
+(size=19)
+
+ERGO : ✗ -0.0045
+ORIGO : ✗ -0.0935
+DC : ✗ -0.2713
+
+----------44/207----------
+2 4 9 -> 12
+Ptot_25, P300_25, harvest_30 -> PMG
+(size=19)
+
+ERGO : ✓ 0.0087
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0184
+
+----------45/207----------
+1 4 7 -> 11 12
+genotype, P300_25, P1000_30 -> seed_nb, PMG
+(size=15)
+
+ERGO : ✓ 0.0376
+ORIGO : ✓ 1.1458
+DC : ✓ 0.0353
+
+----------46/207----------
+2 6 7 8 -> 14
+Ptot_25, P1000_25, P1000_30, harvest_25 -> proteins
+(size=15)
+
+ERGO : ✓ 0.0159
+ORIGO : ✗ -4.3396
+DC : ✓ 0.0940
+
+----------47/207----------
+4 7 9 -> 13
+P300_25, P1000_30, harvest_30 -> lipids
+(size=18)
+
+ERGO : ✓ 0.0078
+ORIGO : ✗ -0.5673
+DC : ✓ 0.0111
+
+----------48/207----------
+1 4 7 -> 14
+genotype, P300_25, P1000_30 -> proteins
+(size=18)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0137
+
+----------49/207----------
+0 5 7 8 -> 14
+climate, P600_25, P1000_30, harvest_25 -> proteins
+(size=14)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------50/207----------
+4 7 8 -> 11
+P300_25, P1000_30, harvest_25 -> seed_nb
+(size=17)
+
+ERGO : ✓ 0.0120
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0138
+
+----------51/207----------
+0 1 7 -> 11
+climate, genotype, P1000_30 -> seed_nb
+(size=17)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------52/207----------
+0 4 7 -> 12
+climate, P300_25, P1000_30 -> PMG
+(size=17)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------53/207----------
+1 4 -> 11
+genotype, P300_25 -> seed_nb
+(size=22)
+
+ERGO : ✓ 0.0220
+ORIGO : ✗ -0.0490
+DC : ✓ 0.1319
+
+----------54/207----------
+0 4 5 9 -> 14
+climate, P300_25, P600_25, harvest_30 -> proteins
+(size=13)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------55/207----------
+0 5 7 -> 10
+climate, P600_25, P1000_30 -> seed_yield
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0002
+
+----------56/207----------
+0 4 7 -> 11
+climate, P300_25, P1000_30 -> seed_nb
+(size=16)
+
+ERGO : ✗ -0.0191
+ORIGO : ✓ 0.2849
+DC : ? 0.0000
+
+----------57/207----------
+3 8 9 -> 12
+Ptot_30, harvest_25, harvest_30 -> PMG
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0338
+
+----------58/207----------
+0 1 5 -> 12
+climate, genotype, P600_25 -> PMG
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------59/207----------
+4 8 9 -> 13
+P300_25, harvest_25, harvest_30 -> lipids
+(size=16)
+
+ERGO : ✓ 0.0105
+ORIGO : ✓ 0.0299
+DC : ✓ 0.0241
+
+----------60/207----------
+4 7 9 -> 14
+P300_25, P1000_30, harvest_30 -> proteins
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0075
+
+----------61/207----------
+0 4 7 -> 14
+climate, P300_25, P1000_30 -> proteins
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------62/207----------
+2 4 9 -> 10
+Ptot_25, P300_25, harvest_30 -> seed_yield
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0314
+
+----------63/207----------
+2 7 9 -> 10
+Ptot_25, P1000_30, harvest_30 -> seed_yield
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0006
+
+----------64/207----------
+1 6 7 -> 10
+genotype, P1000_25, P1000_30 -> seed_yield
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0019
+
+----------65/207----------
+2 7 8 -> 11
+Ptot_25, P1000_30, harvest_25 -> seed_nb
+(size=15)
+
+ERGO : ✓ 0.0114
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0085
+
+----------66/207----------
+3 8 9 -> 11
+Ptot_30, harvest_25, harvest_30 -> seed_nb
+(size=15)
+
+ERGO : ✗ -0.0070
+ORIGO : ✗ -1.4016
+DC : ✓ 0.0043
+
+----------67/207----------
+0 4 5 -> 11
+climate, P300_25, P600_25 -> seed_nb
+(size=15)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------68/207----------
+4 7 9 -> 12
+P300_25, P1000_30, harvest_30 -> PMG
+(size=15)
+
+ERGO : ✓ 0.0264
+ORIGO : ✓ 0.0562
+DC : ✓ 0.0076
+
+----------69/207----------
+1 7 -> 11 12
+genotype, P1000_30 -> seed_nb, PMG
+(size=15)
+
+ERGO : ✗ -0.0346
+ORIGO : ✓ 0.5251
+DC : ✓ 0.0493
+
+----------70/207----------
+2 7 8 -> 12
+Ptot_25, P1000_30, harvest_25 -> PMG
+(size=15)
+
+ERGO : ✓ 0.0246
+ORIGO : ✓ 2.2625
+DC : ✓ 0.0231
+
+----------71/207----------
+1 7 -> 10 12
+genotype, P1000_30 -> seed_yield, PMG
+(size=15)
+
+ERGO : ✗ -0.0538
+ORIGO : ✗ -2.7149
+DC : ✓ 0.0937
+
+----------72/207----------
+0 5 -> 13 14
+climate, P600_25 -> lipids, proteins
+(size=15)
+
+ERGO : ? 0.0001
+ORIGO : ✓ 0.0301
+DC : ✗ -0.0251
+
+----------73/207----------
+0 5 7 -> 14
+climate, P600_25, P1000_30 -> proteins
+(size=14)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------74/207----------
+1 -> 10 11
+genotype -> seed_yield, seed_nb
+(size=18)
+
+ERGO : ✗ -0.0269
+ORIGO : ✗ -0.6370
+DC : ✗ -0.0152
+
+----------75/207----------
+1 -> 10 13
+genotype -> seed_yield, lipids
+(size=18)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0026
+
+----------76/207----------
+3 4 6 -> 14
+Ptot_30, P300_25, P1000_25 -> proteins
+(size=13)
+
+ERGO : ✗ -0.0105
+ORIGO : ✗ -3.2359
+DC : ✓ 0.0286
+
+----------77/207----------
+1 3 9 -> 14
+genotype, Ptot_30, harvest_30 -> proteins
+(size=13)
+
+ERGO : ? -0.0001
+ORIGO : ✗ -0.0268
+DC : ? 0.0000
+
+----------78/207----------
+0 4 -> 11 14
+climate, P300_25 -> seed_nb, proteins
+(size=13)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------79/207----------
+2 4 8 -> 14
+Ptot_25, P300_25, harvest_25 -> proteins
+(size=13)
+
+ERGO : ✓ 0.0088
+ORIGO : ✗ -6.2209
+DC : ✓ 0.1127
+
+----------80/207----------
+1 8 -> 13 14
+genotype, harvest_25 -> lipids, proteins
+(size=13)
+
+ERGO : ✗ -0.0062
+ORIGO : ✗ -2.1478
+DC : ✓ 0.1483
+
+----------81/207----------
+0 4 5 -> 14
+climate, P300_25, P600_25 -> proteins
+(size=13)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------82/207----------
+4 9 -> 10
+P300_25, harvest_30 -> seed_yield
+(size=17)
+
+ERGO : ✓ 0.0088
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0310
+
+----------83/207----------
+1 7 -> 11
+genotype, P1000_30 -> seed_nb
+(size=17)
+
+ERGO : ✓ 0.0588
+ORIGO : ✓ 3.4291
+DC : ✓ 0.0964
+
+----------84/207----------
+1 9 -> 13
+genotype, harvest_30 -> lipids
+(size=17)
+
+ERGO : ✓ 0.0357
+ORIGO : ✗ -0.0936
+DC : ✓ 0.1037
+
+----------85/207----------
+4 8 -> 12
+P300_25, harvest_25 -> PMG
+(size=16)
+
+ERGO : ✓ 0.0080
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0048
+
+----------86/207----------
+0 4 -> 10
+climate, P300_25 -> seed_yield
+(size=15)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------87/207----------
+5 7 -> 11
+P600_25, P1000_30 -> seed_nb
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------88/207----------
+1 5 -> 11
+genotype, P600_25 -> seed_nb
+(size=15)
+
+ERGO : ✓ 0.0222
+ORIGO : ✓ 0.1439
+DC : ✓ 0.0564
+
+----------89/207----------
+4 7 -> 11
+P300_25, P1000_30 -> seed_nb
+(size=15)
+
+ERGO : ✓ 0.0071
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0001
+
+----------90/207----------
+1 5 -> 12
+genotype, P600_25 -> PMG
+(size=15)
+
+ERGO : ✓ 0.1063
+ORIGO : ✗ -1.3448
+DC : ✓ 0.1264
+
+----------91/207----------
+4 6 -> 13
+P300_25, P1000_25 -> lipids
+(size=15)
+
+ERGO : ✗ -0.0019
+ORIGO : ✗ -0.3586
+DC : ✓ 0.0023
+
+----------92/207----------
+1 -> 12 14
+genotype -> PMG, proteins
+(size=15)
+
+ERGO : ✗ -0.1509
+ORIGO : ✗ -0.0158
+DC : ✗ -0.1338
+
+----------93/207----------
+7 -> 13 14
+P1000_30 -> lipids, proteins
+(size=14)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0158
+
+----------94/207----------
+4 5 -> 14
+P300_25, P600_25 -> proteins
+(size=14)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0009
+
+----------95/207----------
+7 -> 12 14
+P1000_30 -> PMG, proteins
+(size=13)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0583
+
+----------96/207----------
+1 4 -> 14
+genotype, P300_25 -> proteins
+(size=13)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0032
+
+----------97/207----------
+1 3 4 5 7 -> 12
+genotype, Ptot_30, P300_25, P600_25, P1000_30 -> PMG
+(size=31)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0308
+
+----------98/207----------
+1 3 4 5 7 -> 13
+genotype, Ptot_30, P300_25, P600_25, P1000_30 -> lipids
+(size=26)
+
+ERGO : ✓ 0.0617
+ORIGO : ✓ 1.8541
+DC : ✓ 0.1114
+
+----------99/207----------
+4 5 7 9 -> 12
+P300_25, P600_25, P1000_30, harvest_30 -> PMG
+(size=26)
+
+ERGO : ✓ 0.0094
+ORIGO : ✓ 0.1237
+DC : ✓ 0.0295
+
+----------100/207----------
+0 2 3 4 5 6 9 -> 12 13 14
+climate, Ptot_25, Ptot_30, P300_25, P600_25, P1000_25, harvest_30 -> PMG, lipids, proteins
+(size=12)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0033
+
+----------101/207----------
+0 1 4 6 7 -> 12
+climate, genotype, P300_25, P1000_25, P1000_30 -> PMG
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------102/207----------
+0 1 5 7 -> 12 13
+climate, genotype, P600_25, P1000_30 -> PMG, lipids
+(size=18)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------103/207----------
+5 6 7 -> 13
+P600_25, P1000_25, P1000_30 -> lipids
+(size=26)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0114
+
+----------104/207----------
+1 4 5 8 -> 12
+genotype, P300_25, P600_25, harvest_25 -> PMG
+(size=20)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0274
+
+----------105/207----------
+1 7 9 -> 12
+genotype, P1000_30, harvest_30 -> PMG
+(size=24)
+
+ERGO : ✓ 0.1628
+ORIGO : ✗ -0.3446
+DC : ✓ 0.2908
+
+----------106/207----------
+0 1 4 7 -> 11
+climate, genotype, P300_25, P1000_30 -> seed_nb
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------107/207----------
+3 4 7 -> 12
+Ptot_30, P300_25, P1000_30 -> PMG
+(size=23)
+
+ERGO : ✓ 0.0249
+ORIGO : ✓ 0.0562
+DC : ✓ 0.0026
+
+----------108/207----------
+1 4 5 7 9 -> 13
+genotype, P300_25, P600_25, P1000_30, harvest_30 -> lipids
+(size=15)
+
+ERGO : ✓ 0.0617
+ORIGO : ✓ 1.8541
+DC : ✓ 0.1114
+
+----------109/207----------
+0 4 5 7 -> 10
+climate, P300_25, P600_25, P1000_30 -> seed_yield
+(size=18)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------110/207----------
+3 4 7 -> 14
+Ptot_30, P300_25, P1000_30 -> proteins
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0075
+
+----------111/207----------
+4 5 7 -> 12
+P300_25, P600_25, P1000_30 -> PMG
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0048
+
+----------112/207----------
+1 4 8 9 -> 12
+genotype, P300_25, harvest_25, harvest_30 -> PMG
+(size=17)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0021
+
+----------113/207----------
+1 5 7 -> 11
+genotype, P600_25, P1000_30 -> seed_nb
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------114/207----------
+2 4 7 8 9 -> 14
+Ptot_25, P300_25, P1000_30, harvest_25, harvest_30 -> proteins
+(size=14)
+
+ERGO : ✗ -0.0099
+ORIGO : ✗ -3.8025
+DC : ✓ 0.0190
+
+----------115/207----------
+0 4 7 -> 13
+climate, P300_25, P1000_30 -> lipids
+(size=20)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------116/207----------
+4 7 -> 11 12
+P300_25, P1000_30 -> seed_nb, PMG
+(size=18)
+
+ERGO : ✗ -0.0302
+ORIGO : ✗ -3.4503
+DC : ✗ -0.1666
+
+----------117/207----------
+2 4 7 8 9 -> 12
+Ptot_25, P300_25, P1000_30, harvest_25, harvest_30 -> PMG
+(size=12)
+
+ERGO : ✓ 0.0055
+ORIGO : ✗ -0.7155
+DC : ✓ 0.0248
+
+----------118/207----------
+2 4 7 8 -> 11
+Ptot_25, P300_25, P1000_30, harvest_25 -> seed_nb
+(size=14)
+
+ERGO : ✓ 0.0291
+ORIGO : ✓ 1.6082
+DC : ✓ 0.0083
+
+----------119/207----------
+1 4 7 -> 10 12
+genotype, P300_25, P1000_30 -> seed_yield, PMG
+(size=14)
+
+ERGO : ✓ 0.0048
+ORIGO : ✗ -4.4872
+DC : ✓ 0.0067
+
+----------120/207----------
+1 8 -> 13
+genotype, harvest_25 -> lipids
+(size=23)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.1988
+
+----------121/207----------
+2 4 5 7 8 -> 14
+Ptot_25, P300_25, P600_25, P1000_30, harvest_25 -> proteins
+(size=11)
+
+ERGO : ✓ 0.0375
+ORIGO : ✗ -2.2320
+DC : ✓ 0.0839
+
+----------122/207----------
+1 4 5 7 -> 12
+genotype, P300_25, P600_25, P1000_30 -> PMG
+(size=13)
+
+ERGO : ✓ 0.1845
+ORIGO : ✗ -10.0602
+DC : ✓ 0.1101
+
+----------123/207----------
+1 5 7 -> 12 14
+genotype, P600_25, P1000_30 -> PMG, proteins
+(size=13)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.1989
+
+----------124/207----------
+0 4 7 -> 10
+climate, P300_25, P1000_30 -> seed_yield
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------125/207----------
+1 4 8 -> 11
+genotype, P300_25, harvest_25 -> seed_nb
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------126/207----------
+1 4 8 -> 12
+genotype, P300_25, harvest_25 -> PMG
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0008
+
+----------127/207----------
+1 5 7 -> 10
+genotype, P600_25, P1000_30 -> seed_yield
+(size=15)
+
+ERGO : ✗ -0.0016
+ORIGO : ✗ -0.4749
+DC : ✓ 0.0087
+
+----------128/207----------
+1 4 7 -> 12
+genotype, P300_25, P1000_30 -> PMG
+(size=15)
+
+ERGO : ✓ 0.1475
+ORIGO : ✗ -2.7149
+DC : ✓ 0.1363
+
+----------129/207----------
+1 5 7 8 -> 13
+genotype, P600_25, P1000_30, harvest_25 -> lipids
+(size=12)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0446
+
+----------130/207----------
+4 5 7 9 -> 10
+P300_25, P600_25, P1000_30, harvest_30 -> seed_yield
+(size=12)
+
+ERGO : ✓ 0.0028
+ORIGO : ✗ -2.4162
+DC : ✓ 0.0386
+
+----------131/207----------
+1 4 5 7 -> 12 14
+genotype, P300_25, P600_25, P1000_30 -> PMG, proteins
+(size=10)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0849
+
+----------132/207----------
+1 9 -> 11 12
+genotype, harvest_30 -> seed_nb, PMG
+(size=14)
+
+ERGO : ? 0.0007
+ORIGO : ✗ -0.0490
+DC : ✓ 0.3518
+
+----------133/207----------
+1 4 9 -> 12
+genotype, P300_25, harvest_30 -> PMG
+(size=14)
+
+ERGO : ✓ 0.1683
+ORIGO : ✗ -0.0158
+DC : ✓ 0.4042
+
+----------134/207----------
+2 4 7 -> 12
+Ptot_25, P300_25, P1000_30 -> PMG
+(size=14)
+
+ERGO : ✓ 0.0091
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0251
+
+----------135/207----------
+4 7 9 -> 10 11
+P300_25, P1000_30, harvest_30 -> seed_yield, seed_nb
+(size=11)
+
+ERGO : ✓ 0.0023
+ORIGO : ✓ 0.6919
+DC : ✗ -0.1872
+
+----------136/207----------
+1 4 7 9 -> 11
+genotype, P300_25, P1000_30, harvest_30 -> seed_nb
+(size=11)
+
+ERGO : ✓ 0.1209
+ORIGO : ✓ 3.9266
+DC : ✓ 0.1379
+
+----------137/207----------
+1 4 5 -> 13 14
+genotype, P300_25, P600_25 -> lipids, proteins
+(size=11)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.2045
+
+----------138/207----------
+2 4 7 9 -> 14
+Ptot_25, P300_25, P1000_30, harvest_30 -> proteins
+(size=11)
+
+ERGO : ✓ 0.0302
+ORIGO : ✗ -1.4849
+DC : ✓ 0.0427
+
+----------139/207----------
+1 4 9 -> 14
+genotype, P300_25, harvest_30 -> proteins
+(size=13)
+
+ERGO : ✗ -0.0039
+ORIGO : ✗ -0.8989
+DC : ✓ 0.2232
+
+----------140/207----------
+1 2 8 -> 12
+genotype, Ptot_25, harvest_25 -> PMG
+(size=13)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0018
+
+----------141/207----------
+3 9 -> 12 13
+Ptot_30, harvest_30 -> PMG, lipids
+(size=13)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0477
+
+----------142/207----------
+5 7 8 -> 12
+P600_25, P1000_30, harvest_25 -> PMG
+(size=12)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0235
+
+----------143/207----------
+1 4 -> 12 13
+genotype, P300_25 -> PMG, lipids
+(size=12)
+
+ERGO : ✗ -0.0144
+ORIGO : ✗ -0.3550
+DC : ✗ -0.0875
+
+----------144/207----------
+4 7 8 -> 12
+P300_25, P1000_30, harvest_25 -> PMG
+(size=12)
+
+ERGO : ✓ 0.0091
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0251
+
+----------145/207----------
+0 4 6 -> 14
+climate, P300_25, P1000_25 -> proteins
+(size=12)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------146/207----------
+5 7 -> 13 14
+P600_25, P1000_30 -> lipids, proteins
+(size=12)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.1174
+
+----------147/207----------
+0 1 -> 10
+climate, genotype -> seed_yield
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------148/207----------
+1 7 -> 12
+genotype, P1000_30 -> PMG
+(size=15)
+
+ERGO : ✓ 0.0947
+ORIGO : ✗ -0.7597
+DC : ✓ 0.1586
+
+----------149/207----------
+4 5 7 -> 10
+P300_25, P600_25, P1000_30 -> seed_yield
+(size=11)
+
+ERGO : ✗ -0.0020
+ORIGO : ✗ -2.7381
+DC : ✓ 0.0208
+
+----------150/207----------
+4 5 7 -> 11
+P300_25, P600_25, P1000_30 -> seed_nb
+(size=11)
+
+ERGO : ✓ 0.0111
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0012
+
+----------151/207----------
+1 2 8 -> 11
+genotype, Ptot_25, harvest_25 -> seed_nb
+(size=11)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------152/207----------
+1 2 9 -> 12
+genotype, Ptot_25, harvest_30 -> PMG
+(size=11)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0000
+
+----------153/207----------
+1 2 9 -> 13
+genotype, Ptot_25, harvest_30 -> lipids
+(size=11)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0681
+
+----------154/207----------
+4 7 8 -> 13
+P300_25, P1000_30, harvest_25 -> lipids
+(size=11)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0337
+
+----------155/207----------
+4 5 7 -> 14
+P300_25, P600_25, P1000_30 -> proteins
+(size=11)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0156
+
+----------156/207----------
+1 7 8 -> 14
+genotype, P1000_30, harvest_25 -> proteins
+(size=11)
+
+ERGO : ✓ 0.0352
+ORIGO : ✓ 0.2844
+DC : ✓ 0.0765
+
+----------157/207----------
+2 4 7 -> 14
+Ptot_25, P300_25, P1000_30 -> proteins
+(size=11)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0081
+
+----------158/207----------
+2 4 7 -> 10
+Ptot_25, P300_25, P1000_30 -> seed_yield
+(size=11)
+
+ERGO : ✗ -0.0045
+ORIGO : ✗ -2.7381
+DC : ✓ 0.0075
+
+----------159/207----------
+1 9 -> 10 11
+genotype, harvest_30 -> seed_yield, seed_nb
+(size=11)
+
+ERGO : ✓ 0.0274
+ORIGO : ✓ 6.7634
+DC : ✓ 0.2343
+
+----------160/207----------
+1 9 -> 11 13
+genotype, harvest_30 -> seed_nb, lipids
+(size=11)
+
+ERGO : ? 0.0004
+ORIGO : ✗ -0.0105
+DC : ✓ 0.0023
+
+----------161/207----------
+1 -> 10 11 13
+genotype -> seed_yield, seed_nb, lipids
+(size=11)
+
+ERGO : ✗ -0.0384
+ORIGO : ✗ -1.3685
+DC : ✗ -0.0149
+
+----------162/207----------
+1 7 -> 11 13
+genotype, P1000_30 -> seed_nb, lipids
+(size=11)
+
+ERGO : ✗ -0.0088
+ORIGO : ✓ 3.6047
+DC : ✗ -0.0164
+
+----------163/207----------
+1 4 -> 10 12
+genotype, P300_25 -> seed_yield, PMG
+(size=10)
+
+ERGO : ✗ -0.0237
+ORIGO : ✓ 0.1149
+DC : ✓ 0.0729
+
+----------164/207----------
+1 7 9 -> 10
+genotype, P1000_30, harvest_30 -> seed_yield
+(size=10)
+
+ERGO : ✓ 0.0096
+ORIGO : ✗ -3.3111
+DC : ✓ 0.0387
+
+----------165/207----------
+4 7 9 -> 10
+P300_25, P1000_30, harvest_30 -> seed_yield
+(size=10)
+
+ERGO : ? -0.0003
+ORIGO : ✗ -2.7381
+DC : ✓ 0.0201
+
+----------166/207----------
+7 8 9 -> 11
+P1000_30, harvest_25, harvest_30 -> seed_nb
+(size=10)
+
+ERGO : ✓ 0.0121
+ORIGO : ✓ 0.7379
+DC : ✓ 0.0052
+
+----------167/207----------
+1 4 -> 11 12
+genotype, P300_25 -> seed_nb, PMG
+(size=10)
+
+ERGO : ✗ -0.0156
+ORIGO : ✗ -0.0158
+DC : ✓ 0.1246
+
+----------168/207----------
+2 4 8 -> 13
+Ptot_25, P300_25, harvest_25 -> lipids
+(size=10)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0737
+
+----------169/207----------
+1 7 9 -> 13
+genotype, P1000_30, harvest_30 -> lipids
+(size=10)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.1987
+
+----------170/207----------
+1 4 8 -> 14
+genotype, P300_25, harvest_25 -> proteins
+(size=10)
+
+ERGO : ✓ 0.0307
+ORIGO : ✗ -1.4849
+DC : ✓ 0.1747
+
+----------171/207----------
+1 4 -> 11 13
+genotype, P300_25 -> seed_nb, lipids
+(size=10)
+
+ERGO : ✗ -0.0042
+ORIGO : ✗ -0.0105
+DC : ✗ -0.0504
+
+----------172/207----------
+1 -> 10 13 14
+genotype -> seed_yield, lipids, proteins
+(size=10)
+
+ERGO : ✗ -0.0489
+ORIGO : ✗ -0.0490
+DC : ✗ -0.0695
+
+----------173/207----------
+1 8 -> 10 11
+genotype, harvest_25 -> seed_yield, seed_nb
+(size=10)
+
+ERGO : ✓ 0.0270
+ORIGO : ✓ 6.7634
+DC : ✓ 0.2186
+
+----------174/207----------
+0 2 -> 11 14
+climate, Ptot_25 -> seed_nb, proteins
+(size=10)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0637
+
+----------175/207----------
+1 2 -> 13
+genotype, Ptot_25 -> lipids
+(size=13)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.1988
+
+----------176/207----------
+1 4 -> 13
+genotype, P300_25 -> lipids
+(size=13)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.1112
+
+----------177/207----------
+3 7 9 -> 10
+Ptot_30, P1000_30, harvest_30 -> seed_yield
+(size=9)
+
+ERGO : ✓ 0.0010
+ORIGO : ✗ -1.3909
+DC : ✓ 0.0102
+
+----------178/207----------
+1 4 -> 10 11
+genotype, P300_25 -> seed_yield, seed_nb
+(size=9)
+
+ERGO : ✗ -0.0047
+ORIGO : ✗ -0.5063
+DC : ✓ 0.1254
+
+----------179/207----------
+4 9 -> 10 12
+P300_25, harvest_30 -> seed_yield, PMG
+(size=9)
+
+ERGO : ? -0.0009
+ORIGO : ✓ 0.1307
+DC : ✗ -0.0736
+
+----------180/207----------
+2 4 7 -> 11
+Ptot_25, P300_25, P1000_30 -> seed_nb
+(size=9)
+
+ERGO : ✓ 0.0196
+ORIGO : ✓ 2.5780
+DC : ✓ 0.0112
+
+----------181/207----------
+5 7 8 -> 11
+P600_25, P1000_30, harvest_25 -> seed_nb
+(size=9)
+
+ERGO : ✓ 0.0240
+ORIGO : ✓ 0.3339
+DC : ✓ 0.0020
+
+----------182/207----------
+1 7 9 -> 11
+genotype, P1000_30, harvest_30 -> seed_nb
+(size=9)
+
+ERGO : ✓ 0.1104
+ORIGO : ✓ 3.6047
+DC : ✓ 0.1005
+
+----------183/207----------
+2 4 7 -> 13
+Ptot_25, P300_25, P1000_30 -> lipids
+(size=9)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0337
+
+----------184/207----------
+4 7 -> 13 14
+P300_25, P1000_30 -> lipids, proteins
+(size=9)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0072
+
+----------185/207----------
+4 5 7 -> 13
+P300_25, P600_25, P1000_30 -> lipids
+(size=9)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0057
+
+----------186/207----------
+1 7 -> 12 13
+genotype, P1000_30 -> PMG, lipids
+(size=9)
+
+ERGO : ? -0.0001
+ORIGO : ✓ 8.3854
+DC : ✗ -0.0554
+
+----------187/207----------
+8 9 -> 10 13
+harvest_25, harvest_30 -> seed_yield, lipids
+(size=9)
+
+ERGO : ✗ -0.0136
+ORIGO : ✗ -2.3245
+DC : ✗ -0.0338
+
+----------188/207----------
+1 5 7 -> 13
+genotype, P600_25, P1000_30 -> lipids
+(size=9)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0001
+
+----------189/207----------
+1 9 -> 10 13
+genotype, harvest_30 -> seed_yield, lipids
+(size=9)
+
+ERGO : ? 0.0006
+ORIGO : ✗ -0.0936
+DC : ✓ 0.0862
+
+----------190/207----------
+7 8 9 -> 14
+P1000_30, harvest_25, harvest_30 -> proteins
+(size=9)
+
+ERGO : ✗ -0.0169
+ORIGO : ✗ -4.3875
+DC : ✓ 0.0103
+
+----------191/207----------
+1 4 -> 11 14
+genotype, P300_25 -> seed_nb, proteins
+(size=9)
+
+ERGO : ✗ -0.0061
+ORIGO : ✗ -0.0105
+DC : ✗ -0.0565
+
+----------192/207----------
+1 9 -> 12 14
+genotype, harvest_30 -> PMG, proteins
+(size=9)
+
+ERGO : ✗ -0.0038
+ORIGO : ✗ -0.0010
+DC : ✓ 0.0455
+
+----------193/207----------
+1 7 9 -> 14
+genotype, P1000_30, harvest_30 -> proteins
+(size=9)
+
+ERGO : ✗ -0.0011
+ORIGO : ✗ -0.3129
+DC : ✓ 0.0762
+
+----------194/207----------
+7 -> 10 11 12
+P1000_30 -> seed_yield, seed_nb, PMG
+(size=9)
+
+ERGO : ✗ -0.0472
+ORIGO : ✗ -3.5065
+DC : ✗ -0.1408
+
+----------195/207----------
+1 5 -> 10
+genotype, P600_25 -> seed_yield
+(size=11)
+
+ERGO : ? -0.0003
+ORIGO : ✗ -0.0630
+DC : ✓ 0.0115
+
+----------196/207----------
+1 -> 11 13
+genotype -> seed_nb, lipids
+(size=11)
+
+ERGO : ✗ -0.0336
+ORIGO : ✗ -1.1955
+DC : ✗ -0.0109
+
+----------197/207----------
+1 5 -> 14
+genotype, P600_25 -> proteins
+(size=11)
+
+ERGO : ? -0.0003
+ORIGO : ✗ -0.0630
+DC : ✓ 0.0152
+
+----------198/207----------
+4 -> 10 11
+P300_25 -> seed_yield, seed_nb
+(size=11)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0314
+
+----------199/207----------
+1 7 -> 14
+genotype, P1000_30 -> proteins
+(size=11)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------200/207----------
+1 7 -> 10
+genotype, P1000_30 -> seed_yield
+(size=10)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------201/207----------
+4 5 -> 10
+P300_25, P600_25 -> seed_yield
+(size=10)
+
+ERGO : ✓ 0.0072
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0306
+
+----------202/207----------
+1 4 -> 10
+genotype, P300_25 -> seed_yield
+(size=10)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0399
+
+----------203/207----------
+1 -> 11 14
+genotype -> seed_nb, proteins
+(size=10)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------204/207----------
+1 7 -> 13
+genotype, P1000_30 -> lipids
+(size=10)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0341
+
+----------205/207----------
+4 9 -> 11
+P300_25, harvest_30 -> seed_nb
+(size=9)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0242
+
+----------206/207----------
+0 7 -> 13
+climate, P1000_30 -> lipids
+(size=9)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------207/207----------
+1 -> 13 14
+genotype -> lipids, proteins
+(size=9)
+
+ERGO : ✗ -0.0384
+ORIGO : ✗ -0.0490
+DC : ✗ -0.0282
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 65/121 (53.7%)
+SCORE ORIGO : 52/115 (45.2%)
+SCORE DC : 142/190 (74.7%)
+Sauvegardé dans 'files/5_origo/result_bicpams_additive_v1_TRIÉ_origo.txt'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/2a_bicpams/result_bicpams_constant_v1_TRIÉ.docx'
+Nombre de règles : 15
+
+----------1/15----------
+0 4 7 -> 12
+climate, P300_25, P1000_30 -> PMG
+(size=34)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------2/15----------
+0 5 7 -> 13
+climate, P600_25, P1000_30 -> lipids
+(size=32)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0001
+
+----------3/15----------
+1 5 -> 12
+genotype, P600_25 -> PMG
+(size=34)
+
+ERGO : ✓ 0.1063
+ORIGO : ✗ -1.3448
+DC : ✓ 0.1264
+
+----------4/15----------
+1 4 5 7 -> 12
+genotype, P300_25, P600_25, P1000_30 -> PMG
+(size=33)
+
+ERGO : ✓ 0.1845
+ORIGO : ✗ -10.0602
+DC : ✓ 0.1101
+
+----------5/15----------
+1 4 5 7 -> 13
+genotype, P300_25, P600_25, P1000_30 -> lipids
+(size=29)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0030
+
+----------6/15----------
+4 5 7 -> 10
+P300_25, P600_25, P1000_30 -> seed_yield
+(size=24)
+
+ERGO : ✗ -0.0020
+ORIGO : ✗ -2.7381
+DC : ✓ 0.0208
+
+----------7/15----------
+4 7 8 -> 12
+P300_25, P1000_30, harvest_25 -> PMG
+(size=24)
+
+ERGO : ✓ 0.0091
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0251
+
+----------8/15----------
+4 5 7 -> 14
+P300_25, P600_25, P1000_30 -> proteins
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0156
+
+----------9/15----------
+4 7 -> 11
+P300_25, P1000_30 -> seed_nb
+(size=25)
+
+ERGO : ✓ 0.0071
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0001
+
+----------10/15----------
+4 7 -> 10
+P300_25, P1000_30 -> seed_yield
+(size=24)
+
+ERGO : ✗ -0.0136
+ORIGO : ✗ -3.1531
+DC : ✓ 0.0072
+
+----------11/15----------
+4 7 -> 12
+P300_25, P1000_30 -> PMG
+(size=24)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0020
+
+----------12/15----------
+7 -> 12 13
+P1000_30 -> PMG, lipids
+(size=24)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0545
+
+----------13/15----------
+0 1 -> 12
+climate, genotype -> PMG
+(size=22)
+
+ERGO : ? -0.0003
+ORIGO : ✗ -0.1235
+DC : ? 0.0000
+
+----------14/15----------
+5 7 -> 10
+P600_25, P1000_30 -> seed_yield
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0010
+
+----------15/15----------
+5 7 -> 14
+P600_25, P1000_30 -> proteins
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 4/6 (66.7%)
+SCORE ORIGO : 2/7 (28.6%)
+SCORE DC : 11/13 (84.6%)
+Sauvegardé dans 'files/5_origo/result_bicpams_constant_v1_TRIÉ_origo.txt'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/2c_coron/coron_rules_v1.txt'
+Nombre de règles : 22
+
+----------1/22----------
+0 2 6 7 8 -> 10
+climate, Ptot_25, P1000_25, P1000_30, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------2/22----------
+2 6 7 8 -> 10
+Ptot_25, P1000_25, P1000_30, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0011
+
+----------3/22----------
+0 6 7 8 -> 10
+climate, P1000_25, P1000_30, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------4/22----------
+0 2 7 8 -> 10
+climate, Ptot_25, P1000_30, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------5/22----------
+0 2 6 8 -> 10
+climate, Ptot_25, P1000_25, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------6/22----------
+6 7 8 -> 10
+P1000_25, P1000_30, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0011
+
+----------7/22----------
+2 7 8 -> 10
+Ptot_25, P1000_30, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0029
+
+----------8/22----------
+2 6 8 -> 10
+Ptot_25, P1000_25, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------9/22----------
+0 7 8 -> 10
+climate, P1000_30, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------10/22----------
+0 6 8 -> 10
+climate, P1000_25, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------11/22----------
+0 2 8 -> 10
+climate, Ptot_25, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------12/22----------
+6 8 -> 10
+P1000_25, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------13/22----------
+2 8 -> 10
+Ptot_25, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------14/22----------
+0 8 -> 10
+climate, harvest_25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------15/22----------
+0 4 -> 10
+climate, P300_25 -> seed_yield
+(supp=57, conf=60.00%)
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------16/22----------
+0 5 -> 10
+climate, P600_25 -> seed_yield
+(supp=51, conf=64.56%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------17/22----------
+4 5 -> 10
+P300_25, P600_25 -> seed_yield
+(supp=53, conf=67.09%)
+
+ERGO : ✓ 0.0072
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0306
+
+----------18/22----------
+5 7 -> 13
+P600_25, P1000_30 -> lipids
+(supp=53, conf=60.23%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0006
+
+----------19/22----------
+1 -> 12
+genotype -> PMG
+(supp=52, conf=67.53%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------20/22----------
+14 -> 13
+proteins -> lipids
+(supp=57, conf=71.25%)
+
+ERGO : ✗ -0.0035
+ORIGO : ✓ 0.0359
+DC : ? 0.0000
+
+----------21/22----------
+4 -> 10
+P300_25 -> seed_yield
+(supp=70, conf=61.40%)
+
+ERGO : ✗ -0.0063
+ORIGO : ✓ 0.1307
+DC : ? 0.0000
+
+----------22/22----------
+1 -> 12
+genotype -> PMG
+(supp=52, conf=66.67%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 1/8 (12.5%)
+SCORE ORIGO : 3/3 (100.0%)
+SCORE DC : 13/15 (86.7%)
+Sauvegardé dans 'files/5_origo/coron_rules_v1_origo.txt'
+...terminé !
+
+Preprocessing du tableur...
+Lecture de 'RAPSODYN_Zachary_20220414\DATA\Rapsodyn_data_20220519_v2.csv'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/1_cfca/Expe_agro_Zac_v2 TRIÉ.txt'
+152.829 secondes.
+
+>>> (executing file "main.py")
+
+Preprocessing du tableur...
+Lecture de 'RAPSODYN_Zachary_20220414\DATA\Rapsodyn_data_20220519_v2.csv'
+...terminé !
+
+Part. I - Tri des règles d'inférence...
+Lecture de 'files/1_cfca/Expe_agro_Zac_v2.txt'
+70 règles initiales
+10 règles retenues
+Écrites dans 'files/1_cfca/Expe_agro_Zac_v2 TRIÉ.txt'
+...terminé !
+
+Part. IIa - Pre-processing pour BicPAMS...
+Sauvegardé dans 'files/2a_bicpams/bicpams25_302.txt'
+...terminé !
+
+Part. IIa - Récupération et tri des biclusters...
+Lecture de 'files/2a_bicpams/result_bicpams_additive_v2.htm'
+755 biclusters inférés
+684 biclusters non-doublons
+261 biclusters retenus
+Sauvegardé dans 'files/2a_bicpams/result_bicpams_additive_v2_TRIÉ.docx'
+...terminé !
+
+Part. IIa - Récupération et tri des biclusters...
+Lecture de 'files/2a_bicpams/result_bicpams_constant_v2.htm'
+48 biclusters inférés
+43 biclusters non-doublons
+5 biclusters retenus
+Sauvegardé dans 'files/2a_bicpams/result_bicpams_constant_v2_TRIÉ.docx'
+...terminé !
+
+Part. IIb - Binarisation du tableur...
+Lecture de 'RAPSODYN_Zachary_20220414\DATA\Rapsodyn_data_20220519_v2.csv'
+Sauvegardé dans 'RAPSODYN_Zachary_20220414\DATA\rapsodyn_binary_v2.csv'
+...terminé !
+
+Part. IIb - Traduction du tableur binarisé en + - ...
+Lecture de 'RAPSODYN_Zachary_20220414\DATA\rapsodyn_binary_v2.csv'
+Sauvegardé dans 'files/2b_pypingen/pypingen_binary_v2.txt'
+...terminé !
+
+Part IIc - Binarisation du tableur...
+Sauvegardé dans 'files/2c_coron/binary_new_v2.csv'
+...terminé !
+
+Part IIc - Transformation en fichier Coron...
+Lecture de 'files/2c_coron/binary_new_v2.csv'
+Sauvegardé dans 'files/2c_coron/rapsodynCoron_v2.rcf'
+...terminé !
+
+Part IIc - Exécution de Coron...
+Lecture de 'rapsodynCoron_v2.rcf'
+> Start: getting itemsets from Coron... It can take some time.
+> Number of itemsets taken over from Coron: 891
+> Stop:  getting itemsets from Coron. Elapsed time: 0.376 sec.
+> Start: generating rules...
+> Stop:  generating rules. Elapsed time: 116.437 sec.
+> Getting itemsets from Coron: 0.376 sec.
+> Generating rules:            116.437 sec.
+> Trie accesses: 1,943,016
+1022263 règles extraites
+Sauvegardé dans 'files/2c_coron/coron2.log'
+...terminé !
+
+Part IIc - Tri des règles...
+Lecture de 'files/2c_coron/coron2.log'
+"59|60|61|62|63|64|65|66|67|68"
+1021484 règles après tri gauche
+396 règles après tri droit
+Sauvegardé dans'files/2c_coron/coron_rules_v2.txt'
+Noms sauvegardés dans'files/2c_coron/coron_ruleNames_v2.txt'
+...terminé !
+
+Part. IV - Pre-processing du tableur pour Globe...
+Lecture de 'RAPSODYN_Zachary_20220414\DATA\Rapsodyn_data_20220519_v2.csv'
+Sauvegardé dans 'files/4_globe/globe25_302.txt'
+...terminé !
+
+Part. IV - Lancement de l'algorithme Globe...
+Lecture de 'files/4_globe/globe25_302.txt'
+Sauvegardé dans 'files/4_globe/globe_output_v2.log'
+...terminé !
+
+Part. IV - Affichage du diagramme causal de Globe...
+Lecture de 'files/4_globe/globe_output_v2.log'
+0- Ptot_>20
+1- Ptot_20-25
+2- Ptot_>25
+3- Ptot_25-30
+4- Ptot_>30
+5- Ptot_<5
+6- P300_>20
+7- P300_20-25
+8- P300_>25
+9- P300_25-30
+10- P300_<5
+11- P600_>20
+12- P600_20-25
+13- P600_>25
+14- P600_25-30
+15- P600_<5
+16- P1000_>20
+17- P1000_20-25
+18- P1000_>25
+19- P1000_25-30
+20- P1000_>30
+21- Pharv_>20
+22- Pharv_20-25
+23- Pharv_>25
+24- Pharv_25-30
+25- Pharvt_>30
+26- seed_yield
+27- seed_nb
+28- PMG
+29- lipids
+30- proteins
+Image sauvegardée dans 'files/4_globe/globefig_v2.png'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/1_cfca/Expe_agro_Zac_v2 TRIÉ.txt'
+Nombre de règles : 10
+
+----------1/10----------
+27 -> 28
+Pharvt_>30 -> seed_yield
+
+ERGO : ✗ -0.0047
+ORIGO : ✓ 0.0299
+DC : ? 0.0000
+
+----------2/10----------
+26 -> 28
+Pharv_25-30 -> seed_yield
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------3/10----------
+22 -> 31
+P1000_>30 -> lipids
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------4/10----------
+19 -> 31
+P1000_20-25 -> lipids
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------5/10----------
+16 17 9 10 25 -> 32 31
+P600_25-30, P600_<5, P300_20-25, P300_>25, Pharv_>25 -> proteins, lipids
+
+ERGO : ✓ 0.0121
+ORIGO : ✗ -0.0102
+DC : ✓ 0.1385
+
+----------6/10----------
+7 -> 28
+Ptot_<5 -> seed_yield
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------7/10----------
+5 -> 28
+Ptot_25-30 -> seed_yield
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------8/10----------
+18 9 2 10 -> 32 31
+P1000_>20, P300_20-25, Ptot_>20, P300_>25 -> proteins, lipids
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.2409
+
+----------9/10----------
+16 1 17 -> 31
+P600_25-30, genotype, P600_<5 -> lipids
+
+ERGO : ✓ 0.0068
+ORIGO : ✓ 0.4601
+DC : ✓ 0.0234
+
+----------10/10----------
+0 1 -> 31
+climate, genotype -> lipids
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0950
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 2/3 (66.7%)
+SCORE ORIGO : 2/3 (66.7%)
+SCORE DC : 4/4 (100.0%)
+Sauvegardé dans 'files/5_origo/Expe_agro_Zac_v2 TRIÉ_origo.txt'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/1_cfca/Expe_agro_Zac_v2.txt'
+Nombre de règles : 70
+
+----------1/70----------
+31 -> 1 4 11 12 14 15 21 30
+lipids -> genotype, Ptot_>25, P300_25-30, P300_<5, P600_20-25, P600_>25, P1000_25-30, PMG
+
+ERGO : ✗ -0.1074
+ORIGO : ✓ 1.5218
+DC : ✗ -0.1326
+
+----------2/70----------
+32 30 -> 11 12 15 19 21 22 29 31
+proteins, PMG -> P300_25-30, P300_<5, P600_>25, P1000_20-25, P1000_25-30, P1000_>30, seed_nb, lipids
+
+ERGO : ✗ -0.0588
+ORIGO : ✓ 2.6769
+DC : ✗ -0.0352
+
+----------3/70----------
+29 30 -> 1 4 11 12 14 15 19 21 22 31
+seed_nb, PMG -> genotype, Ptot_>25, P300_25-30, P300_<5, P600_20-25, P600_>25, P1000_20-25, P1000_25-30, P1000_>30, lipids
+
+ERGO : ✓ 0.0091
+ORIGO : ✓ 13.1940
+DC : ✗ -0.2055
+
+----------4/70----------
+32 28 -> 3 5 6 7 8 21 22 26 27
+proteins, seed_yield -> Ptot_20-25, Ptot_25-30, Ptot_>30, Ptot_<5, P300_>20, P1000_25-30, P1000_>30, Pharv_25-30, Pharvt_>30
+
+ERGO : ✓ 0.0060
+ORIGO : ✓ 4.5370
+DC : ✗ -0.0447
+
+----------5/70----------
+28 30 -> 3 5 6 7 24 26 27 31
+seed_yield, PMG -> Ptot_20-25, Ptot_25-30, Ptot_>30, Ptot_<5, Pharv_20-25, Pharv_25-30, Pharvt_>30, lipids
+
+ERGO : ✓ 0.0156
+ORIGO : ✓ 10.6183
+DC : ✓ 0.0125
+
+----------6/70----------
+28 29 -> 5 6 7 26 27
+seed_yield, seed_nb -> Ptot_25-30, Ptot_>30, Ptot_<5, Pharv_25-30, Pharvt_>30
+
+ERGO : ✓ 0.0299
+ORIGO : ✓ 13.2590
+DC : ✗ -0.1311
+
+----------7/70----------
+27 -> 28
+Pharvt_>30 -> seed_yield
+
+ERGO : ✗ -0.0047
+ORIGO : ✓ 0.0299
+DC : ? 0.0000
+
+----------8/70----------
+27 28 -> 5 6 7 24 26
+Pharvt_>30, seed_yield -> Ptot_25-30, Ptot_>30, Ptot_<5, Pharv_20-25, Pharv_25-30
+
+ERGO : ✗ -0.2429
+ORIGO : ✗ -4.2740
+DC : ✗ -0.1080
+
+----------9/70----------
+26 -> 24 27 28 6
+Pharv_25-30 -> Pharv_20-25, Pharvt_>30, seed_yield, Ptot_>30
+
+ERGO : ✗ -0.0854
+ORIGO : ✗ -0.0268
+DC : ✗ -0.0999
+
+----------10/70----------
+25 -> 9
+Pharv_>25 -> P300_20-25
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------11/70----------
+24 -> 27
+Pharv_20-25 -> Pharvt_>30
+
+ERGO : ? -0.0005
+ORIGO : ✓ 0.0510
+DC : ? 0.0000
+
+----------12/70----------
+30 23 -> 19 31
+PMG, Pharv_>20 -> P1000_20-25, lipids
+
+ERGO : ✓ 0.0014
+ORIGO : ✓ 1.3319
+DC : ✓ 0.1882
+
+----------13/70----------
+32 29 23 -> 19 21 22 30
+proteins, seed_nb, Pharv_>20 -> P1000_20-25, P1000_25-30, P1000_>30, PMG
+
+ERGO : ✗ -0.0232
+ORIGO : ✗ -7.4744
+DC : ✓ 0.2472
+
+----------14/70----------
+22 -> 1 15 31
+P1000_>30 -> genotype, P600_>25, lipids
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0049
+
+----------15/70----------
+21 -> 1 3 6 11 22
+P1000_25-30 -> genotype, Ptot_20-25, Ptot_>30, P300_25-30, P1000_>30
+
+ERGO : ✗ -0.2215
+ORIGO : ✓ 2.1228
+DC : ✗ -0.3116
+
+----------16/70----------
+32 20 -> 19
+proteins, P1000_>25 -> P1000_20-25
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0203
+
+----------17/70----------
+19 -> 1 3 4 14 15 21 22 31
+P1000_20-25 -> genotype, Ptot_20-25, Ptot_>25, P600_20-25, P600_>25, P1000_25-30, P1000_>30, lipids
+
+ERGO : ✗ -0.2854
+ORIGO : ✓ 13.4045
+DC : ✗ -0.1558
+
+----------18/70----------
+18 30 -> 31
+P1000_>20, PMG -> lipids
+
+ERGO : ✗ -0.0148
+ORIGO : ✗ -3.3237
+DC : ✓ 0.0407
+
+----------19/70----------
+18 23 -> 8
+P1000_>20, Pharv_>20 -> P300_>20
+
+ERGO : ✓ 0.0212
+ORIGO : ✓ 0.0328
+DC : ✓ 0.0510
+
+----------20/70----------
+18 20 29 -> 19
+P1000_>20, P1000_>25, seed_nb -> P1000_20-25
+
+ERGO : ✓ 0.0434
+ORIGO : ✗ -5.0567
+DC : ✓ 0.3026
+
+----------21/70----------
+18 20 28 -> 3 5 7 8 19 26 27
+P1000_>20, P1000_>25, seed_yield -> Ptot_20-25, Ptot_25-30, Ptot_<5, P300_>20, P1000_20-25, Pharv_25-30, Pharvt_>30
+
+ERGO : ✗ -0.1498
+ORIGO : ✗ -12.4175
+DC : ✗ -0.1242
+
+----------22/70----------
+32 17 -> 16
+proteins, P600_<5 -> P600_25-30
+
+ERGO : ✓ 0.0349
+ORIGO : ✗ -0.0964
+DC : ✓ 0.0653
+
+----------23/70----------
+17 23 -> 16
+P600_<5, Pharv_>20 -> P600_25-30
+
+ERGO : ✓ 0.1510
+ORIGO : ✗ -0.1884
+DC : ✓ 0.2690
+
+----------24/70----------
+16 -> 17
+P600_25-30 -> P600_<5
+
+ERGO : ✗ -0.0883
+ORIGO : ✓ 0.1884
+DC : ? 0.0000
+
+----------25/70----------
+16 17 30 -> 31
+P600_25-30, P600_<5, PMG -> lipids
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0324
+
+----------26/70----------
+16 17 32 29 -> 30
+P600_25-30, P600_<5, proteins, seed_nb -> PMG
+
+ERGO : ✓ 0.1307
+ORIGO : ✗ -10.9816
+DC : ✓ 0.1114
+
+----------27/70----------
+16 17 28 -> 5 6 7 24 26 27
+P600_25-30, P600_<5, seed_yield -> Ptot_25-30, Ptot_>30, Ptot_<5, Pharv_20-25, Pharv_25-30, Pharvt_>30
+
+ERGO : ✗ -0.0868
+ORIGO : ✗ -4.5307
+DC : ✗ -0.1540
+
+----------28/70----------
+16 17 32 23 -> 19 21 22
+P600_25-30, P600_<5, proteins, Pharv_>20 -> P1000_20-25, P1000_25-30, P1000_>30
+
+ERGO : ✓ 0.0142
+ORIGO : ✗ -3.1522
+DC : ✓ 0.1556
+
+----------29/70----------
+16 17 20 29 -> 19
+P600_25-30, P600_<5, P1000_>25, seed_nb -> P1000_20-25
+
+ERGO : ✓ 0.1553
+ORIGO : ✗ -1.6225
+DC : ✓ 0.2927
+
+----------30/70----------
+16 17 20 23 -> 19
+P600_25-30, P600_<5, P1000_>25, Pharv_>20 -> P1000_20-25
+
+ERGO : ✓ 0.0929
+ORIGO : ✗ -6.9238
+DC : ✓ 0.1805
+
+----------31/70----------
+16 17 18 20 -> 19
+P600_25-30, P600_<5, P1000_>20, P1000_>25 -> P1000_20-25
+
+ERGO : ✓ 0.0026
+ORIGO : ✓ 0.3322
+DC : ✓ 0.0243
+
+----------32/70----------
+15 -> 1 12 21
+P600_>25 -> genotype, P300_<5, P1000_25-30
+
+ERGO : ✗ -0.0236
+ORIGO : ✗ -1.7036
+DC : ✗ -0.2447
+
+----------33/70----------
+14 -> 1 11 22 15
+P600_20-25 -> genotype, P300_25-30, P1000_>30, P600_>25
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------34/70----------
+13 -> 6
+P600_>20 -> Ptot_>30
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------35/70----------
+12 -> 1 11 14 19 21 22
+P300_<5 -> genotype, P300_25-30, P600_20-25, P1000_20-25, P1000_25-30, P1000_>30
+
+ERGO : ✗ -0.3735
+ORIGO : ✗ -1.7952
+DC : ✗ -0.0589
+
+----------36/70----------
+11 -> 1 19 22 15
+P300_25-30 -> genotype, P1000_20-25, P1000_>30, P600_>25
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0096
+
+----------37/70----------
+10 -> 9
+P300_>25 -> P300_20-25
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------38/70----------
+32 9 -> 10 11 12 21 22 25
+proteins, P300_20-25 -> P300_>25, P300_25-30, P300_<5, P1000_25-30, P1000_>30, Pharv_>25
+
+ERGO : ✓ 0.0035
+ORIGO : ✓ 14.3931
+DC : ✓ 0.0062
+
+----------39/70----------
+9 30 -> 25 10 31
+P300_20-25, PMG -> Pharv_>25, P300_>25, lipids
+
+ERGO : ✗ -0.0300
+ORIGO : ✓ 0.8773
+DC : ✗ -0.0606
+
+----------40/70----------
+9 28 -> 5 6 7 8 10 13 24 25 26 27
+P300_20-25, seed_yield -> Ptot_25-30, Ptot_>30, Ptot_<5, P300_>20, P300_>25, P600_>20, Pharv_20-25, Pharv_>25, Pharv_25-30, Pharvt_>30
+
+ERGO : ✗ -0.3085
+ORIGO : ✗ -3.5950
+DC : ✗ -0.3768
+
+----------41/70----------
+9 23 -> 3 5 8 10 13 25
+P300_20-25, Pharv_>20 -> Ptot_20-25, Ptot_25-30, P300_>20, P300_>25, P600_>20, Pharv_>25
+
+ERGO : ✗ -0.3343
+ORIGO : ✓ 10.8399
+DC : ✗ -0.1609
+
+----------42/70----------
+9 20 -> 25 10 19 4
+P300_20-25, P1000_>25 -> Pharv_>25, P300_>25, P1000_20-25, Ptot_>25
+
+ERGO : ✗ -0.0623
+ORIGO : ✓ 5.8159
+DC : ✓ 0.0406
+
+----------43/70----------
+9 17 -> 16 25 10
+P300_20-25, P600_<5 -> P600_25-30, Pharv_>25, P300_>25
+
+ERGO : ✗ -0.0444
+ORIGO : ✗ -2.5844
+DC : ✗ -0.0782
+
+----------44/70----------
+18 9 10 29 25 -> 0 1 32 3 4 8 11 12 13 14 15 19 21 22 30 31
+P1000_>20, P300_20-25, P300_>25, seed_nb, Pharv_>25 -> climate, genotype, proteins, Ptot_20-25, Ptot_>25, P300_>20, P300_25-30, P300_<5, P600_>20, P600_20-25, P600_>25, P1000_20-25, P1000_25-30, P1000_>30, PMG, lipids
+
+ERGO : ✗ -0.3019
+ORIGO : ✗ -47.5162
+DC : ✗ -0.0678
+
+----------45/70----------
+16 17 9 10 25 -> 0 1 32 3 4 8 11 12 13 14 15 19 21 22 31
+P600_25-30, P600_<5, P300_20-25, P300_>25, Pharv_>25 -> climate, genotype, proteins, Ptot_20-25, Ptot_>25, P300_>20, P300_25-30, P300_<5, P600_>20, P600_20-25, P600_>25, P1000_20-25, P1000_25-30, P1000_>30, lipids
+
+ERGO : ✗ -0.4296
+ORIGO : ✗ -2.2886
+DC : ✗ -0.3143
+
+----------46/70----------
+8 -> 5 3 13
+P300_>20 -> Ptot_25-30, Ptot_20-25, P600_>20
+
+ERGO : ✗ -0.1026
+ORIGO : ✗ -2.8102
+DC : ✗ -0.0739
+
+----------47/70----------
+7 -> 5 24 26 27 28
+Ptot_<5 -> Ptot_25-30, Pharv_20-25, Pharv_25-30, Pharvt_>30, seed_yield
+
+ERGO : ✗ -0.1239
+ORIGO : ✓ 28.4181
+DC : ✗ -0.2640
+
+----------48/70----------
+6 -> 1 27 22
+Ptot_>30 -> genotype, Pharvt_>30, P1000_>30
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------49/70----------
+5 -> 1 3 6 13 26 27 28
+Ptot_25-30 -> genotype, Ptot_20-25, Ptot_>30, P600_>20, Pharv_25-30, Pharvt_>30, seed_yield
+
+ERGO : ✗ -0.5848
+ORIGO : ✓ 10.5362
+DC : ✗ -0.2868
+
+----------50/70----------
+4 -> 3 14 15
+Ptot_>25 -> Ptot_20-25, P600_20-25, P600_>25
+
+ERGO : ✗ -0.2024
+ORIGO : ✓ 1.7693
+DC : ✗ -0.1578
+
+----------51/70----------
+3 -> 1 13 6 22
+Ptot_20-25 -> genotype, P600_>20, Ptot_>30, P1000_>30
+
+ERGO : ✗ -0.2793
+ORIGO : ✓ 1.3328
+DC : ✗ -0.1226
+
+----------52/70----------
+2 30 -> 31
+Ptot_>20, PMG -> lipids
+
+ERGO : ✓ 0.0251
+ORIGO : ✓ 1.7263
+DC : ✓ 0.0374
+
+----------53/70----------
+2 28 -> 26 27 5 7
+Ptot_>20, seed_yield -> Pharv_25-30, Pharvt_>30, Ptot_25-30, Ptot_<5
+
+ERGO : ✗ -0.1528
+ORIGO : ✓ 10.7742
+DC : ✓ 0.0696
+
+----------54/70----------
+2 20 29 -> 19
+Ptot_>20, P1000_>25, seed_nb -> P1000_20-25
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0048
+
+----------55/70----------
+2 20 23 -> 19
+Ptot_>20, P1000_>25, Pharv_>20 -> P1000_20-25
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0128
+
+----------56/70----------
+16 17 2 32 -> 31
+P600_25-30, P600_<5, Ptot_>20, proteins -> lipids
+
+ERGO : ✓ 0.1012
+ORIGO : ✗ -0.0158
+DC : ✓ 0.1169
+
+----------57/70----------
+16 17 2 20 -> 19
+P600_25-30, P600_<5, Ptot_>20, P1000_>25 -> P1000_20-25
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0311
+
+----------58/70----------
+2 9 10 29 25 -> 0 1 32 3 4 8 11 12 13 14 15 19 21 22 30 31
+Ptot_>20, P300_20-25, P300_>25, seed_nb, Pharv_>25 -> climate, genotype, proteins, Ptot_20-25, Ptot_>25, P300_>20, P300_25-30, P300_<5, P600_>20, P600_20-25, P600_>25, P1000_20-25, P1000_25-30, P1000_>30, PMG, lipids
+
+ERGO : ✗ -0.2901
+ORIGO : ✗ -4.9535
+DC : ✗ -0.1630
+
+----------59/70----------
+18 9 2 10 -> 0 1 32 3 8 11 12 14 15 19 21 22 25 31
+P1000_>20, P300_20-25, Ptot_>20, P300_>25 -> climate, genotype, proteins, Ptot_20-25, P300_>20, P300_25-30, P300_<5, P600_20-25, P600_>25, P1000_20-25, P1000_25-30, P1000_>30, Pharv_>25, lipids
+
+ERGO : ✗ -0.3697
+ORIGO : ✓ 2.2014
+DC : ✗ -0.1397
+
+----------60/70----------
+32 1 -> 3 5 6 11 12 14 15 19 21 22 31
+proteins, genotype -> Ptot_20-25, Ptot_25-30, Ptot_>30, P300_25-30, P300_<5, P600_20-25, P600_>25, P1000_20-25, P1000_25-30, P1000_>30, lipids
+
+ERGO : ✓ 0.0087
+ORIGO : ✓ 8.1608
+DC : ✗ -0.2041
+
+----------61/70----------
+16 1 17 -> 3 5 6 11 12 14 15 19 21 22 31
+P600_25-30, genotype, P600_<5 -> Ptot_20-25, Ptot_25-30, Ptot_>30, P300_25-30, P300_<5, P600_20-25, P600_>25, P1000_20-25, P1000_25-30, P1000_>30, lipids
+
+ERGO : ✗ -1.0000
+ORIGO : ? 0.0000
+DC : ✓ 1.0000
+
+----------62/70----------
+0 32 -> 11 12 21 22
+climate, proteins -> P300_25-30, P300_<5, P1000_25-30, P1000_>30
+
+ERGO : ✗ -0.0910
+ORIGO : ✓ 12.5578
+DC : ✓ 0.0532
+
+----------63/70----------
+0 30 -> 11 12 31
+climate, PMG -> P300_25-30, P300_<5, lipids
+
+ERGO : ✗ -0.0478
+ORIGO : ✗ -1.1710
+DC : ✗ -0.0884
+
+----------64/70----------
+0 29 -> 11 12
+climate, seed_nb -> P300_25-30, P300_<5
+
+ERGO : ✗ -0.0214
+ORIGO : ✗ -5.4520
+DC : ✗ -0.0297
+
+----------65/70----------
+0 28 -> 3 5 6 7 13 26 27
+climate, seed_yield -> Ptot_20-25, Ptot_25-30, Ptot_>30, Ptot_<5, P600_>20, Pharv_25-30, Pharvt_>30
+
+ERGO : ✗ -0.0619
+ORIGO : ✓ 10.1844
+DC : ✗ -0.2580
+
+----------66/70----------
+0 18 -> 8
+climate, P1000_>20 -> P300_>20
+
+ERGO : ✓ 0.0056
+ORIGO : ✓ 0.1587
+DC : ✓ 0.0333
+
+----------67/70----------
+0 16 20 17 -> 19
+climate, P600_25-30, P1000_>25, P600_<5 -> P1000_20-25
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0172
+
+----------68/70----------
+0 9 -> 8 10 11 12 13 25
+climate, P300_20-25 -> P300_>20, P300_>25, P300_25-30, P300_<5, P600_>20, Pharv_>25
+
+ERGO : ✗ -0.3926
+ORIGO : ✓ 1.0199
+DC : ✗ -0.1430
+
+----------69/70----------
+0 1 -> 3 5 6 11 12 14 15 19 21 22 31
+climate, genotype -> Ptot_20-25, Ptot_25-30, Ptot_>30, P300_25-30, P300_<5, P600_20-25, P600_>25, P1000_20-25, P1000_25-30, P1000_>30, lipids
+
+ERGO : ✗ -0.6018
+ORIGO : ✓ 9.3378
+DC : ✗ -0.2782
+
+----------70/70----------
+0 1 3 4 5 6 7 11 12 13 14 15 19 21 22 24 26 27 28 30 31 -> 32 2 8 9 10 16 17 18 20 23 25 29
+climate, genotype, Ptot_20-25, Ptot_>25, Ptot_25-30, Ptot_>30, Ptot_<5, P300_25-30, P300_<5, P600_>20, P600_20-25, P600_>25, P1000_20-25, P1000_25-30, P1000_>30, Pharv_20-25, Pharv_25-30, Pharvt_>30, seed_yield, PMG, lipids -> proteins, Ptot_>20, P300_>20, P300_20-25, P300_>25, P600_25-30, P600_<5, P1000_>20, P1000_>25, Pharv_>20, Pharv_>25, seed_nb
+
+ERGO : ✓ 0.1021
+ORIGO : ✓ 36.9705
+DC : ✓ 0.1025
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 20/58 (34.5%)
+SCORE ORIGO : 32/56 (57.1%)
+SCORE DC : 30/64 (46.9%)
+Sauvegardé dans 'files/5_origo/Expe_agro_Zac_v2_origo.txt'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/2a_bicpams/result_bicpams_additive_v2_TRIÉ.docx'
+Nombre de règles : 261
+
+----------1/261----------
+0 1 2 10 11 15 16 22 -> 31
+climate, genotype, Ptot_>20, P300_>25, P300_25-30, P600_>25, P600_25-30, P1000_>30 -> lipids
+(size=24)
+
+ERGO : ✓ 0.0487
+ORIGO : ✓ 0.2266
+DC : ✓ 0.1043
+
+----------2/261----------
+0 1 10 11 22 -> 30
+climate, genotype, P300_>25, P300_25-30, P1000_>30 -> PMG
+(size=35)
+
+ERGO : ✓ 0.1620
+ORIGO : ✓ 3.5156
+DC : ✓ 0.0772
+
+----------3/261----------
+10 11 13 14 22 -> 30
+P300_>25, P300_25-30, P600_>20, P600_20-25, P1000_>30 -> PMG
+(size=35)
+
+ERGO : ✓ 0.0661
+ORIGO : ✗ -3.6747
+DC : ✓ 0.0634
+
+----------4/261----------
+3 10 11 22 -> 29
+Ptot_20-25, P300_>25, P300_25-30, P1000_>30 -> seed_nb
+(size=41)
+
+ERGO : ✓ 0.0276
+ORIGO : ✓ 3.4694
+DC : ✓ 0.0035
+
+----------5/261----------
+0 2 5 10 11 20 21 -> 32
+climate, Ptot_>20, Ptot_25-30, P300_>25, P300_25-30, P1000_>25, P1000_25-30 -> proteins
+(size=25)
+
+ERGO : ✓ 0.0539
+ORIGO : ✓ 0.3419
+DC : ✓ 0.0482
+
+----------6/261----------
+0 2 10 11 15 16 22 -> 32
+climate, Ptot_>20, P300_>25, P300_25-30, P600_>25, P600_25-30, P1000_>30 -> proteins
+(size=23)
+
+ERGO : ✓ 0.0558
+ORIGO : ✗ -3.3090
+DC : ✓ 0.1140
+
+----------7/261----------
+10 11 13 14 -> 29
+P300_>25, P300_25-30, P600_>20, P600_20-25 -> seed_nb
+(size=35)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0425
+
+----------8/261----------
+3 10 11 13 14 22 -> 32
+Ptot_20-25, P300_>25, P300_25-30, P600_>20, P600_20-25, P1000_>30 -> proteins
+(size=25)
+
+ERGO : ✗ -0.0418
+ORIGO : ✗ -18.1830
+DC : ✓ 0.0923
+
+----------9/261----------
+1 5 10 11 22 -> 30
+genotype, Ptot_25-30, P300_>25, P300_25-30, P1000_>30 -> PMG
+(size=28)
+
+ERGO : ✓ 0.1265
+ORIGO : ✗ -0.8287
+DC : ✓ 0.2169
+
+----------10/261----------
+0 10 11 20 21 22 -> 29
+climate, P300_>25, P300_25-30, P1000_>25, P1000_25-30, P1000_>30 -> seed_nb
+(size=23)
+
+ERGO : ✓ 0.0426
+ORIGO : ✓ 4.5937
+DC : ✓ 0.0098
+
+----------11/261----------
+10 11 22 -> 28
+P300_>25, P300_25-30, P1000_>30 -> seed_yield
+(size=39)
+
+ERGO : ✗ -0.0099
+ORIGO : ✗ -2.7381
+DC : ✓ 0.0072
+
+----------12/261----------
+2 3 10 11 12 22 27 -> 28
+Ptot_>20, Ptot_20-25, P300_>25, P300_25-30, P300_<5, P1000_>30, Pharvt_>30 -> seed_yield
+(size=19)
+
+ERGO : ✓ 0.0079
+ORIGO : ✓ 1.0056
+DC : ✓ 0.0601
+
+----------13/261----------
+10 11 17 22 -> 30
+P300_>25, P300_25-30, P600_<5, P1000_>30 -> PMG
+(size=30)
+
+ERGO : ? 0.0005
+ORIGO : ✗ -2.0837
+DC : ✓ 0.0076
+
+----------14/261----------
+3 13 14 18 22 -> 32
+Ptot_20-25, P600_>20, P600_20-25, P1000_>20, P1000_>30 -> proteins
+(size=25)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0804
+
+----------15/261----------
+5 10 11 22 27 -> 28
+Ptot_25-30, P300_>25, P300_25-30, P1000_>30, Pharvt_>30 -> seed_yield
+(size=25)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0302
+
+----------16/261----------
+10 11 22 27 -> 30
+P300_>25, P300_25-30, P1000_>30, Pharvt_>30 -> PMG
+(size=29)
+
+ERGO : ✓ 0.0267
+ORIGO : ✓ 0.0562
+DC : ✓ 0.0076
+
+----------17/261----------
+10 11 22 -> 31
+P300_>25, P300_25-30, P1000_>30 -> lipids
+(size=36)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0015
+
+----------18/261----------
+1 15 16 22 -> 31
+genotype, P600_>25, P600_25-30, P1000_>30 -> lipids
+(size=28)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0001
+
+----------19/261----------
+0 10 11 15 16 22 -> 28
+climate, P300_>25, P300_25-30, P600_>25, P600_25-30, P1000_>30 -> seed_yield
+(size=20)
+
+ERGO : ✓ 0.0095
+ORIGO : ✓ 1.1983
+DC : ✓ 0.0200
+
+----------20/261----------
+15 16 22 -> 30
+P600_>25, P600_25-30, P1000_>30 -> PMG
+(size=34)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0008
+
+----------21/261----------
+2 10 11 22 -> 30
+Ptot_>20, P300_>25, P300_25-30, P1000_>30 -> PMG
+(size=27)
+
+ERGO : ✓ 0.0080
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0251
+
+----------22/261----------
+1 10 11 22 -> 32
+genotype, P300_>25, P300_25-30, P1000_>30 -> proteins
+(size=27)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0137
+
+----------23/261----------
+1 10 11 24 -> 30
+genotype, P300_>25, P300_25-30, Pharv_20-25 -> PMG
+(size=27)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0315
+
+----------24/261----------
+10 11 22 27 -> 32
+P300_>25, P300_25-30, P1000_>30, Pharvt_>30 -> proteins
+(size=27)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0075
+
+----------25/261----------
+0 10 11 -> 32
+climate, P300_>25, P300_25-30 -> proteins
+(size=33)
+
+ERGO : ✗ -0.0032
+ORIGO : ✗ -0.5857
+DC : ✓ 0.0031
+
+----------26/261----------
+10 11 22 -> 32
+P300_>25, P300_25-30, P1000_>30 -> proteins
+(size=33)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0046
+
+----------27/261----------
+10 11 20 21 22 -> 31
+P300_>25, P300_25-30, P1000_>25, P1000_25-30, P1000_>30 -> lipids
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0041
+
+----------28/261----------
+3 13 14 22 -> 29
+Ptot_20-25, P600_>20, P600_20-25, P1000_>30 -> seed_nb
+(size=26)
+
+ERGO : ✓ 0.0565
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0301
+
+----------29/261----------
+6 25 27 -> 30
+Ptot_>30, Pharv_>25, Pharvt_>30 -> PMG
+(size=32)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0338
+
+----------30/261----------
+3 10 11 12 22 -> 30
+Ptot_20-25, P300_>25, P300_25-30, P300_<5, P1000_>30 -> PMG
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0116
+
+----------31/261----------
+10 11 13 14 22 -> 28
+P300_>25, P300_25-30, P600_>20, P600_20-25, P1000_>30 -> seed_yield
+(size=21)
+
+ERGO : ? -0.0008
+ORIGO : ✗ -2.1531
+DC : ✓ 0.0141
+
+----------32/261----------
+7 10 11 22 27 -> 29
+Ptot_<5, P300_>25, P300_25-30, P1000_>30, Pharvt_>30 -> seed_nb
+(size=21)
+
+ERGO : ✓ 0.0423
+ORIGO : ✓ 4.1452
+DC : ✓ 0.0024
+
+----------33/261----------
+3 10 11 22 24 -> 28
+Ptot_20-25, P300_>25, P300_25-30, P1000_>30, Pharv_20-25 -> seed_yield
+(size=21)
+
+ERGO : ✗ -0.0033
+ORIGO : ✗ -1.3048
+DC : ✓ 0.0157
+
+----------34/261----------
+10 11 20 21 -> 30
+P300_>25, P300_25-30, P1000_>25, P1000_25-30 -> PMG
+(size=25)
+
+ERGO : ✓ 0.0731
+ORIGO : ✓ 1.5087
+DC : ✓ 0.0335
+
+----------35/261----------
+1 10 11 22 -> 30 31
+genotype, P300_>25, P300_25-30, P1000_>30 -> PMG, lipids
+(size=20)
+
+ERGO : ✓ 0.0174
+ORIGO : ✗ -1.2351
+DC : ✗ -0.0261
+
+----------36/261----------
+2 20 21 22 -> 32
+Ptot_>20, P1000_>25, P1000_25-30, P1000_>30 -> proteins
+(size=24)
+
+ERGO : ✓ 0.0118
+ORIGO : ✗ -4.3396
+DC : ✓ 0.0844
+
+----------37/261----------
+2 10 11 22 24 -> 28
+Ptot_>20, P300_>25, P300_25-30, P1000_>30, Pharv_20-25 -> seed_yield
+(size=20)
+
+ERGO : ✓ 0.0046
+ORIGO : ✓ 0.1692
+DC : ✓ 0.0574
+
+----------38/261----------
+4 5 23 25 26 -> 31
+Ptot_>25, Ptot_25-30, Pharv_>20, Pharv_>25, Pharv_25-30 -> lipids
+(size=20)
+
+ERGO : ? 0.0002
+ORIGO : ✓ 0.0268
+DC : ✓ 0.0067
+
+----------39/261----------
+6 23 24 27 -> 30
+Ptot_>30, Pharv_>20, Pharv_20-25, Pharvt_>30 -> PMG
+(size=24)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0179
+
+----------40/261----------
+1 10 11 22 -> 29
+genotype, P300_>25, P300_25-30, P1000_>30 -> seed_nb
+(size=24)
+
+ERGO : ✓ 0.0108
+ORIGO : ✓ 0.2849
+DC : ✓ 0.0008
+
+----------41/261----------
+13 14 18 -> 29
+P600_>20, P600_20-25, P1000_>20 -> seed_nb
+(size=29)
+
+ERGO : ✓ 0.0058
+ORIGO : ✓ 0.0189
+DC : ✓ 0.0338
+
+----------42/261----------
+1 13 14 22 -> 30
+genotype, P600_>20, P600_20-25, P1000_>30 -> PMG
+(size=23)
+
+ERGO : ✓ 0.1289
+ORIGO : ✗ -1.6840
+DC : ✓ 0.0669
+
+----------43/261----------
+2 3 13 14 -> 32
+Ptot_>20, Ptot_20-25, P600_>20, P600_20-25 -> proteins
+(size=23)
+
+ERGO : ✓ 0.0354
+ORIGO : ✓ 1.0223
+DC : ✓ 0.0548
+
+----------44/261----------
+0 3 10 11 -> 29
+climate, Ptot_20-25, P300_>25, P300_25-30 -> seed_nb
+(size=23)
+
+ERGO : ✓ 0.0217
+ORIGO : ✓ 1.9244
+DC : ✓ 0.0596
+
+----------45/261----------
+0 10 11 15 16 -> 31
+climate, P300_>25, P300_25-30, P600_>25, P600_25-30 -> lipids
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0062
+
+----------46/261----------
+2 3 10 11 22 -> 32
+Ptot_>20, Ptot_20-25, P300_>25, P300_25-30, P1000_>30 -> proteins
+(size=19)
+
+ERGO : ✓ 0.0324
+ORIGO : ✗ -1.4849
+DC : ✓ 0.1299
+
+----------47/261----------
+10 11 22 27 -> 29
+P300_>25, P300_25-30, P1000_>30, Pharvt_>30 -> seed_nb
+(size=22)
+
+ERGO : ✓ 0.0157
+ORIGO : ✓ 0.6919
+DC : ✓ 0.0012
+
+----------48/261----------
+2 3 13 14 -> 29
+Ptot_>20, Ptot_20-25, P600_>20, P600_20-25 -> seed_nb
+(size=22)
+
+ERGO : ✓ 0.0325
+ORIGO : ✓ 0.0965
+DC : ✓ 0.0751
+
+----------49/261----------
+10 11 22 -> 28 29
+P300_>25, P300_25-30, P1000_>30 -> seed_yield, seed_nb
+(size=22)
+
+ERGO : ✗ -0.0023
+ORIGO : ✓ 0.2849
+DC : ✗ -0.2007
+
+----------50/261----------
+10 11 22 -> 29
+P300_>25, P300_25-30, P1000_>30 -> seed_nb
+(size=27)
+
+ERGO : ✓ 0.0073
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0001
+
+----------51/261----------
+1 2 22 -> 31
+genotype, Ptot_>20, P1000_>30 -> lipids
+(size=27)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.1779
+
+----------52/261----------
+13 14 15 16 -> 29
+P600_>20, P600_20-25, P600_>25, P600_25-30 -> seed_nb
+(size=21)
+
+ERGO : ✓ 0.0039
+ORIGO : ✓ 0.1077
+DC : ✓ 0.0339
+
+----------53/261----------
+2 10 11 22 -> 29
+Ptot_>20, P300_>25, P300_25-30, P1000_>30 -> seed_nb
+(size=21)
+
+ERGO : ✓ 0.0260
+ORIGO : ✗ -0.7054
+DC : ✓ 0.0096
+
+----------54/261----------
+0 22 -> 30
+climate, P1000_>30 -> PMG
+(size=35)
+
+ERGO : ✓ 0.0240
+ORIGO : ✓ 2.7535
+DC : ✓ 0.0023
+
+----------55/261----------
+10 11 18 22 -> 29
+P300_>25, P300_25-30, P1000_>20, P1000_>30 -> seed_nb
+(size=21)
+
+ERGO : ✓ 0.0170
+ORIGO : ✓ 0.2849
+DC : ✓ 0.0137
+
+----------56/261----------
+5 10 11 -> 30
+Ptot_25-30, P300_>25, P300_25-30 -> PMG
+(size=26)
+
+ERGO : ✓ 0.0312
+ORIGO : ✗ -3.7723
+DC : ✓ 0.0469
+
+----------57/261----------
+5 25 26 -> 31
+Ptot_25-30, Pharv_>25, Pharv_25-30 -> lipids
+(size=26)
+
+ERGO : ✗ -0.0216
+ORIGO : ✗ -5.0351
+DC : ✓ 0.0158
+
+----------58/261----------
+3 13 14 -> 28
+Ptot_20-25, P600_>20, P600_20-25 -> seed_yield
+(size=25)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0012
+
+----------59/261----------
+13 14 18 22 -> 28
+P600_>20, P600_20-25, P1000_>20, P1000_>30 -> seed_yield
+(size=20)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0104
+
+----------60/261----------
+1 10 11 22 -> 28
+genotype, P300_>25, P300_25-30, P1000_>30 -> seed_yield
+(size=20)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0052
+
+----------61/261----------
+1 20 21 22 -> 29
+genotype, P1000_>25, P1000_25-30, P1000_>30 -> seed_nb
+(size=20)
+
+ERGO : ✓ 0.0744
+ORIGO : ✓ 5.2986
+DC : ✓ 0.0852
+
+----------62/261----------
+15 16 22 -> 32
+P600_>25, P600_25-30, P1000_>30 -> proteins
+(size=25)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------63/261----------
+5 10 11 27 -> 28
+Ptot_25-30, P300_>25, P300_25-30, Pharvt_>30 -> seed_yield
+(size=20)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0304
+
+----------64/261----------
+1 10 11 22 -> 31
+genotype, P300_>25, P300_25-30, P1000_>30 -> lipids
+(size=20)
+
+ERGO : ✓ 0.0387
+ORIGO : ✗ -0.0158
+DC : ✓ 0.0802
+
+----------65/261----------
+18 20 21 22 -> 31
+P1000_>20, P1000_>25, P1000_25-30, P1000_>30 -> lipids
+(size=20)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0030
+
+----------66/261----------
+0 22 -> 31
+climate, P1000_>30 -> lipids
+(size=33)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0004
+
+----------67/261----------
+10 11 17 -> 30
+P300_>25, P300_25-30, P600_<5 -> PMG
+(size=24)
+
+ERGO : ✓ 0.0074
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0010
+
+----------68/261----------
+5 25 26 -> 28
+Ptot_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(size=24)
+
+ERGO : ✓ 0.0053
+ORIGO : ✗ -0.8532
+DC : ✓ 0.0067
+
+----------69/261----------
+5 25 26 -> 30
+Ptot_25-30, Pharv_>25, Pharv_25-30 -> PMG
+(size=24)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0001
+
+----------70/261----------
+13 14 24 -> 30
+P600_>20, P600_20-25, Pharv_20-25 -> PMG
+(size=24)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.1281
+
+----------71/261----------
+0 2 5 -> 32
+climate, Ptot_>20, Ptot_25-30 -> proteins
+(size=24)
+
+ERGO : ✓ 0.0104
+ORIGO : ✗ -6.5043
+DC : ✓ 0.1914
+
+----------72/261----------
+10 11 13 14 -> 28
+P300_>25, P300_25-30, P600_>20, P600_20-25 -> seed_yield
+(size=19)
+
+ERGO : ✓ 0.0063
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0088
+
+----------73/261----------
+13 14 15 16 -> 31
+P600_>20, P600_20-25, P600_>25, P600_25-30 -> lipids
+(size=19)
+
+ERGO : ✗ -0.0233
+ORIGO : ✗ -6.9824
+DC : ✓ 0.0649
+
+----------74/261----------
+10 11 13 14 -> 31
+P300_>25, P300_25-30, P600_>20, P600_20-25 -> lipids
+(size=19)
+
+ERGO : ✗ -0.0033
+ORIGO : ✗ -1.5944
+DC : ✓ 0.0400
+
+----------75/261----------
+13 14 19 -> 29
+P600_>20, P600_20-25, P1000_20-25 -> seed_nb
+(size=23)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0045
+
+----------76/261----------
+8 10 11 -> 30
+P300_>20, P300_>25, P300_25-30 -> PMG
+(size=23)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0036
+
+----------77/261----------
+10 11 18 -> 32
+P300_>25, P300_25-30, P1000_>20 -> proteins
+(size=23)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0118
+
+----------78/261----------
+1 17 22 -> 29
+genotype, P600_<5, P1000_>30 -> seed_nb
+(size=23)
+
+ERGO : ✓ 0.0744
+ORIGO : ✓ 3.4291
+DC : ✓ 0.0751
+
+----------79/261----------
+20 21 22 -> 30
+P1000_>25, P1000_25-30, P1000_>30 -> PMG
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0000
+
+----------80/261----------
+6 22 27 -> 30
+Ptot_>30, P1000_>30, Pharvt_>30 -> PMG
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0018
+
+----------81/261----------
+1 10 11 -> 30
+genotype, P300_>25, P300_25-30 -> PMG
+(size=22)
+
+ERGO : ✓ 0.1232
+ORIGO : ✗ -0.0158
+DC : ✓ 0.2089
+
+----------82/261----------
+10 11 13 -> 30
+P300_>25, P300_25-30, P600_>20 -> PMG
+(size=22)
+
+ERGO : ✓ 0.1053
+ORIGO : ✓ 9.8293
+DC : ✓ 0.0676
+
+----------83/261----------
+1 7 12 -> 28
+genotype, Ptot_<5, P300_<5 -> seed_yield
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0138
+
+----------84/261----------
+15 16 22 -> 29
+P600_>25, P600_25-30, P1000_>30 -> seed_nb
+(size=22)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------85/261----------
+20 21 22 -> 28
+P1000_>25, P1000_25-30, P1000_>30 -> seed_yield
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0005
+
+----------86/261----------
+1 10 11 -> 28
+genotype, P300_>25, P300_25-30 -> seed_yield
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0373
+
+----------87/261----------
+2 3 22 -> 29
+Ptot_>20, Ptot_20-25, P1000_>30 -> seed_nb
+(size=21)
+
+ERGO : ✓ 0.0077
+ORIGO : ✗ -3.3603
+DC : ✓ 0.1355
+
+----------88/261----------
+5 10 11 -> 29
+Ptot_25-30, P300_>25, P300_25-30 -> seed_nb
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0041
+
+----------89/261----------
+13 14 22 -> 31
+P600_>20, P600_20-25, P1000_>30 -> lipids
+(size=21)
+
+ERGO : ✓ 0.0031
+ORIGO : ✓ 0.0222
+DC : ✓ 0.0235
+
+----------90/261----------
+5 10 11 -> 31
+Ptot_25-30, P300_>25, P300_25-30 -> lipids
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0056
+
+----------91/261----------
+1 10 11 -> 32
+genotype, P300_>25, P300_25-30 -> proteins
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0032
+
+----------92/261----------
+2 3 5 -> 32
+Ptot_>20, Ptot_20-25, Ptot_25-30 -> proteins
+(size=21)
+
+ERGO : ✓ 0.0030
+ORIGO : ✗ -8.0875
+DC : ✓ 0.0615
+
+----------93/261----------
+15 16 22 -> 28
+P600_>25, P600_25-30, P1000_>30 -> seed_yield
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0010
+
+----------94/261----------
+8 9 -> 28 29
+P300_>20, P300_20-25 -> seed_yield, seed_nb
+(size=21)
+
+ERGO : ✗ -0.0044
+ORIGO : ✗ -0.9132
+DC : ✓ 0.0737
+
+----------95/261----------
+10 11 24 -> 31
+P300_>25, P300_25-30, Pharv_20-25 -> lipids
+(size=20)
+
+ERGO : ✓ 0.0022
+ORIGO : ✗ -1.1191
+DC : ✓ 0.2546
+
+----------96/261----------
+6 22 27 -> 28
+Ptot_>30, P1000_>30, Pharvt_>30 -> seed_yield
+(size=20)
+
+ERGO : ✓ 0.0010
+ORIGO : ✗ -1.3909
+DC : ✓ 0.0102
+
+----------97/261----------
+13 14 27 -> 28
+P600_>20, P600_20-25, Pharvt_>30 -> seed_yield
+(size=20)
+
+ERGO : ? 0.0006
+ORIGO : ✓ 0.0141
+DC : ✓ 0.0704
+
+----------98/261----------
+3 13 14 -> 29
+Ptot_20-25, P600_>20, P600_20-25 -> seed_nb
+(size=20)
+
+ERGO : ✓ 0.0252
+ORIGO : ✓ 0.0965
+DC : ✓ 0.0789
+
+----------99/261----------
+1 18 22 -> 29
+genotype, P1000_>20, P1000_>30 -> seed_nb
+(size=20)
+
+ERGO : ✓ 0.0733
+ORIGO : ✓ 3.4291
+DC : ✓ 0.1309
+
+----------100/261----------
+3 18 22 -> 29
+Ptot_20-25, P1000_>20, P1000_>30 -> seed_nb
+(size=20)
+
+ERGO : ✓ 0.0122
+ORIGO : ✓ 0.3866
+DC : ✓ 0.0742
+
+----------101/261----------
+6 25 27 -> 31
+Ptot_>30, Pharv_>25, Pharvt_>30 -> lipids
+(size=20)
+
+ERGO : ✓ 0.0180
+ORIGO : ✓ 2.4185
+DC : ✓ 0.2464
+
+----------102/261----------
+2 3 27 -> 31
+Ptot_>20, Ptot_20-25, Pharvt_>30 -> lipids
+(size=20)
+
+ERGO : ✓ 0.0342
+ORIGO : ✓ 2.4038
+DC : ✓ 0.0418
+
+----------103/261----------
+4 5 25 -> 32
+Ptot_>25, Ptot_25-30, Pharv_>25 -> proteins
+(size=20)
+
+ERGO : ✓ 0.0171
+ORIGO : ✓ 0.0199
+DC : ✓ 0.0289
+
+----------104/261----------
+10 11 24 -> 29
+P300_>25, P300_25-30, Pharv_20-25 -> seed_nb
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.1180
+
+----------105/261----------
+10 11 18 -> 28
+P300_>25, P300_25-30, P1000_>20 -> seed_yield
+(size=19)
+
+ERGO : ✗ -0.0233
+ORIGO : ✗ -5.2856
+DC : ✓ 0.0252
+
+----------106/261----------
+5 25 26 -> 29
+Ptot_25-30, Pharv_>25, Pharv_25-30 -> seed_nb
+(size=19)
+
+ERGO : ? -0.0007
+ORIGO : ✗ -0.1651
+DC : ✓ 0.0039
+
+----------107/261----------
+1 10 11 -> 29
+genotype, P300_>25, P300_25-30 -> seed_nb
+(size=19)
+
+ERGO : ✓ 0.0219
+ORIGO : ✗ -0.0490
+DC : ✓ 0.1319
+
+----------108/261----------
+2 3 27 -> 29
+Ptot_>20, Ptot_20-25, Pharvt_>30 -> seed_nb
+(size=19)
+
+ERGO : ✓ 0.0125
+ORIGO : ✗ -3.4348
+DC : ✓ 0.1679
+
+----------109/261----------
+1 2 3 -> 29
+genotype, Ptot_>20, Ptot_20-25 -> seed_nb
+(size=19)
+
+ERGO : ✓ 0.1017
+ORIGO : ✓ 5.3313
+DC : ✓ 0.2517
+
+----------110/261----------
+1 3 22 -> 29
+genotype, Ptot_20-25, P1000_>30 -> seed_nb
+(size=19)
+
+ERGO : ✓ 0.0161
+ORIGO : ✓ 0.3234
+DC : ✓ 0.0008
+
+----------111/261----------
+1 22 -> 28 29
+genotype, P1000_>30 -> seed_yield, seed_nb
+(size=19)
+
+ERGO : ✗ -0.0030
+ORIGO : ✓ 3.6047
+DC : ✗ -0.0054
+
+----------112/261----------
+2 3 22 -> 31
+Ptot_>20, Ptot_20-25, P1000_>30 -> lipids
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0007
+
+----------113/261----------
+10 11 27 -> 31
+P300_>25, P300_25-30, Pharvt_>30 -> lipids
+(size=19)
+
+ERGO : ✓ 0.0076
+ORIGO : ✓ 0.0299
+DC : ✓ 0.0248
+
+----------114/261----------
+20 21 22 -> 32
+P1000_>25, P1000_25-30, P1000_>30 -> proteins
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0002
+
+----------115/261----------
+2 22 23 -> 32
+Ptot_>20, P1000_>30, Pharv_>20 -> proteins
+(size=19)
+
+ERGO : ✓ 0.0202
+ORIGO : ✗ -3.8823
+DC : ✓ 0.0984
+
+----------116/261----------
+10 11 -> 31 32
+P300_>25, P300_25-30 -> lipids, proteins
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0102
+
+----------117/261----------
+1 13 14 -> 32
+genotype, P600_>20, P600_20-25 -> proteins
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0044
+
+----------118/261----------
+3 24 -> 29
+Ptot_20-25, Pharv_20-25 -> seed_nb
+(size=23)
+
+ERGO : ✓ 0.0593
+ORIGO : ✗ -1.9157
+DC : ✓ 0.0876
+
+----------119/261----------
+0 22 -> 29
+climate, P1000_>30 -> seed_nb
+(size=22)
+
+ERGO : ✓ 0.0127
+ORIGO : ✓ 0.3234
+DC : ✓ 0.0008
+
+----------120/261----------
+0 22 -> 28
+climate, P1000_>30 -> seed_yield
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0024
+
+----------121/261----------
+22 -> 30 31
+P1000_>30 -> PMG, lipids
+(size=20)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.0545
+
+----------122/261----------
+1 19 -> 29
+genotype, P1000_20-25 -> seed_nb
+(size=19)
+
+ERGO : ✓ 0.0349
+ORIGO : ✓ 0.9960
+DC : ✓ 0.0459
+
+----------123/261----------
+1 23 -> 31
+genotype, Pharv_>20 -> lipids
+(size=19)
+
+ERGO : ✓ 0.1083
+ORIGO : ✗ -0.0847
+DC : ✓ 0.0962
+
+----------124/261----------
+1 4 10 11 13 16 22 -> 30
+genotype, Ptot_>25, P300_>25, P300_25-30, P600_>20, P600_25-30, P1000_>30 -> PMG
+(size=32)
+
+ERGO : ✗ -0.0171
+ORIGO : ✗ -7.3570
+DC : ✓ 0.0566
+
+----------125/261----------
+10 11 12 21 22 -> 30
+P300_>25, P300_25-30, P300_<5, P1000_25-30, P1000_>30 -> PMG
+(size=37)
+
+ERGO : ✓ 0.0986
+ORIGO : ✓ 4.1462
+DC : ✓ 0.0286
+
+----------126/261----------
+0 1 10 11 16 22 -> 31
+climate, genotype, P300_>25, P300_25-30, P600_25-30, P1000_>30 -> lipids
+(size=31)
+
+ERGO : ✓ 0.0458
+ORIGO : ✗ -0.0158
+DC : ✓ 0.0414
+
+----------127/261----------
+0 1 10 11 -> 30
+climate, genotype, P300_>25, P300_25-30 -> PMG
+(size=37)
+
+ERGO : ✓ 0.1470
+ORIGO : ✓ 2.9708
+DC : ✓ 0.0973
+
+----------128/261----------
+2 6 10 11 22 27 -> 30
+Ptot_>20, Ptot_>30, P300_>25, P300_25-30, P1000_>30, Pharvt_>30 -> PMG
+(size=23)
+
+ERGO : ✓ 0.0065
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0180
+
+----------129/261----------
+9 10 11 -> 31
+P300_20-25, P300_>25, P300_25-30 -> lipids
+(size=34)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0881
+
+----------130/261----------
+16 21 22 -> 31
+P600_25-30, P1000_25-30, P1000_>30 -> lipids
+(size=34)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0114
+
+----------131/261----------
+3 11 22 -> 29
+Ptot_20-25, P300_25-30, P1000_>30 -> seed_nb
+(size=34)
+
+ERGO : ✓ 0.0752
+ORIGO : ✓ 0.1190
+DC : ✓ 0.0155
+
+----------132/261----------
+4 10 11 -> 30
+Ptot_>25, P300_>25, P300_25-30 -> PMG
+(size=33)
+
+ERGO : ✓ 0.0073
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0048
+
+----------133/261----------
+1 21 22 -> 30
+genotype, P1000_25-30, P1000_>30 -> PMG
+(size=32)
+
+ERGO : ✓ 0.1732
+ORIGO : ✓ 1.6475
+DC : ✓ 0.1876
+
+----------134/261----------
+1 3 5 11 22 -> 30
+genotype, Ptot_20-25, Ptot_25-30, P300_25-30, P1000_>30 -> PMG
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0261
+
+----------135/261----------
+0 16 22 -> 30
+climate, P600_25-30, P1000_>30 -> PMG
+(size=31)
+
+ERGO : ✓ 0.0719
+ORIGO : ✓ 0.2104
+DC : ✓ 0.0195
+
+----------136/261----------
+1 4 16 -> 30
+genotype, Ptot_>25, P600_25-30 -> PMG
+(size=31)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0003
+
+----------137/261----------
+1 10 11 16 22 -> 30 31
+genotype, P300_>25, P300_25-30, P600_25-30, P1000_>30 -> PMG, lipids
+(size=17)
+
+ERGO : ✓ 0.0238
+ORIGO : ✗ -11.0497
+DC : ✓ 0.0040
+
+----------138/261----------
+10 11 16 22 -> 32
+P300_>25, P300_25-30, P600_25-30, P1000_>30 -> proteins
+(size=23)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0156
+
+----------139/261----------
+10 11 16 20 22 -> 30
+P300_>25, P300_25-30, P600_25-30, P1000_>25, P1000_>30 -> PMG
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0282
+
+----------140/261----------
+5 10 11 22 25 -> 28
+Ptot_25-30, P300_>25, P300_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0393
+
+----------141/261----------
+5 10 11 22 25 -> 30
+Ptot_25-30, P300_>25, P300_25-30, P1000_>30, Pharv_>25 -> PMG
+(size=19)
+
+ERGO : ✗ -0.0040
+ORIGO : ✗ -3.5926
+DC : ✓ 0.0290
+
+----------142/261----------
+5 11 18 20 22 -> 31
+Ptot_25-30, P300_25-30, P1000_>20, P1000_>25, P1000_>30 -> lipids
+(size=19)
+
+ERGO : ✗ -0.0116
+ORIGO : ✗ -4.5910
+DC : ✓ 0.0232
+
+----------143/261----------
+1 14 16 22 -> 30
+genotype, P600_20-25, P600_25-30, P1000_>30 -> PMG
+(size=22)
+
+ERGO : ✓ 0.1976
+ORIGO : ✗ -0.7286
+DC : ✓ 0.0850
+
+----------144/261----------
+3 11 22 27 -> 30
+Ptot_20-25, P300_25-30, P1000_>30, Pharvt_>30 -> PMG
+(size=22)
+
+ERGO : ✓ 0.0128
+ORIGO : ✗ -1.1412
+DC : ✓ 0.0420
+
+----------145/261----------
+3 11 22 -> 32
+Ptot_20-25, P300_25-30, P1000_>30 -> proteins
+(size=27)
+
+ERGO : ✗ -0.0215
+ORIGO : ✗ -5.6622
+DC : ✓ 0.0131
+
+----------146/261----------
+5 6 25 26 27 -> 32
+Ptot_25-30, Ptot_>30, Pharv_>25, Pharv_25-30, Pharvt_>30 -> proteins
+(size=18)
+
+ERGO : ✓ 0.0999
+ORIGO : ✓ 10.2974
+DC : ✓ 0.0869
+
+----------147/261----------
+3 11 18 -> 29
+Ptot_20-25, P300_25-30, P1000_>20 -> seed_nb
+(size=26)
+
+ERGO : ✓ 0.0291
+ORIGO : ✓ 0.1830
+DC : ✓ 0.0659
+
+----------148/261----------
+10 11 16 20 22 -> 31
+P300_>25, P300_25-30, P600_25-30, P1000_>25, P1000_>30 -> lipids
+(size=17)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0234
+
+----------149/261----------
+5 6 11 22 27 -> 30
+Ptot_25-30, Ptot_>30, P300_25-30, P1000_>30, Pharvt_>30 -> PMG
+(size=17)
+
+ERGO : ✓ 0.0074
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0203
+
+----------150/261----------
+3 5 11 22 27 -> 28
+Ptot_20-25, Ptot_25-30, P300_25-30, P1000_>30, Pharvt_>30 -> seed_yield
+(size=17)
+
+ERGO : ✓ 0.0084
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0438
+
+----------151/261----------
+10 11 16 22 -> 28
+P300_>25, P300_25-30, P600_25-30, P1000_>30 -> seed_yield
+(size=20)
+
+ERGO : ✗ -0.0071
+ORIGO : ✗ -3.1784
+DC : ✓ 0.0095
+
+----------152/261----------
+5 11 22 -> 30
+Ptot_25-30, P300_25-30, P1000_>30 -> PMG
+(size=24)
+
+ERGO : ✗ -0.0256
+ORIGO : ✗ -6.2116
+DC : ✓ 0.0127
+
+----------153/261----------
+10 11 -> 30
+P300_>25, P300_25-30 -> PMG
+(size=32)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------154/261----------
+5 6 11 22 27 -> 31
+Ptot_25-30, Ptot_>30, P300_25-30, P1000_>30, Pharvt_>30 -> lipids
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0141
+
+----------155/261----------
+10 11 17 22 -> 29
+P300_>25, P300_25-30, P600_<5, P1000_>30 -> seed_nb
+(size=19)
+
+ERGO : ✓ 0.0109
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0159
+
+----------156/261----------
+11 18 22 -> 31
+P300_25-30, P1000_>20, P1000_>30 -> lipids
+(size=23)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0098
+
+----------157/261----------
+3 11 22 -> 30
+Ptot_20-25, P300_25-30, P1000_>30 -> PMG
+(size=23)
+
+ERGO : ✓ 0.1377
+ORIGO : ✓ 8.4711
+DC : ✓ 0.0631
+
+----------158/261----------
+3 11 14 -> 32
+Ptot_20-25, P300_25-30, P600_20-25 -> proteins
+(size=23)
+
+ERGO : ✗ -0.0056
+ORIGO : ✗ -1.6954
+DC : ✓ 0.0344
+
+----------159/261----------
+1 11 22 -> 30
+genotype, P300_25-30, P1000_>30 -> PMG
+(size=23)
+
+ERGO : ✓ 0.1475
+ORIGO : ✗ -2.7149
+DC : ✓ 0.1363
+
+----------160/261----------
+3 7 11 22 27 -> 31
+Ptot_20-25, Ptot_<5, P300_25-30, P1000_>30, Pharvt_>30 -> lipids
+(size=15)
+
+ERGO : ✗ -0.0199
+ORIGO : ✗ -9.2118
+DC : ✓ 0.1407
+
+----------161/261----------
+10 11 16 20 22 -> 28
+P300_>25, P300_25-30, P600_25-30, P1000_>25, P1000_>30 -> seed_yield
+(size=15)
+
+ERGO : ✓ 0.0018
+ORIGO : ✗ -2.1531
+DC : ✓ 0.0371
+
+----------162/261----------
+10 11 16 20 22 -> 32
+P300_>25, P300_25-30, P600_25-30, P1000_>25, P1000_>30 -> proteins
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0475
+
+----------163/261----------
+3 5 11 25 -> 32
+Ptot_20-25, Ptot_25-30, P300_25-30, Pharv_>25 -> proteins
+(size=18)
+
+ERGO : ✓ 0.0201
+ORIGO : ✗ -5.5787
+DC : ✓ 0.0432
+
+----------164/261----------
+3 11 22 27 -> 29
+Ptot_20-25, P300_25-30, P1000_>30, Pharvt_>30 -> seed_nb
+(size=18)
+
+ERGO : ✓ 0.0623
+ORIGO : ✗ -1.1781
+DC : ✓ 0.0279
+
+----------165/261----------
+1 11 13 27 -> 30
+genotype, P300_25-30, P600_>20, Pharvt_>30 -> PMG
+(size=18)
+
+ERGO : ✓ 0.2053
+ORIGO : ✓ 7.3664
+DC : ✓ 0.2571
+
+----------166/261----------
+7 11 22 27 -> 29
+Ptot_<5, P300_25-30, P1000_>30, Pharvt_>30 -> seed_nb
+(size=17)
+
+ERGO : ✓ 0.0253
+ORIGO : ✗ -2.8917
+DC : ✓ 0.0125
+
+----------167/261----------
+7 11 22 27 -> 30
+Ptot_<5, P300_25-30, P1000_>30, Pharvt_>30 -> PMG
+(size=17)
+
+ERGO : ✓ 0.0094
+ORIGO : ✓ 0.1237
+DC : ✓ 0.0574
+
+----------168/261----------
+1 11 19 22 -> 31
+genotype, P300_25-30, P1000_20-25, P1000_>30 -> lipids
+(size=17)
+
+ERGO : ✗ -0.0152
+ORIGO : ✗ -5.7626
+DC : ✓ 0.1003
+
+----------169/261----------
+14 16 22 -> 31
+P600_20-25, P600_25-30, P1000_>30 -> lipids
+(size=21)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0072
+
+----------170/261----------
+19 23 25 -> 31
+P1000_20-25, Pharv_>20, Pharv_>25 -> lipids
+(size=21)
+
+ERGO : ✓ 0.0425
+ORIGO : ✓ 0.2152
+DC : ✓ 0.0703
+
+----------171/261----------
+11 19 22 -> 32
+P300_25-30, P1000_20-25, P1000_>30 -> proteins
+(size=20)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0337
+
+----------172/261----------
+11 18 22 -> 29
+P300_25-30, P1000_>20, P1000_>30 -> seed_nb
+(size=20)
+
+ERGO : ✓ 0.0117
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0188
+
+----------173/261----------
+5 10 11 25 -> 30
+Ptot_25-30, P300_>25, P300_25-30, Pharv_>25 -> PMG
+(size=16)
+
+ERGO : ✓ 0.0833
+ORIGO : ✓ 4.4271
+DC : ✓ 0.1422
+
+----------174/261----------
+5 10 11 25 -> 31
+Ptot_25-30, P300_>25, P300_25-30, Pharv_>25 -> lipids
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0394
+
+----------175/261----------
+6 22 25 27 -> 32
+Ptot_>30, P1000_>30, Pharv_>25, Pharvt_>30 -> proteins
+(size=16)
+
+ERGO : ✗ -0.0148
+ORIGO : ✗ -4.0656
+DC : ✓ 0.0103
+
+----------176/261----------
+1 16 22 -> 31 32
+genotype, P600_25-30, P1000_>30 -> lipids, proteins
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -0.2311
+
+----------177/261----------
+6 23 27 -> 28 29
+Ptot_>30, Pharv_>20, Pharvt_>30 -> seed_yield, seed_nb
+(size=16)
+
+ERGO : ✗ -0.0068
+ORIGO : ✗ -1.8575
+DC : ✓ 0.0401
+
+----------178/261----------
+6 10 11 22 27 -> 28
+Ptot_>30, P300_>25, P300_25-30, P1000_>30, Pharvt_>30 -> seed_yield
+(size=13)
+
+ERGO : ✓ 0.0087
+ORIGO : ✗ -2.7262
+DC : ✓ 0.0197
+
+----------179/261----------
+5 11 27 -> 30
+Ptot_25-30, P300_25-30, Pharvt_>30 -> PMG
+(size=19)
+
+ERGO : ✓ 0.0087
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0300
+
+----------180/261----------
+11 19 22 -> 30
+P300_25-30, P1000_20-25, P1000_>30 -> PMG
+(size=19)
+
+ERGO : ✓ 0.1063
+ORIGO : ✓ 3.1023
+DC : ✓ 0.0432
+
+----------181/261----------
+8 11 20 -> 30
+P300_>20, P300_25-30, P1000_>25 -> PMG
+(size=19)
+
+ERGO : ✗ -0.0308
+ORIGO : ✗ -8.2638
+DC : ✓ 0.0330
+
+----------182/261----------
+1 8 20 -> 31
+genotype, P300_>20, P1000_>25 -> lipids
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.2267
+
+----------183/261----------
+3 5 22 -> 29
+Ptot_20-25, Ptot_25-30, P1000_>30 -> seed_nb
+(size=19)
+
+ERGO : ✓ 0.0072
+ORIGO : ✗ -3.3603
+DC : ✓ 0.0900
+
+----------184/261----------
+11 22 -> 30 31
+P300_25-30, P1000_>30 -> PMG, lipids
+(size=19)
+
+ERGO : ✗ -0.0045
+ORIGO : ✗ -0.0935
+DC : ✗ -0.2713
+
+----------185/261----------
+2 22 -> 30
+Ptot_>20, P1000_>30 -> PMG
+(size=24)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0000
+
+----------186/261----------
+6 25 27 -> 28
+Ptot_>30, Pharv_>25, Pharvt_>30 -> seed_yield
+(size=18)
+
+ERGO : ✓ 0.0010
+ORIGO : ✓ 0.1338
+DC : ✓ 0.0513
+
+----------187/261----------
+5 22 27 -> 30
+Ptot_25-30, P1000_>30, Pharvt_>30 -> PMG
+(size=18)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0074
+
+----------188/261----------
+23 25 26 -> 31
+Pharv_>20, Pharv_>25, Pharv_25-30 -> lipids
+(size=18)
+
+ERGO : ✓ 0.0159
+ORIGO : ✓ 2.1332
+DC : ✓ 0.1061
+
+----------189/261----------
+5 23 25 -> 31
+Ptot_25-30, Pharv_>20, Pharv_>25 -> lipids
+(size=18)
+
+ERGO : ✓ 0.0293
+ORIGO : ✓ 3.3079
+DC : ✓ 0.0325
+
+----------190/261----------
+11 22 27 -> 31
+P300_25-30, P1000_>30, Pharvt_>30 -> lipids
+(size=18)
+
+ERGO : ✓ 0.0078
+ORIGO : ✗ -0.5673
+DC : ✓ 0.0111
+
+----------191/261----------
+11 18 22 -> 32
+P300_25-30, P1000_>20, P1000_>30 -> proteins
+(size=18)
+
+ERGO : ✗ -0.0062
+ORIGO : ✗ -1.4976
+DC : ✓ 0.0106
+
+----------192/261----------
+3 11 -> 29 32
+Ptot_20-25, P300_25-30 -> seed_nb, proteins
+(size=18)
+
+ERGO : ✗ -0.0360
+ORIGO : ✗ -3.9019
+DC : ✗ -0.0699
+
+----------193/261----------
+5 11 20 -> 30
+Ptot_25-30, P300_25-30, P1000_>25 -> PMG
+(size=17)
+
+ERGO : ✓ 0.0585
+ORIGO : ✗ -2.7162
+DC : ✓ 0.0614
+
+----------194/261----------
+11 22 27 -> 29
+P300_25-30, P1000_>30, Pharvt_>30 -> seed_nb
+(size=17)
+
+ERGO : ✓ 0.0160
+ORIGO : ✓ 0.6919
+DC : ✓ 0.0012
+
+----------195/261----------
+7 15 16 -> 30
+Ptot_<5, P600_>25, P600_25-30 -> PMG
+(size=17)
+
+ERGO : ✓ 0.0097
+ORIGO : ✗ -0.0727
+DC : ✓ 0.0253
+
+----------196/261----------
+5 23 25 -> 30
+Ptot_25-30, Pharv_>20, Pharv_>25 -> PMG
+(size=17)
+
+ERGO : ✓ 0.0514
+ORIGO : ✓ 3.1455
+DC : ✓ 0.0135
+
+----------197/261----------
+11 25 27 -> 30
+P300_25-30, Pharv_>25, Pharvt_>30 -> PMG
+(size=17)
+
+ERGO : ✓ 0.0091
+ORIGO : ✗ -0.1982
+DC : ✓ 0.0162
+
+----------198/261----------
+6 23 27 -> 31
+Ptot_>30, Pharv_>20, Pharvt_>30 -> lipids
+(size=17)
+
+ERGO : ✓ 0.0074
+ORIGO : ✓ 0.0299
+DC : ✓ 0.0134
+
+----------199/261----------
+5 11 25 -> 31
+Ptot_25-30, P300_25-30, Pharv_>25 -> lipids
+(size=17)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0394
+
+----------200/261----------
+5 22 25 -> 32
+Ptot_25-30, P1000_>30, Pharv_>25 -> proteins
+(size=17)
+
+ERGO : ✓ 0.0254
+ORIGO : ✓ 0.0199
+DC : ✓ 0.0669
+
+----------201/261----------
+3 18 20 -> 32
+Ptot_20-25, P1000_>20, P1000_>25 -> proteins
+(size=17)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0325
+
+----------202/261----------
+11 18 22 27 -> 28
+P300_25-30, P1000_>20, P1000_>30, Pharvt_>30 -> seed_yield
+(size=13)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0121
+
+----------203/261----------
+8 11 22 -> 30
+P300_>20, P300_25-30, P1000_>30 -> PMG
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0079
+
+----------204/261----------
+3 8 14 -> 29
+Ptot_20-25, P300_>20, P600_20-25 -> seed_nb
+(size=16)
+
+ERGO : ✓ 0.0350
+ORIGO : ✗ -2.5715
+DC : ✓ 0.3078
+
+----------205/261----------
+8 11 14 -> 32
+P300_>20, P300_25-30, P600_20-25 -> proteins
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0192
+
+----------206/261----------
+16 20 23 -> 32
+P600_25-30, P1000_>25, Pharv_>20 -> proteins
+(size=16)
+
+ERGO : ✓ 0.0644
+ORIGO : ✗ -4.7538
+DC : ✓ 0.1392
+
+----------207/261----------
+1 8 20 -> 28
+genotype, P300_>20, P1000_>25 -> seed_yield
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0611
+
+----------208/261----------
+23 25 26 -> 28
+Pharv_>20, Pharv_>25, Pharv_25-30 -> seed_yield
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0061
+
+----------209/261----------
+1 23 25 -> 28
+genotype, Pharv_>20, Pharv_>25 -> seed_yield
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0000
+
+----------210/261----------
+10 11 17 -> 28
+P300_>25, P300_25-30, P600_<5 -> seed_yield
+(size=16)
+
+ERGO : ✓ 0.0080
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0045
+
+----------211/261----------
+5 22 25 -> 29
+Ptot_25-30, P1000_>30, Pharv_>25 -> seed_nb
+(size=16)
+
+ERGO : ✓ 0.0128
+ORIGO : ✓ 0.7311
+DC : ✓ 0.0004
+
+----------212/261----------
+3 11 25 -> 29
+Ptot_20-25, P300_25-30, Pharv_>25 -> seed_nb
+(size=16)
+
+ERGO : ✗ -0.0010
+ORIGO : ✗ -0.3363
+DC : ✓ 0.1761
+
+----------213/261----------
+1 3 11 -> 29
+genotype, Ptot_20-25, P300_25-30 -> seed_nb
+(size=16)
+
+ERGO : ✓ 0.0980
+ORIGO : ✓ 4.5759
+DC : ✓ 0.0902
+
+----------214/261----------
+11 18 22 -> 30
+P300_25-30, P1000_>20, P1000_>30 -> PMG
+(size=16)
+
+ERGO : ✓ 0.0809
+ORIGO : ✓ 4.0302
+DC : ✓ 0.0194
+
+----------215/261----------
+5 25 27 -> 30
+Ptot_25-30, Pharv_>25, Pharvt_>30 -> PMG
+(size=16)
+
+ERGO : ✗ -0.0204
+ORIGO : ✗ -4.4593
+DC : ✓ 0.0098
+
+----------216/261----------
+3 6 27 -> 31
+Ptot_20-25, Ptot_>30, Pharvt_>30 -> lipids
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0423
+
+----------217/261----------
+1 11 22 -> 31
+genotype, P300_25-30, P1000_>30 -> lipids
+(size=16)
+
+ERGO : ✓ 0.0390
+ORIGO : ✗ -0.0158
+DC : ✓ 0.0802
+
+----------218/261----------
+5 11 22 -> 31
+Ptot_25-30, P300_25-30, P1000_>30 -> lipids
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0023
+
+----------219/261----------
+5 16 22 -> 31
+Ptot_25-30, P600_25-30, P1000_>30 -> lipids
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0020
+
+----------220/261----------
+11 22 27 -> 32
+P300_25-30, P1000_>30, Pharvt_>30 -> proteins
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0075
+
+----------221/261----------
+5 11 22 -> 32
+Ptot_25-30, P300_25-30, P1000_>30 -> proteins
+(size=16)
+
+ERGO : ✗ -0.0119
+ORIGO : ✗ -3.1719
+DC : ✓ 0.0282
+
+----------222/261----------
+1 7 16 -> 30
+genotype, Ptot_<5, P600_25-30 -> PMG
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0913
+
+----------223/261----------
+20 25 27 -> 31
+P1000_>25, Pharv_>25, Pharvt_>30 -> lipids
+(size=15)
+
+ERGO : ✓ 0.0108
+ORIGO : ✓ 0.0299
+DC : ✓ 0.0437
+
+----------224/261----------
+5 11 20 -> 32
+Ptot_25-30, P300_25-30, P1000_>25 -> proteins
+(size=15)
+
+ERGO : ✗ -0.0040
+ORIGO : ✗ -1.1091
+DC : ✓ 0.0560
+
+----------225/261----------
+3 18 22 -> 28
+Ptot_20-25, P1000_>20, P1000_>30 -> seed_yield
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0027
+
+----------226/261----------
+1 16 22 -> 29
+genotype, P600_25-30, P1000_>30 -> seed_nb
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------227/261----------
+1 11 13 -> 29
+genotype, P300_25-30, P600_>20 -> seed_nb
+(size=15)
+
+ERGO : ✓ 0.0282
+ORIGO : ✗ -0.7646
+DC : ✓ 0.1320
+
+----------228/261----------
+6 25 27 -> 29
+Ptot_>30, Pharv_>25, Pharvt_>30 -> seed_nb
+(size=15)
+
+ERGO : ✗ -0.0070
+ORIGO : ✗ -1.4016
+DC : ✓ 0.0043
+
+----------229/261----------
+6 22 27 -> 29
+Ptot_>30, P1000_>30, Pharvt_>30 -> seed_nb
+(size=15)
+
+ERGO : ✓ 0.0088
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0005
+
+----------230/261----------
+3 11 14 -> 29
+Ptot_20-25, P300_25-30, P600_20-25 -> seed_nb
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0772
+
+----------231/261----------
+3 16 22 -> 29
+Ptot_20-25, P600_25-30, P1000_>30 -> seed_nb
+(size=15)
+
+ERGO : ✓ 0.0386
+ORIGO : ✗ -3.6960
+DC : ✓ 0.0157
+
+----------232/261----------
+5 11 22 -> 29
+Ptot_25-30, P300_25-30, P1000_>30 -> seed_nb
+(size=15)
+
+ERGO : ✓ 0.0103
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0172
+
+----------233/261----------
+2 5 22 -> 30
+Ptot_>20, Ptot_25-30, P1000_>30 -> PMG
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0012
+
+----------234/261----------
+1 8 11 -> 30
+genotype, P300_>20, P300_25-30 -> PMG
+(size=15)
+
+ERGO : ✓ 0.1188
+ORIGO : ✓ 0.9758
+DC : ✓ 0.2396
+
+----------235/261----------
+11 22 25 -> 30
+P300_25-30, P1000_>30, Pharv_>25 -> PMG
+(size=15)
+
+ERGO : ✓ 0.0091
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0251
+
+----------236/261----------
+1 18 22 -> 30
+genotype, P1000_>20, P1000_>30 -> PMG
+(size=15)
+
+ERGO : ✓ 0.1917
+ORIGO : ✗ -1.3263
+DC : ✓ 0.1946
+
+----------237/261----------
+1 3 22 -> 30
+genotype, Ptot_20-25, P1000_>30 -> PMG
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0029
+
+----------238/261----------
+15 16 23 -> 31
+P600_>25, P600_25-30, Pharv_>20 -> lipids
+(size=15)
+
+ERGO : ✓ 0.0201
+ORIGO : ✓ 0.9341
+DC : ✓ 0.0056
+
+----------239/261----------
+1 11 18 -> 31
+genotype, P300_25-30, P1000_>20 -> lipids
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.1837
+
+----------240/261----------
+5 8 25 -> 31
+Ptot_25-30, P300_>20, Pharv_>25 -> lipids
+(size=15)
+
+ERGO : ✗ -0.0045
+ORIGO : ✗ -1.2838
+DC : ✓ 0.0098
+
+----------241/261----------
+3 25 26 -> 32
+Ptot_20-25, Pharv_>25, Pharv_25-30 -> proteins
+(size=15)
+
+ERGO : ✓ 0.0288
+ORIGO : ✗ -0.8117
+DC : ✓ 0.0742
+
+----------242/261----------
+11 22 -> 30 32
+P300_25-30, P1000_>30 -> PMG, proteins
+(size=15)
+
+ERGO : ✗ -0.0091
+ORIGO : ✓ 0.0562
+DC : ✗ -0.2094
+
+----------243/261----------
+16 22 -> 31
+P600_25-30, P1000_>30 -> lipids
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0006
+
+----------244/261----------
+16 22 -> 32
+P600_25-30, P1000_>30 -> proteins
+(size=19)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------245/261----------
+1 16 22 -> 28
+genotype, P600_25-30, P1000_>30 -> seed_yield
+(size=14)
+
+ERGO : ✗ -0.0016
+ORIGO : ✗ -0.4749
+DC : ✓ 0.0087
+
+----------246/261----------
+5 23 25 -> 28
+Ptot_25-30, Pharv_>20, Pharv_>25 -> seed_yield
+(size=14)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0169
+
+----------247/261----------
+3 11 22 -> 28
+Ptot_20-25, P300_25-30, P1000_>30 -> seed_yield
+(size=14)
+
+ERGO : ✗ -0.0072
+ORIGO : ✗ -1.8897
+DC : ✓ 0.0106
+
+----------248/261----------
+11 22 27 -> 28
+P300_25-30, P1000_>30, Pharvt_>30 -> seed_yield
+(size=14)
+
+ERGO : ? -0.0003
+ORIGO : ✗ -2.7381
+DC : ✓ 0.0201
+
+----------249/261----------
+10 11 27 -> 28
+P300_>25, P300_25-30, Pharvt_>30 -> seed_yield
+(size=14)
+
+ERGO : ? 0.0005
+ORIGO : ✓ 0.0141
+DC : ✓ 0.0260
+
+----------250/261----------
+11 18 22 -> 28
+P300_25-30, P1000_>20, P1000_>30 -> seed_yield
+(size=13)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0224
+
+----------251/261----------
+3 5 22 -> 28
+Ptot_20-25, Ptot_25-30, P1000_>30 -> seed_yield
+(size=13)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0091
+
+----------252/261----------
+11 22 -> 28 30
+P300_25-30, P1000_>30 -> seed_yield, PMG
+(size=13)
+
+ERGO : ✗ -0.0235
+ORIGO : ✗ -3.4534
+DC : ✗ -0.3360
+
+----------253/261----------
+3 8 -> 28 29
+Ptot_20-25, P300_>20 -> seed_yield, seed_nb
+(size=13)
+
+ERGO : ✓ 0.0075
+ORIGO : ✓ 1.5315
+DC : ✓ 0.2646
+
+----------254/261----------
+5 25 -> 30
+Ptot_25-30, Pharv_>25 -> PMG
+(size=16)
+
+ERGO : ✓ 0.0119
+ORIGO : ✓ 0.0475
+DC : ✓ 0.0720
+
+----------255/261----------
+10 11 -> 31
+P300_>25, P300_25-30 -> lipids
+(size=16)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------256/261----------
+10 11 -> 29
+P300_>25, P300_25-30 -> seed_nb
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------257/261----------
+16 22 -> 29
+P600_25-30, P1000_>30 -> seed_nb
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------258/261----------
+16 22 -> 30
+P600_25-30, P1000_>30 -> PMG
+(size=15)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0008
+
+----------259/261----------
+3 18 -> 30
+Ptot_20-25, P1000_>20 -> PMG
+(size=15)
+
+ERGO : ✓ 0.0323
+ORIGO : ✗ -2.0208
+DC : ✓ 0.1155
+
+----------260/261----------
+16 22 -> 28
+P600_25-30, P1000_>30 -> seed_yield
+(size=14)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0010
+
+----------261/261----------
+10 11 -> 28
+P300_>25, P300_25-30 -> seed_yield
+(size=13)
+
+ERGO : ✗ -0.0019
+ORIGO : ✓ 0.1307
+DC : ? 0.0000
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 124/161 (77.0%)
+SCORE ORIGO : 86/168 (51.2%)
+SCORE DC : 242/257 (94.2%)
+Sauvegardé dans 'files/5_origo/result_bicpams_additive_v2_TRIÉ_origo.txt'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/2a_bicpams/result_bicpams_constant_v2_TRIÉ.docx'
+Nombre de règles : 5
+
+----------1/5----------
+10 11 -> 30
+P300_>25, P300_25-30 -> PMG
+(size=40)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------2/5----------
+10 11 22 -> 30
+P300_>25, P300_25-30, P1000_>30 -> PMG
+(size=37)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0020
+
+----------3/5----------
+16 22 -> 31
+P600_25-30, P1000_>30 -> lipids
+(size=35)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0006
+
+----------4/5----------
+10 11 -> 31
+P300_>25, P300_25-30 -> lipids
+(size=34)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------5/5----------
+1 16 -> 30
+genotype, P600_25-30 -> PMG
+(size=34)
+
+ERGO : ✓ 0.1063
+ORIGO : ✗ -1.3448
+DC : ✓ 0.1264
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 1/1 (100.0%)
+SCORE ORIGO : 0/1 (0.0%)
+SCORE DC : 3/3 (100.0%)
+Sauvegardé dans 'files/5_origo/result_bicpams_constant_v2_TRIÉ_origo.txt'
+...terminé !
+
+Part. V - Vérification par Origo des règles inférées...
+Lecture de 'files/2c_coron/coron_rules_v2.txt'
+Nombre de règles : 396
+
+----------1/396----------
+0 4 5 20 21 22 25 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0192
+ORIGO : ✗ -7.9749
+DC : ✓ 0.0203
+
+----------2/396----------
+4 5 20 21 22 25 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0215
+ORIGO : ✗ -8.1448
+DC : ✓ 0.0240
+
+----------3/396----------
+0 5 20 21 22 25 26 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0206
+
+----------4/396----------
+0 4 20 21 22 25 26 -> 28
+climate, Ptot_>25, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0206
+
+----------5/396----------
+0 4 5 21 22 25 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? -0.0006
+ORIGO : ✗ -0.2838
+DC : ✓ 0.0278
+
+----------6/396----------
+0 4 5 20 22 25 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? -0.0006
+ORIGO : ✗ -0.2838
+DC : ✓ 0.0311
+
+----------7/396----------
+0 4 5 20 21 25 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0171
+
+----------8/396----------
+0 4 5 20 21 22 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0206
+
+----------9/396----------
+0 4 5 20 21 22 25 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0205
+ORIGO : ✗ -8.1448
+DC : ✓ 0.0203
+
+----------10/396----------
+5 20 21 22 25 26 -> 28
+Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0202
+
+----------11/396----------
+4 20 21 22 25 26 -> 28
+Ptot_>25, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0097
+
+----------12/396----------
+4 5 21 22 25 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0237
+
+----------13/396----------
+4 5 20 22 25 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0209
+
+----------14/396----------
+4 5 20 21 25 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0029
+ORIGO : ✗ -0.9913
+DC : ✓ 0.0153
+
+----------15/396----------
+4 5 20 21 22 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0202
+
+----------16/396----------
+4 5 20 21 22 25 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0231
+ORIGO : ✗ -8.3374
+DC : ✓ 0.0240
+
+----------17/396----------
+0 20 21 22 25 26 -> 28
+climate, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0129
+
+----------18/396----------
+0 5 21 22 25 26 -> 28
+climate, Ptot_25-30, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0129
+
+----------19/396----------
+0 5 20 22 25 26 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0141
+
+----------20/396----------
+0 5 20 21 25 26 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0065
+
+----------21/396----------
+0 5 20 21 22 26 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0129
+
+----------22/396----------
+0 5 20 21 22 25 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0239
+ORIGO : ✗ -8.3374
+DC : ✓ 0.0139
+
+----------23/396----------
+0 4 21 22 25 26 -> 28
+climate, Ptot_>25, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0206
+
+----------24/396----------
+0 4 20 22 25 26 -> 28
+climate, Ptot_>25, P1000_>25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0229
+
+----------25/396----------
+0 4 20 21 25 26 -> 28
+climate, Ptot_>25, P1000_>25, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0152
+
+----------26/396----------
+0 4 20 21 22 26 -> 28
+climate, Ptot_>25, P1000_>25, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0112
+
+----------27/396----------
+0 4 20 21 22 25 -> 28
+climate, Ptot_>25, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0047
+
+----------28/396----------
+0 4 5 22 25 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0105
+ORIGO : ✗ -4.1638
+DC : ✓ 0.0270
+
+----------29/396----------
+0 4 5 21 25 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0011
+ORIGO : ✗ -0.4764
+DC : ✓ 0.0201
+
+----------30/396----------
+0 4 5 21 22 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0206
+
+----------31/396----------
+0 4 5 21 22 25 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0220
+ORIGO : ✗ -8.3374
+DC : ✓ 0.0203
+
+----------32/396----------
+0 4 5 20 25 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0011
+ORIGO : ✗ -0.4764
+DC : ✓ 0.0239
+
+----------33/396----------
+0 4 5 20 22 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0229
+
+----------34/396----------
+0 4 5 20 22 25 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0223
+ORIGO : ✗ -8.3374
+DC : ✓ 0.0253
+
+----------35/396----------
+0 4 5 20 21 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0065
+
+----------36/396----------
+0 4 5 20 21 25 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0160
+
+----------37/396----------
+0 4 5 20 21 22 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0022
+
+----------38/396----------
+20 21 22 25 26 -> 28
+P1000_>25, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0097
+
+----------39/396----------
+5 21 22 25 26 -> 28
+Ptot_25-30, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0202
+
+----------40/396----------
+5 20 22 25 26 -> 28
+Ptot_25-30, P1000_>25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0179
+
+----------41/396----------
+5 20 21 25 26 -> 28
+Ptot_25-30, P1000_>25, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0086
+
+----------42/396----------
+5 20 21 22 26 -> 28
+Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0113
+
+----------43/396----------
+5 20 21 22 25 -> 28
+Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0272
+ORIGO : ✗ -8.5598
+DC : ✓ 0.0158
+
+----------44/396----------
+4 21 22 25 26 -> 28
+Ptot_>25, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0097
+
+----------45/396----------
+4 20 22 25 26 -> 28
+Ptot_>25, P1000_>25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------46/396----------
+4 20 21 25 26 -> 28
+Ptot_>25, P1000_>25, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0086
+
+----------47/396----------
+4 20 21 22 26 -> 28
+Ptot_>25, P1000_>25, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0097
+
+----------48/396----------
+4 20 21 22 25 -> 28
+Ptot_>25, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0017
+
+----------49/396----------
+4 5 22 25 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0171
+
+----------50/396----------
+4 5 21 25 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0094
+
+----------51/396----------
+4 5 21 22 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0202
+
+----------52/396----------
+4 5 21 22 25 -> 28
+Ptot_>25, Ptot_25-30, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0248
+ORIGO : ✗ -8.5598
+DC : ✓ 0.0240
+
+----------53/396----------
+4 5 20 25 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0079
+
+----------54/396----------
+4 5 20 22 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0179
+
+----------55/396----------
+4 5 20 22 25 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0256
+ORIGO : ✗ -8.5598
+DC : ✓ 0.0285
+
+----------56/396----------
+4 5 20 21 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0045
+
+----------57/396----------
+4 5 20 21 25 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0119
+
+----------58/396----------
+4 5 20 21 22 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? -0.0001
+ORIGO : ✗ -0.0376
+DC : ✓ 0.0075
+
+----------59/396----------
+0 21 22 25 26 -> 28
+climate, P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0112
+
+----------60/396----------
+0 20 22 25 26 -> 28
+climate, P1000_>25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0122
+
+----------61/396----------
+0 20 21 25 26 -> 28
+climate, P1000_>25, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0084
+
+----------62/396----------
+0 20 21 22 26 -> 28
+climate, P1000_>25, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0071
+
+----------63/396----------
+0 20 21 22 25 -> 28
+climate, P1000_>25, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0047
+
+----------64/396----------
+0 5 22 25 26 -> 28
+climate, Ptot_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0222
+ORIGO : ✗ -8.5598
+DC : ✓ 0.0229
+
+----------65/396----------
+0 5 21 25 26 -> 28
+climate, Ptot_25-30, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0066
+
+----------66/396----------
+0 5 21 22 26 -> 28
+climate, Ptot_25-30, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0129
+
+----------67/396----------
+0 5 21 22 25 -> 28
+climate, Ptot_25-30, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0259
+ORIGO : ✗ -8.5598
+DC : ✓ 0.0139
+
+----------68/396----------
+0 5 20 25 26 -> 28
+climate, Ptot_25-30, P1000_>25, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0087
+
+----------69/396----------
+0 5 20 22 26 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0141
+
+----------70/396----------
+0 5 20 22 25 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0263
+ORIGO : ✗ -8.5598
+DC : ✓ 0.0178
+
+----------71/396----------
+0 5 20 21 26 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0038
+
+----------72/396----------
+0 5 20 21 25 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? -0.0009
+ORIGO : ✗ -0.2732
+DC : ✓ 0.0089
+
+----------73/396----------
+0 5 20 21 22 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0007
+
+----------74/396----------
+0 4 22 25 26 -> 28
+climate, Ptot_>25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0241
+ORIGO : ✗ -8.5598
+DC : ✓ 0.0122
+
+----------75/396----------
+0 4 21 25 26 -> 28
+climate, Ptot_>25, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0138
+
+----------76/396----------
+0 4 21 22 26 -> 28
+climate, Ptot_>25, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0112
+
+----------77/396----------
+0 4 21 22 25 -> 28
+climate, Ptot_>25, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0203
+
+----------78/396----------
+0 4 20 25 26 -> 28
+climate, Ptot_>25, P1000_>25, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0166
+
+----------79/396----------
+0 4 20 22 26 -> 28
+climate, Ptot_>25, P1000_>25, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0122
+
+----------80/396----------
+0 4 20 22 25 -> 28
+climate, Ptot_>25, P1000_>25, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0253
+
+----------81/396----------
+0 4 20 21 26 -> 28
+climate, Ptot_>25, P1000_>25, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0038
+
+----------82/396----------
+0 4 20 21 25 -> 28
+climate, Ptot_>25, P1000_>25, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0053
+
+----------83/396----------
+0 4 5 25 26 -> 28
+climate, Ptot_>25, Ptot_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0053
+
+----------84/396----------
+0 4 5 22 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0222
+ORIGO : ✗ -8.5598
+DC : ✓ 0.0229
+
+----------85/396----------
+0 4 5 22 25 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0148
+
+----------86/396----------
+0 4 5 21 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0038
+
+----------87/396----------
+0 4 5 21 25 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0154
+
+----------88/396----------
+0 4 5 21 22 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0109
+
+----------89/396----------
+0 4 5 20 26 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0034
+
+----------90/396----------
+0 4 5 20 25 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0187
+
+----------91/396----------
+0 4 5 20 22 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0148
+
+----------92/396----------
+0 4 5 20 21 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0012
+
+----------93/396----------
+21 22 25 26 -> 28
+P1000_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0097
+
+----------94/396----------
+20 22 25 26 -> 28
+P1000_>25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------95/396----------
+20 21 25 26 -> 28
+P1000_>25, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0086
+
+----------96/396----------
+20 21 22 26 -> 28
+P1000_>25, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0058
+
+----------97/396----------
+20 21 22 25 -> 28
+P1000_>25, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0113
+
+----------98/396----------
+5 22 25 26 -> 28
+Ptot_25-30, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0171
+
+----------99/396----------
+5 21 25 26 -> 28
+Ptot_25-30, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0094
+
+----------100/396----------
+5 21 22 26 -> 28
+Ptot_25-30, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0058
+
+----------101/396----------
+5 21 22 25 -> 28
+Ptot_25-30, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0095
+ORIGO : ✗ -2.9410
+DC : ✓ 0.0131
+
+----------102/396----------
+5 20 25 26 -> 28
+Ptot_25-30, P1000_>25, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0079
+
+----------103/396----------
+5 20 22 26 -> 28
+Ptot_25-30, P1000_>25, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0038
+
+----------104/396----------
+5 20 22 25 -> 28
+Ptot_25-30, P1000_>25, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0003
+
+----------105/396----------
+5 20 21 26 -> 28
+Ptot_25-30, P1000_>25, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0045
+
+----------106/396----------
+5 20 21 25 -> 28
+Ptot_25-30, P1000_>25, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0019
+ORIGO : ✗ -0.5362
+DC : ✓ 0.0041
+
+----------107/396----------
+5 20 21 22 -> 28
+Ptot_25-30, P1000_>25, P1000_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0066
+
+----------108/396----------
+4 22 25 26 -> 28
+Ptot_>25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0322
+ORIGO : ✗ -8.8228
+DC : ✓ 0.0159
+
+----------109/396----------
+4 21 25 26 -> 28
+Ptot_>25, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0094
+
+----------110/396----------
+4 21 22 26 -> 28
+Ptot_>25, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0097
+
+----------111/396----------
+4 21 22 25 -> 28
+Ptot_>25, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0113
+
+----------112/396----------
+4 20 25 26 -> 28
+Ptot_>25, P1000_>25, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0079
+
+----------113/396----------
+4 20 22 26 -> 28
+Ptot_>25, P1000_>25, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------114/396----------
+4 20 22 25 -> 28
+Ptot_>25, P1000_>25, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0011
+
+----------115/396----------
+4 20 21 26 -> 28
+Ptot_>25, P1000_>25, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0045
+
+----------116/396----------
+4 20 21 25 -> 28
+Ptot_>25, P1000_>25, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0034
+
+----------117/396----------
+4 5 25 26 -> 28
+Ptot_>25, Ptot_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0148
+
+----------118/396----------
+4 5 22 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0171
+
+----------119/396----------
+4 5 22 25 -> 28
+Ptot_>25, Ptot_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0068
+
+----------120/396----------
+4 5 21 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0045
+
+----------121/396----------
+4 5 21 25 -> 28
+Ptot_>25, Ptot_25-30, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0019
+ORIGO : ✗ -0.5362
+DC : ✓ 0.0041
+
+----------122/396----------
+4 5 21 22 -> 28
+Ptot_>25, Ptot_25-30, P1000_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0066
+
+----------123/396----------
+4 5 20 26 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0033
+
+----------124/396----------
+4 5 20 25 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0020
+ORIGO : ✗ -0.5362
+DC : ✓ 0.0010
+
+----------125/396----------
+4 5 20 22 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0144
+
+----------126/396----------
+4 5 20 21 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25, P1000_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0004
+
+----------127/396----------
+0 22 25 26 -> 28
+climate, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0261
+ORIGO : ✗ -8.8228
+DC : ✓ 0.0122
+
+----------128/396----------
+0 21 25 26 -> 28
+climate, P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0053
+
+----------129/396----------
+0 21 22 26 -> 28
+climate, P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0071
+
+----------130/396----------
+0 21 22 25 -> 28
+climate, P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0047
+
+----------131/396----------
+0 20 25 26 -> 28
+climate, P1000_>25, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0067
+
+----------132/396----------
+0 20 22 26 -> 28
+climate, P1000_>25, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0073
+
+----------133/396----------
+0 20 22 25 -> 28
+climate, P1000_>25, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0066
+
+----------134/396----------
+0 20 21 26 -> 28
+climate, P1000_>25, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0038
+
+----------135/396----------
+0 20 21 25 -> 28
+climate, P1000_>25, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0053
+
+----------136/396----------
+0 5 25 26 -> 28
+climate, Ptot_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0053
+
+----------137/396----------
+0 5 22 26 -> 28
+climate, Ptot_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0260
+ORIGO : ✗ -8.8228
+DC : ✓ 0.0141
+
+----------138/396----------
+0 5 22 25 -> 28
+climate, Ptot_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0148
+
+----------139/396----------
+0 5 21 26 -> 28
+climate, Ptot_25-30, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0027
+
+----------140/396----------
+0 5 21 25 -> 28
+climate, Ptot_25-30, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0018
+ORIGO : ✗ -0.5362
+DC : ✓ 0.0070
+
+----------141/396----------
+0 5 21 22 -> 28
+climate, Ptot_25-30, P1000_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0013
+
+----------142/396----------
+0 5 20 26 -> 28
+climate, Ptot_25-30, P1000_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0034
+
+----------143/396----------
+0 5 20 25 -> 28
+climate, Ptot_25-30, P1000_>25, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0018
+ORIGO : ✗ -0.5362
+DC : ✓ 0.0099
+
+----------144/396----------
+0 5 20 22 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0016
+ORIGO : ✗ -0.3493
+DC : ✓ 0.0021
+
+----------145/396----------
+0 5 20 21 -> 28
+climate, Ptot_25-30, P1000_>25, P1000_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0012
+
+----------146/396----------
+0 4 25 26 -> 28
+climate, Ptot_>25, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0053
+
+----------147/396----------
+0 4 22 26 -> 28
+climate, Ptot_>25, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0261
+ORIGO : ✗ -8.8228
+DC : ✓ 0.0122
+
+----------148/396----------
+0 4 22 25 -> 28
+climate, Ptot_>25, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0066
+
+----------149/396----------
+0 4 21 26 -> 28
+climate, Ptot_>25, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0038
+
+----------150/396----------
+0 4 21 25 -> 28
+climate, Ptot_>25, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0070
+ORIGO : ✗ -1.9941
+DC : ✓ 0.0104
+
+----------151/396----------
+0 4 20 26 -> 28
+climate, Ptot_>25, P1000_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0034
+
+----------152/396----------
+0 4 20 25 -> 28
+climate, Ptot_>25, P1000_>25, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0072
+ORIGO : ✗ -1.9941
+DC : ✓ 0.0145
+
+----------153/396----------
+0 4 5 26 -> 28
+climate, Ptot_>25, Ptot_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0034
+
+----------154/396----------
+0 4 5 25 -> 28
+climate, Ptot_>25, Ptot_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0064
+
+----------155/396----------
+0 4 5 22 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0148
+
+----------156/396----------
+0 4 5 21 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0033
+
+----------157/396----------
+0 4 5 20 -> 28
+climate, Ptot_>25, Ptot_25-30, P1000_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0030
+
+----------158/396----------
+21 25 26 -> 28
+P1000_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0094
+
+----------159/396----------
+21 22 26 -> 28
+P1000_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0058
+
+----------160/396----------
+21 22 25 -> 28
+P1000_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0017
+
+----------161/396----------
+20 25 26 -> 28
+P1000_>25, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0079
+
+----------162/396----------
+20 22 26 -> 28
+P1000_>25, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0038
+
+----------163/396----------
+20 22 25 -> 28
+P1000_>25, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0011
+
+----------164/396----------
+20 21 26 -> 28
+P1000_>25, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0045
+
+----------165/396----------
+20 21 25 -> 28
+P1000_>25, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------166/396----------
+5 25 26 -> 28
+Ptot_25-30, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✓ 0.0053
+ORIGO : ✗ -0.8532
+DC : ✓ 0.0067
+
+----------167/396----------
+5 22 26 -> 28
+Ptot_25-30, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0224
+
+----------168/396----------
+5 22 25 -> 28
+Ptot_25-30, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0077
+
+----------169/396----------
+5 21 26 -> 28
+Ptot_25-30, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0039
+
+----------170/396----------
+5 21 25 -> 28
+Ptot_25-30, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0033
+ORIGO : ✗ -0.8581
+DC : ✓ 0.0023
+
+----------171/396----------
+5 21 22 -> 28
+Ptot_25-30, P1000_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0009
+
+----------172/396----------
+5 20 26 -> 28
+Ptot_25-30, P1000_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0033
+
+----------173/396----------
+5 20 25 -> 28
+Ptot_25-30, P1000_>25, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0012
+
+----------174/396----------
+5 20 22 -> 28
+Ptot_25-30, P1000_>25, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0001
+
+----------175/396----------
+5 20 21 -> 28
+Ptot_25-30, P1000_>25, P1000_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0004
+
+----------176/396----------
+4 25 26 -> 28
+Ptot_>25, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0032
+
+----------177/396----------
+4 22 26 -> 28
+Ptot_>25, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0038
+
+----------178/396----------
+4 22 25 -> 28
+Ptot_>25, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0029
+
+----------179/396----------
+4 21 26 -> 28
+Ptot_>25, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0045
+
+----------180/396----------
+4 21 25 -> 28
+Ptot_>25, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------181/396----------
+4 20 26 -> 28
+Ptot_>25, P1000_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0033
+
+----------182/396----------
+4 20 25 -> 28
+Ptot_>25, P1000_>25, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------183/396----------
+4 5 26 -> 28
+Ptot_>25, Ptot_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0033
+
+----------184/396----------
+4 5 25 -> 28
+Ptot_>25, Ptot_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0005
+
+----------185/396----------
+4 5 22 -> 28
+Ptot_>25, Ptot_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0068
+
+----------186/396----------
+4 5 21 -> 28
+Ptot_>25, Ptot_25-30, P1000_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0004
+
+----------187/396----------
+4 5 20 -> 28
+Ptot_>25, Ptot_25-30, P1000_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0000
+
+----------188/396----------
+0 25 26 -> 28
+climate, Pharv_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0053
+
+----------189/396----------
+0 22 26 -> 28
+climate, P1000_>30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0398
+ORIGO : ✗ -9.1448
+DC : ✓ 0.0073
+
+----------190/396----------
+0 22 25 -> 28
+climate, P1000_>30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0076
+
+----------191/396----------
+0 21 26 -> 28
+climate, P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0027
+
+----------192/396----------
+0 21 25 -> 28
+climate, P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0068
+
+----------193/396----------
+0 20 26 -> 28
+climate, P1000_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0034
+
+----------194/396----------
+0 20 25 -> 28
+climate, P1000_>25, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0109
+
+----------195/396----------
+0 5 26 -> 28
+climate, Ptot_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0023
+
+----------196/396----------
+0 5 25 -> 28
+climate, Ptot_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0064
+
+----------197/396----------
+0 5 22 -> 28
+climate, Ptot_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0021
+
+----------198/396----------
+0 5 21 -> 28
+climate, Ptot_25-30, P1000_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0006
+
+----------199/396----------
+0 5 20 -> 28
+climate, Ptot_25-30, P1000_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0039
+ORIGO : ✗ -0.6713
+DC : ✓ 0.0019
+
+----------200/396----------
+0 4 26 -> 28
+climate, Ptot_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0034
+
+----------201/396----------
+0 4 25 -> 28
+climate, Ptot_>25, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0109
+
+----------202/396----------
+0 4 5 -> 28
+climate, Ptot_>25, Ptot_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0030
+
+----------203/396----------
+21 26 -> 28
+P1000_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0039
+
+----------204/396----------
+21 25 -> 28
+P1000_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0026
+
+----------205/396----------
+20 26 -> 28
+P1000_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0033
+
+----------206/396----------
+20 25 -> 28
+P1000_>25, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------207/396----------
+5 26 -> 28
+Ptot_25-30, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0056
+ORIGO : ✗ -1.2732
+DC : ✓ 0.0002
+
+----------208/396----------
+5 25 -> 28
+Ptot_25-30, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0005
+
+----------209/396----------
+5 22 -> 28
+Ptot_25-30, P1000_>30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0022
+
+----------210/396----------
+5 21 -> 28
+Ptot_25-30, P1000_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0004
+
+----------211/396----------
+5 20 -> 28
+Ptot_25-30, P1000_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0001
+
+----------212/396----------
+4 26 -> 28
+Ptot_>25, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ✗ -0.0184
+ORIGO : ✗ -3.0327
+DC : ✓ 0.0066
+
+----------213/396----------
+4 25 -> 28
+Ptot_>25, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0069
+
+----------214/396----------
+4 5 -> 28
+Ptot_>25, Ptot_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0000
+
+----------215/396----------
+0 26 -> 28
+climate, Pharv_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0023
+
+----------216/396----------
+0 25 -> 28
+climate, Pharv_>25 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0274
+
+----------217/396----------
+0 5 -> 28
+climate, Ptot_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0002
+
+----------218/396----------
+5 -> 28
+Ptot_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------219/396----------
+0 4 18 20 21 22 -> 30
+climate, Ptot_>25, P1000_>20, P1000_>25, P1000_25-30, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0651
+ORIGO : ✗ -7.8304
+DC : ✓ 0.1588
+
+----------220/396----------
+4 18 20 21 22 -> 30
+Ptot_>25, P1000_>20, P1000_>25, P1000_25-30, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0617
+ORIGO : ✗ -7.0537
+DC : ✓ 0.1859
+
+----------221/396----------
+0 18 20 21 22 -> 30
+climate, P1000_>20, P1000_>25, P1000_25-30, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0689
+ORIGO : ✓ 0.4349
+DC : ✓ 0.0621
+
+----------222/396----------
+0 4 18 21 22 -> 30
+climate, Ptot_>25, P1000_>20, P1000_25-30, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0474
+ORIGO : ✓ 0.1439
+DC : ✓ 0.1762
+
+----------223/396----------
+0 4 18 20 22 -> 30
+climate, Ptot_>25, P1000_>20, P1000_>25, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0474
+ORIGO : ✓ 0.1439
+DC : ✓ 0.1762
+
+----------224/396----------
+0 4 18 20 21 -> 30
+climate, Ptot_>25, P1000_>20, P1000_>25, P1000_25-30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0543
+ORIGO : ✗ -9.7631
+DC : ✓ 0.2205
+
+----------225/396----------
+18 20 21 22 -> 30
+P1000_>20, P1000_>25, P1000_25-30, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0573
+ORIGO : ✓ 4.7678
+DC : ✓ 0.0061
+
+----------226/396----------
+4 18 21 22 -> 30
+Ptot_>25, P1000_>20, P1000_25-30, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0661
+ORIGO : ✓ 4.1155
+DC : ✓ 0.1117
+
+----------227/396----------
+4 18 20 22 -> 30
+Ptot_>25, P1000_>20, P1000_>25, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0491
+ORIGO : ✓ 2.5766
+DC : ✓ 0.1750
+
+----------228/396----------
+4 18 20 21 -> 30
+Ptot_>25, P1000_>20, P1000_>25, P1000_25-30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0363
+ORIGO : ✗ -13.3009
+DC : ✓ 0.1412
+
+----------229/396----------
+0 18 21 22 -> 30
+climate, P1000_>20, P1000_25-30, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0475
+ORIGO : ✓ 2.1218
+DC : ✓ 0.0084
+
+----------230/396----------
+0 18 20 22 -> 30
+climate, P1000_>20, P1000_>25, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0479
+ORIGO : ✓ 2.1218
+DC : ✓ 0.0084
+
+----------231/396----------
+0 18 20 21 -> 30
+climate, P1000_>20, P1000_>25, P1000_25-30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0530
+ORIGO : ✓ 2.1218
+DC : ✓ 0.0223
+
+----------232/396----------
+0 4 18 22 -> 30
+climate, Ptot_>25, P1000_>20, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0440
+ORIGO : ✓ 0.1439
+DC : ✓ 0.0322
+
+----------233/396----------
+0 4 18 21 -> 30
+climate, Ptot_>25, P1000_>20, P1000_25-30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0464
+ORIGO : ✓ 0.1439
+DC : ✓ 0.1435
+
+----------234/396----------
+0 4 18 20 -> 30
+climate, Ptot_>25, P1000_>20, P1000_>25 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0464
+ORIGO : ✓ 0.1439
+DC : ✓ 0.1435
+
+----------235/396----------
+18 21 22 -> 30
+P1000_>20, P1000_25-30, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0787
+ORIGO : ✓ 9.2556
+DC : ✓ 0.0061
+
+----------236/396----------
+18 20 22 -> 30
+P1000_>20, P1000_>25, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0320
+ORIGO : ✓ 0.0845
+DC : ✓ 0.0061
+
+----------237/396----------
+18 20 21 -> 30
+P1000_>20, P1000_>25, P1000_25-30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0511
+ORIGO : ✓ 4.7678
+DC : ✓ 0.0088
+
+----------238/396----------
+4 18 22 -> 30
+Ptot_>25, P1000_>20, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0463
+ORIGO : ✓ 2.5766
+DC : ✓ 0.0235
+
+----------239/396----------
+4 18 21 -> 30
+Ptot_>25, P1000_>20, P1000_25-30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0510
+ORIGO : ✓ 0.0845
+DC : ✓ 0.2324
+
+----------240/396----------
+4 18 20 -> 30
+Ptot_>25, P1000_>20, P1000_>25 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0245
+ORIGO : ✗ -5.2025
+DC : ✓ 0.1914
+
+----------241/396----------
+0 18 22 -> 30
+climate, P1000_>20, P1000_>30 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0351
+ORIGO : ✓ 0.1439
+DC : ✓ 0.0121
+
+----------242/396----------
+0 18 20 -> 30
+climate, P1000_>20, P1000_>25 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0516
+ORIGO : ✓ 2.1218
+DC : ✓ 0.0283
+
+----------243/396----------
+0 4 18 -> 30
+climate, Ptot_>25, P1000_>20 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0416
+ORIGO : ✓ 0.1439
+DC : ✓ 0.0564
+
+----------244/396----------
+18 20 -> 30
+P1000_>20, P1000_>25 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0168
+ORIGO : ✓ 0.0845
+DC : ✓ 0.0097
+
+----------245/396----------
+4 18 -> 30
+Ptot_>25, P1000_>20 -> PMG
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0333
+ORIGO : ✗ -0.0148
+DC : ✓ 0.1335
+
+----------246/396----------
+0 4 18 20 21 22 -> 29
+climate, Ptot_>25, P1000_>20, P1000_>25, P1000_25-30, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0340
+ORIGO : ✓ 2.6042
+DC : ✓ 0.0899
+
+----------247/396----------
+4 18 20 21 22 -> 29
+Ptot_>25, P1000_>20, P1000_>25, P1000_25-30, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0246
+ORIGO : ✗ -1.4551
+DC : ✓ 0.0710
+
+----------248/396----------
+0 18 20 21 22 -> 29
+climate, P1000_>20, P1000_>25, P1000_25-30, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0220
+ORIGO : ✓ 2.1544
+DC : ✓ 0.0206
+
+----------249/396----------
+0 4 18 21 22 -> 29
+climate, Ptot_>25, P1000_>20, P1000_25-30, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0346
+ORIGO : ✓ 2.3818
+DC : ✓ 0.0899
+
+----------250/396----------
+0 4 18 20 22 -> 29
+climate, Ptot_>25, P1000_>20, P1000_>25, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0346
+ORIGO : ✓ 2.3818
+DC : ✓ 0.0899
+
+----------251/396----------
+0 4 18 20 21 -> 29
+climate, Ptot_>25, P1000_>20, P1000_>25, P1000_25-30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0284
+ORIGO : ✓ 0.1772
+DC : ✓ 0.0954
+
+----------252/396----------
+18 20 21 22 -> 29
+P1000_>20, P1000_>25, P1000_25-30, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0228
+ORIGO : ✓ 2.1544
+DC : ✓ 0.0361
+
+----------253/396----------
+4 18 21 22 -> 29
+Ptot_>25, P1000_>20, P1000_25-30, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0250
+ORIGO : ✗ -1.5646
+DC : ✓ 0.0710
+
+----------254/396----------
+4 18 20 22 -> 29
+Ptot_>25, P1000_>20, P1000_>25, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0250
+ORIGO : ✗ -1.5646
+DC : ✓ 0.0710
+
+----------255/396----------
+4 18 20 21 -> 29
+Ptot_>25, P1000_>20, P1000_>25, P1000_25-30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0217
+ORIGO : ✗ -1.9096
+DC : ✓ 0.0348
+
+----------256/396----------
+0 18 21 22 -> 29
+climate, P1000_>20, P1000_25-30, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0253
+ORIGO : ✓ 2.8159
+DC : ✓ 0.0206
+
+----------257/396----------
+0 18 20 22 -> 29
+climate, P1000_>20, P1000_>25, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0229
+ORIGO : ✓ 2.1544
+DC : ✓ 0.0285
+
+----------258/396----------
+0 18 20 21 -> 29
+climate, P1000_>20, P1000_>25, P1000_25-30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0447
+
+----------259/396----------
+0 4 18 22 -> 29
+climate, Ptot_>25, P1000_>20, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0861
+ORIGO : ✓ 8.5787
+DC : ✓ 0.0143
+
+----------260/396----------
+0 4 18 21 -> 29
+climate, Ptot_>25, P1000_>20, P1000_25-30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0291
+ORIGO : ✓ 0.1211
+DC : ✓ 0.0954
+
+----------261/396----------
+0 4 18 20 -> 29
+climate, Ptot_>25, P1000_>20, P1000_>25 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0291
+ORIGO : ✓ 0.1211
+DC : ✓ 0.0954
+
+----------262/396----------
+18 21 22 -> 29
+P1000_>20, P1000_25-30, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0126
+ORIGO : ✓ 0.2849
+DC : ✓ 0.0028
+
+----------263/396----------
+18 20 22 -> 29
+P1000_>20, P1000_>25, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0219
+ORIGO : ✓ 2.1544
+DC : ✓ 0.0028
+
+----------264/396----------
+18 20 21 -> 29
+P1000_>20, P1000_>25, P1000_25-30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0391
+
+----------265/396----------
+4 18 22 -> 29
+Ptot_>25, P1000_>20, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0766
+ORIGO : ✓ 6.1156
+DC : ✓ 0.0261
+
+----------266/396----------
+4 18 21 -> 29
+Ptot_>25, P1000_>20, P1000_25-30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0222
+ORIGO : ✗ -1.9096
+DC : ✓ 0.0348
+
+----------267/396----------
+4 18 20 -> 29
+Ptot_>25, P1000_>20, P1000_>25 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0222
+ORIGO : ✗ -1.9096
+DC : ✓ 0.0348
+
+----------268/396----------
+0 18 22 -> 29
+climate, P1000_>20, P1000_>30 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0302
+ORIGO : ✓ 3.7913
+DC : ✓ 0.0021
+
+----------269/396----------
+0 18 20 -> 29
+climate, P1000_>20, P1000_>25 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0791
+
+----------270/396----------
+0 4 18 -> 29
+climate, Ptot_>25, P1000_>20 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0358
+ORIGO : ✓ 4.7106
+DC : ✓ 0.0020
+
+----------271/396----------
+18 20 -> 29
+P1000_>20, P1000_>25 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0049
+ORIGO : ✓ 0.1077
+DC : ✓ 0.0024
+
+----------272/396----------
+4 18 -> 29
+Ptot_>25, P1000_>20 -> seed_nb
+(supp=52, conf=60.47%)
+
+ERGO : ✓ 0.0477
+ORIGO : ✓ 0.0184
+DC : ✓ 0.1833
+
+----------273/396----------
+2 3 22 25 26 -> 29
+Ptot_>20, Ptot_20-25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0349
+ORIGO : ✓ 0.0965
+DC : ✓ 0.0175
+
+----------274/396----------
+3 22 25 26 -> 29
+Ptot_20-25, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0756
+ORIGO : ✓ 5.6277
+DC : ✓ 0.0153
+
+----------275/396----------
+2 22 25 26 -> 29
+Ptot_>20, P1000_>30, Pharv_>25, Pharv_25-30 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0140
+ORIGO : ✓ 1.2262
+DC : ✓ 0.0276
+
+----------276/396----------
+2 3 25 26 -> 29
+Ptot_>20, Ptot_20-25, Pharv_>25, Pharv_25-30 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0294
+ORIGO : ✓ 0.0965
+DC : ✓ 0.0040
+
+----------277/396----------
+2 3 22 26 -> 29
+Ptot_>20, Ptot_20-25, P1000_>30, Pharv_25-30 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✗ -0.0122
+ORIGO : ✗ -8.5217
+DC : ✓ 0.0254
+
+----------278/396----------
+2 3 22 25 -> 29
+Ptot_>20, Ptot_20-25, P1000_>30, Pharv_>25 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0054
+ORIGO : ✗ -1.5514
+DC : ✓ 0.0782
+
+----------279/396----------
+3 25 26 -> 29
+Ptot_20-25, Pharv_>25, Pharv_25-30 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0557
+ORIGO : ✓ 3.2996
+DC : ✓ 0.0087
+
+----------280/396----------
+3 22 26 -> 29
+Ptot_20-25, P1000_>30, Pharv_25-30 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0862
+ORIGO : ✗ -0.2159
+DC : ✓ 0.0076
+
+----------281/396----------
+3 22 25 -> 29
+Ptot_20-25, P1000_>30, Pharv_>25 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.1581
+ORIGO : ✓ 8.2287
+DC : ✓ 0.0381
+
+----------282/396----------
+2 25 26 -> 29
+Ptot_>20, Pharv_>25, Pharv_25-30 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0334
+
+----------283/396----------
+2 22 26 -> 29
+Ptot_>20, P1000_>30, Pharv_25-30 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0109
+ORIGO : ✓ 0.3181
+DC : ✓ 0.0170
+
+----------284/396----------
+2 22 25 -> 29
+Ptot_>20, P1000_>30, Pharv_>25 -> seed_nb
+(supp=51, conf=61.45%)
+
+ERGO : ✓ 0.0176
+ORIGO : ✓ 0.2849
+DC : ✓ 0.0411
+
+----------285/396----------
+2 3 26 -> 29
+Ptot_>20, Ptot_20-25, Pharv_25-30 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0120
+ORIGO : ✗ -0.9062
+DC : ✓ 0.1119
+
+----------286/396----------
+2 3 25 -> 29
+Ptot_>20, Ptot_20-25, Pharv_>25 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0131
+ORIGO : ✓ 0.0189
+DC : ✓ 0.0759
+
+----------287/396----------
+2 3 22 -> 29
+Ptot_>20, Ptot_20-25, P1000_>30 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0077
+ORIGO : ✗ -3.3603
+DC : ✓ 0.1355
+
+----------288/396----------
+3 26 -> 29
+Ptot_20-25, Pharv_25-30 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0714
+ORIGO : ✗ -0.4533
+DC : ✓ 0.0010
+
+----------289/396----------
+3 25 -> 29
+Ptot_20-25, Pharv_>25 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.1432
+ORIGO : ✓ 7.9914
+DC : ✓ 0.0904
+
+----------290/396----------
+2 26 -> 29
+Ptot_>20, Pharv_25-30 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✗ -0.0235
+ORIGO : ✗ -5.9112
+DC : ✓ 0.0168
+
+----------291/396----------
+2 25 -> 29
+Ptot_>20, Pharv_>25 -> seed_nb
+(supp=51, conf=61.45%)
+
+ERGO : ✓ 0.0141
+ORIGO : ✗ -1.2353
+DC : ✓ 0.0748
+
+----------292/396----------
+2 22 -> 29
+Ptot_>20, P1000_>30 -> seed_nb
+(supp=51, conf=61.45%)
+
+ERGO : ✓ 0.0088
+ORIGO : ✓ 0.2849
+DC : ✓ 0.0017
+
+----------293/396----------
+2 3 -> 29
+Ptot_>20, Ptot_20-25 -> seed_nb
+(supp=51, conf=61.45%)
+
+ERGO : ✓ 0.0247
+ORIGO : ✓ 1.0318
+DC : ✓ 0.1354
+
+----------294/396----------
+2 -> 29
+Ptot_>20 -> seed_nb
+(supp=51, conf=60.00%)
+
+ERGO : ? -0.0006
+ORIGO : ✓ 0.0319
+DC : ? 0.0000
+
+----------295/396----------
+2 3 18 22 25 -> 29
+Ptot_>20, Ptot_20-25, P1000_>20, P1000_>30, Pharv_>25 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0252
+ORIGO : ✗ -0.0408
+DC : ✓ 0.0758
+
+----------296/396----------
+3 18 22 25 -> 29
+Ptot_20-25, P1000_>20, P1000_>30, Pharv_>25 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0250
+ORIGO : ✗ -0.3038
+DC : ✓ 0.0758
+
+----------297/396----------
+2 18 22 25 -> 29
+Ptot_>20, P1000_>20, P1000_>30, Pharv_>25 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0772
+ORIGO : ✓ 6.4375
+DC : ✓ 0.0261
+
+----------298/396----------
+2 3 22 25 -> 29
+Ptot_>20, Ptot_20-25, P1000_>30, Pharv_>25 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0054
+ORIGO : ✗ -1.5514
+DC : ✓ 0.0782
+
+----------299/396----------
+2 3 18 25 -> 29
+Ptot_>20, Ptot_20-25, P1000_>20, Pharv_>25 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0268
+ORIGO : ✓ 0.1830
+DC : ✓ 0.0627
+
+----------300/396----------
+2 3 18 22 -> 29
+Ptot_>20, Ptot_20-25, P1000_>20, P1000_>30 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0206
+ORIGO : ✗ -1.9986
+DC : ✓ 0.0758
+
+----------301/396----------
+18 22 25 -> 29
+P1000_>20, P1000_>30, Pharv_>25 -> seed_nb
+(supp=51, conf=60.71%)
+
+ERGO : ✓ 0.0729
+ORIGO : ✓ 4.8222
+DC : ✓ 0.0305
+
+----------302/396----------
+3 22 25 -> 29
+Ptot_20-25, P1000_>30, Pharv_>25 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.1581
+ORIGO : ✓ 8.2287
+DC : ✓ 0.0381
+
+----------303/396----------
+3 18 25 -> 29
+Ptot_20-25, P1000_>20, Pharv_>25 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0289
+ORIGO : ✓ 0.1830
+DC : ✓ 0.0627
+
+----------304/396----------
+3 18 22 -> 29
+Ptot_20-25, P1000_>20, P1000_>30 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0122
+ORIGO : ✓ 0.3866
+DC : ✓ 0.0742
+
+----------305/396----------
+2 22 25 -> 29
+Ptot_>20, P1000_>30, Pharv_>25 -> seed_nb
+(supp=51, conf=61.45%)
+
+ERGO : ✓ 0.0176
+ORIGO : ✓ 0.2849
+DC : ✓ 0.0411
+
+----------306/396----------
+2 18 25 -> 29
+Ptot_>20, P1000_>20, Pharv_>25 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0591
+ORIGO : ✓ 5.4761
+DC : ✓ 0.0329
+
+----------307/396----------
+2 18 22 -> 29
+Ptot_>20, P1000_>20, P1000_>30 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0274
+ORIGO : ✓ 3.1461
+DC : ✓ 0.0042
+
+----------308/396----------
+2 3 25 -> 29
+Ptot_>20, Ptot_20-25, Pharv_>25 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0131
+ORIGO : ✓ 0.0189
+DC : ✓ 0.0759
+
+----------309/396----------
+2 3 22 -> 29
+Ptot_>20, Ptot_20-25, P1000_>30 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0077
+ORIGO : ✗ -3.3603
+DC : ✓ 0.1355
+
+----------310/396----------
+2 3 18 -> 29
+Ptot_>20, Ptot_20-25, P1000_>20 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0509
+ORIGO : ✓ 0.0342
+DC : ✓ 0.1137
+
+----------311/396----------
+18 25 -> 29
+P1000_>20, Pharv_>25 -> seed_nb
+(supp=51, conf=60.71%)
+
+ERGO : ✓ 0.0388
+ORIGO : ✓ 0.0342
+DC : ✓ 0.1164
+
+----------312/396----------
+3 25 -> 29
+Ptot_20-25, Pharv_>25 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.1432
+ORIGO : ✓ 7.9914
+DC : ✓ 0.0904
+
+----------313/396----------
+3 18 -> 29
+Ptot_20-25, P1000_>20 -> seed_nb
+(supp=51, conf=64.56%)
+
+ERGO : ✓ 0.0234
+ORIGO : ✓ 0.1830
+DC : ✓ 0.0171
+
+----------314/396----------
+2 25 -> 29
+Ptot_>20, Pharv_>25 -> seed_nb
+(supp=51, conf=61.45%)
+
+ERGO : ✓ 0.0141
+ORIGO : ✗ -1.2353
+DC : ✓ 0.0748
+
+----------315/396----------
+2 22 -> 29
+Ptot_>20, P1000_>30 -> seed_nb
+(supp=51, conf=61.45%)
+
+ERGO : ✓ 0.0088
+ORIGO : ✓ 0.2849
+DC : ✓ 0.0017
+
+----------316/396----------
+2 18 -> 29
+Ptot_>20, P1000_>20 -> seed_nb
+(supp=51, conf=62.96%)
+
+ERGO : ✓ 0.0539
+ORIGO : ✓ 3.4070
+DC : ✓ 0.0137
+
+----------317/396----------
+2 3 -> 29
+Ptot_>20, Ptot_20-25 -> seed_nb
+(supp=51, conf=61.45%)
+
+ERGO : ✓ 0.0247
+ORIGO : ✓ 1.0318
+DC : ✓ 0.1354
+
+----------318/396----------
+2 -> 29
+Ptot_>20 -> seed_nb
+(supp=51, conf=60.00%)
+
+ERGO : ? -0.0006
+ORIGO : ✓ 0.0319
+DC : ? 0.0000
+
+----------319/396----------
+2 3 22 25 -> 29
+Ptot_>20, Ptot_20-25, P1000_>30, Pharv_>25 -> seed_nb
+(supp=53, conf=65.43%)
+
+ERGO : ✓ 0.0054
+ORIGO : ✗ -1.5514
+DC : ✓ 0.0782
+
+----------320/396----------
+3 22 25 -> 29
+Ptot_20-25, P1000_>30, Pharv_>25 -> seed_nb
+(supp=53, conf=65.43%)
+
+ERGO : ✓ 0.1581
+ORIGO : ✓ 8.2287
+DC : ✓ 0.0381
+
+----------321/396----------
+2 22 25 -> 29
+Ptot_>20, P1000_>30, Pharv_>25 -> seed_nb
+(supp=53, conf=63.86%)
+
+ERGO : ✓ 0.0176
+ORIGO : ✓ 0.2849
+DC : ✓ 0.0411
+
+----------322/396----------
+2 3 25 -> 29
+Ptot_>20, Ptot_20-25, Pharv_>25 -> seed_nb
+(supp=53, conf=65.43%)
+
+ERGO : ✓ 0.0131
+ORIGO : ✓ 0.0189
+DC : ✓ 0.0759
+
+----------323/396----------
+2 3 22 -> 29
+Ptot_>20, Ptot_20-25, P1000_>30 -> seed_nb
+(supp=53, conf=65.43%)
+
+ERGO : ✓ 0.0077
+ORIGO : ✗ -3.3603
+DC : ✓ 0.1355
+
+----------324/396----------
+3 25 -> 29
+Ptot_20-25, Pharv_>25 -> seed_nb
+(supp=53, conf=65.43%)
+
+ERGO : ✓ 0.1432
+ORIGO : ✓ 7.9914
+DC : ✓ 0.0904
+
+----------325/396----------
+2 25 -> 29
+Ptot_>20, Pharv_>25 -> seed_nb
+(supp=53, conf=63.86%)
+
+ERGO : ✓ 0.0141
+ORIGO : ✗ -1.2353
+DC : ✓ 0.0748
+
+----------326/396----------
+2 22 -> 29
+Ptot_>20, P1000_>30 -> seed_nb
+(supp=53, conf=63.86%)
+
+ERGO : ✓ 0.0088
+ORIGO : ✓ 0.2849
+DC : ✓ 0.0017
+
+----------327/396----------
+2 3 -> 29
+Ptot_>20, Ptot_20-25 -> seed_nb
+(supp=53, conf=63.86%)
+
+ERGO : ✓ 0.0247
+ORIGO : ✓ 1.0318
+DC : ✓ 0.1354
+
+----------328/396----------
+2 -> 29
+Ptot_>20 -> seed_nb
+(supp=53, conf=62.35%)
+
+ERGO : ? -0.0006
+ORIGO : ✓ 0.0319
+DC : ? 0.0000
+
+----------329/396----------
+3 8 10 11 -> 28
+Ptot_20-25, P300_>20, P300_>25, P300_25-30 -> seed_yield
+(supp=51, conf=66.23%)
+
+ERGO : ✗ -0.0111
+ORIGO : ✗ -3.5452
+DC : ✓ 0.0737
+
+----------330/396----------
+3 8 11 -> 28
+Ptot_20-25, P300_>20, P300_25-30 -> seed_yield
+(supp=51, conf=66.23%)
+
+ERGO : ✗ -0.0104
+ORIGO : ✗ -2.8663
+DC : ✓ 0.0169
+
+----------331/396----------
+3 8 10 -> 28
+Ptot_20-25, P300_>20, P300_>25 -> seed_yield
+(supp=51, conf=66.23%)
+
+ERGO : ✗ -0.0104
+ORIGO : ✗ -2.8663
+DC : ✓ 0.0169
+
+----------332/396----------
+3 8 -> 28
+Ptot_20-25, P300_>20 -> seed_yield
+(supp=51, conf=66.23%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0070
+
+----------333/396----------
+10 11 15 16 -> 28
+P300_>25, P300_25-30, P600_>25, P600_25-30 -> seed_yield
+(supp=53, conf=67.09%)
+
+ERGO : ✓ 0.0040
+ORIGO : ✓ 0.1692
+DC : ✓ 0.0097
+
+----------334/396----------
+11 15 16 -> 28
+P300_25-30, P600_>25, P600_25-30 -> seed_yield
+(supp=53, conf=67.09%)
+
+ERGO : ✓ 0.0046
+ORIGO : ✓ 0.1692
+DC : ✓ 0.0097
+
+----------335/396----------
+10 15 16 -> 28
+P300_>25, P600_>25, P600_25-30 -> seed_yield
+(supp=53, conf=67.09%)
+
+ERGO : ✓ 0.0046
+ORIGO : ✓ 0.1692
+DC : ✓ 0.0097
+
+----------336/396----------
+10 11 16 -> 28
+P300_>25, P300_25-30, P600_25-30 -> seed_yield
+(supp=53, conf=67.09%)
+
+ERGO : ✓ 0.0046
+ORIGO : ✓ 0.1692
+DC : ✓ 0.0097
+
+----------337/396----------
+10 11 15 -> 28
+P300_>25, P300_25-30, P600_>25 -> seed_yield
+(supp=53, conf=67.09%)
+
+ERGO : ✓ 0.0046
+ORIGO : ✓ 0.1692
+DC : ✓ 0.0097
+
+----------338/396----------
+11 16 -> 28
+P300_25-30, P600_25-30 -> seed_yield
+(supp=53, conf=67.09%)
+
+ERGO : ✓ 0.0072
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0306
+
+----------339/396----------
+11 15 -> 28
+P300_25-30, P600_>25 -> seed_yield
+(supp=53, conf=67.09%)
+
+ERGO : ✓ 0.0072
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0306
+
+----------340/396----------
+10 16 -> 28
+P300_>25, P600_25-30 -> seed_yield
+(supp=53, conf=67.09%)
+
+ERGO : ✓ 0.0072
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0306
+
+----------341/396----------
+10 15 -> 28
+P300_>25, P600_>25 -> seed_yield
+(supp=53, conf=67.09%)
+
+ERGO : ✓ 0.0072
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0306
+
+----------342/396----------
+0 10 11 21 -> 28
+climate, P300_>25, P300_25-30, P1000_25-30 -> seed_yield
+(supp=51, conf=60.00%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0006
+
+----------343/396----------
+10 11 21 -> 28
+P300_>25, P300_25-30, P1000_25-30 -> seed_yield
+(supp=51, conf=60.00%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0033
+
+----------344/396----------
+0 11 21 -> 28
+climate, P300_25-30, P1000_25-30 -> seed_yield
+(supp=51, conf=60.00%)
+
+ERGO : ✓ 0.0160
+ORIGO : ✓ 2.0056
+DC : ✓ 0.0041
+
+----------345/396----------
+0 10 21 -> 28
+climate, P300_>25, P1000_25-30 -> seed_yield
+(supp=51, conf=60.00%)
+
+ERGO : ✓ 0.0160
+ORIGO : ✓ 2.0056
+DC : ✓ 0.0041
+
+----------346/396----------
+11 21 -> 28
+P300_25-30, P1000_25-30 -> seed_yield
+(supp=51, conf=60.00%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0033
+
+----------347/396----------
+10 21 -> 28
+P300_>25, P1000_25-30 -> seed_yield
+(supp=51, conf=60.00%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0033
+
+----------348/396----------
+22 23 25 26 -> 32
+P1000_>30, Pharv_>20, Pharv_>25, Pharv_25-30 -> proteins
+(supp=54, conf=60.67%)
+
+ERGO : ✓ 0.0164
+ORIGO : ✗ -6.6187
+DC : ✓ 0.0739
+
+----------349/396----------
+22 23 26 -> 32
+P1000_>30, Pharv_>20, Pharv_25-30 -> proteins
+(supp=54, conf=60.67%)
+
+ERGO : ✓ 0.0033
+ORIGO : ✗ -5.5384
+DC : ✓ 0.0081
+
+----------350/396----------
+22 23 25 -> 32
+P1000_>30, Pharv_>20, Pharv_>25 -> proteins
+(supp=54, conf=60.67%)
+
+ERGO : ✓ 0.0123
+ORIGO : ✗ -5.9178
+DC : ✓ 0.0152
+
+----------351/396----------
+22 23 -> 32
+P1000_>30, Pharv_>20 -> proteins
+(supp=54, conf=60.67%)
+
+ERGO : ✓ 0.0320
+ORIGO : ✗ -1.2082
+DC : ✓ 0.0481
+
+----------352/396----------
+0 15 16 -> 28
+climate, P600_>25, P600_25-30 -> seed_yield
+(supp=51, conf=64.56%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0193
+
+----------353/396----------
+0 16 -> 28
+climate, P600_25-30 -> seed_yield
+(supp=51, conf=64.56%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0193
+
+----------354/396----------
+0 15 -> 28
+climate, P600_>25 -> seed_yield
+(supp=51, conf=64.56%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0193
+
+----------355/396----------
+8 10 11 -> 28
+P300_>20, P300_>25, P300_25-30 -> seed_yield
+(supp=59, conf=61.46%)
+
+ERGO : ✓ 0.0073
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0643
+
+----------356/396----------
+8 11 -> 28
+P300_>20, P300_25-30 -> seed_yield
+(supp=59, conf=61.46%)
+
+ERGO : ✓ 0.0080
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0643
+
+----------357/396----------
+8 10 -> 28
+P300_>20, P300_>25 -> seed_yield
+(supp=59, conf=61.46%)
+
+ERGO : ✓ 0.0080
+ORIGO : ✓ 0.1307
+DC : ✓ 0.0643
+
+----------358/396----------
+3 15 16 -> 28
+Ptot_20-25, P600_>25, P600_25-30 -> seed_yield
+(supp=52, conf=65.00%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0093
+
+----------359/396----------
+3 16 -> 28
+Ptot_20-25, P600_25-30 -> seed_yield
+(supp=52, conf=65.00%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0093
+
+----------360/396----------
+3 15 -> 28
+Ptot_20-25, P600_>25 -> seed_yield
+(supp=52, conf=65.00%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0093
+
+----------361/396----------
+0 18 21 -> 30
+climate, P1000_>20, P1000_25-30 -> PMG
+(supp=54, conf=61.36%)
+
+ERGO : ✓ 0.0364
+ORIGO : ✓ 2.1218
+DC : ✓ 0.0105
+
+----------362/396----------
+18 21 -> 30
+P1000_>20, P1000_25-30 -> PMG
+(supp=54, conf=61.36%)
+
+ERGO : ✓ 0.0447
+ORIGO : ✓ 4.7678
+DC : ✓ 0.0080
+
+----------363/396----------
+0 18 -> 30
+climate, P1000_>20 -> PMG
+(supp=54, conf=61.36%)
+
+ERGO : ✓ 0.0259
+ORIGO : ✓ 0.1439
+DC : ✓ 0.0250
+
+----------364/396----------
+18 -> 30
+P1000_>20 -> PMG
+(supp=54, conf=60.00%)
+
+ERGO : ✗ -0.0033
+ORIGO : ✗ -0.0302
+DC : ? 0.0000
+
+----------365/396----------
+3 10 11 -> 28
+Ptot_20-25, P300_>25, P300_25-30 -> seed_yield
+(supp=56, conf=62.92%)
+
+ERGO : ✗ -0.0090
+ORIGO : ✗ -1.8897
+DC : ✓ 0.0185
+
+----------366/396----------
+3 11 -> 28
+Ptot_20-25, P300_25-30 -> seed_yield
+(supp=56, conf=62.92%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0119
+
+----------367/396----------
+3 10 -> 28
+Ptot_20-25, P300_>25 -> seed_yield
+(supp=56, conf=62.92%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0119
+
+----------368/396----------
+0 10 11 -> 28
+climate, P300_>25, P300_25-30 -> seed_yield
+(supp=57, conf=60.00%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------369/396----------
+0 11 -> 28
+climate, P300_25-30 -> seed_yield
+(supp=57, conf=60.00%)
+
+ERGO : ✓ 0.0194
+ORIGO : ✓ 2.4207
+DC : ✓ 0.0017
+
+----------370/396----------
+0 10 -> 28
+climate, P300_>25 -> seed_yield
+(supp=57, conf=60.00%)
+
+ERGO : ✓ 0.0194
+ORIGO : ✓ 2.4207
+DC : ✓ 0.0017
+
+----------371/396----------
+23 25 26 -> 32
+Pharv_>20, Pharv_>25, Pharv_25-30 -> proteins
+(supp=60, conf=63.16%)
+
+ERGO : ✓ 0.0458
+ORIGO : ✓ 3.6064
+DC : ✓ 0.0491
+
+----------372/396----------
+25 26 -> 32
+Pharv_>25, Pharv_25-30 -> proteins
+(supp=60, conf=60.61%)
+
+ERGO : ✓ 0.0203
+ORIGO : ✓ 0.2536
+DC : ✓ 0.0712
+
+----------373/396----------
+23 26 -> 32
+Pharv_>20, Pharv_25-30 -> proteins
+(supp=60, conf=63.16%)
+
+ERGO : ✓ 0.0357
+ORIGO : ✓ 3.6064
+DC : ✓ 0.0002
+
+----------374/396----------
+23 25 -> 32
+Pharv_>20, Pharv_>25 -> proteins
+(supp=60, conf=63.16%)
+
+ERGO : ✓ 0.0237
+ORIGO : ✓ 0.0481
+DC : ✓ 0.0116
+
+----------375/396----------
+26 -> 32
+Pharv_25-30 -> proteins
+(supp=60, conf=60.61%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------376/396----------
+23 -> 32
+Pharv_>20 -> proteins
+(supp=60, conf=61.86%)
+
+ERGO : ✗ -0.0057
+ORIGO : ✗ -0.0126
+DC : ? 0.0000
+
+----------377/396----------
+15 16 22 -> 31
+P600_>25, P600_25-30, P1000_>30 -> lipids
+(supp=53, conf=60.23%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0006
+
+----------378/396----------
+16 22 -> 31
+P600_25-30, P1000_>30 -> lipids
+(supp=53, conf=60.23%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0006
+
+----------379/396----------
+15 22 -> 31
+P600_>25, P1000_>30 -> lipids
+(supp=53, conf=60.23%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0006
+
+----------380/396----------
+0 17 -> 30
+climate, P600_<5 -> PMG
+(supp=52, conf=63.41%)
+
+ERGO : ✓ 0.0342
+ORIGO : ✓ 0.4482
+DC : ✓ 0.0028
+
+----------381/396----------
+9 22 -> 31
+P300_20-25, P1000_>30 -> lipids
+(supp=52, conf=65.82%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✓ 0.0044
+
+----------382/396----------
+0 19 -> 30
+climate, P1000_20-25 -> PMG
+(supp=51, conf=70.83%)
+
+ERGO : ✓ 0.0703
+ORIGO : ✗ -1.1980
+DC : ✓ 0.0113
+
+----------383/396----------
+10 11 -> 28
+P300_>25, P300_25-30 -> seed_yield
+(supp=70, conf=61.40%)
+
+ERGO : ✗ -0.0019
+ORIGO : ✓ 0.1307
+DC : ? 0.0000
+
+----------384/396----------
+11 -> 28
+P300_25-30 -> seed_yield
+(supp=70, conf=61.40%)
+
+ERGO : ✗ -0.0063
+ORIGO : ✓ 0.1307
+DC : ? 0.0000
+
+----------385/396----------
+10 -> 28
+P300_>25 -> seed_yield
+(supp=70, conf=61.40%)
+
+ERGO : ✗ -0.0063
+ORIGO : ✓ 0.1307
+DC : ? 0.0000
+
+----------386/396----------
+18 22 -> 29
+P1000_>20, P1000_>30 -> seed_nb
+(supp=54, conf=61.36%)
+
+ERGO : ✓ 0.0416
+ORIGO : ✓ 3.7893
+DC : ✓ 0.0004
+
+----------387/396----------
+18 -> 29
+P1000_>20 -> seed_nb
+(supp=54, conf=60.00%)
+
+ERGO : ✗ -0.0113
+ORIGO : ✓ 0.0342
+DC : ? 0.0000
+
+----------388/396----------
+9 -> 31
+P300_20-25 -> lipids
+(supp=54, conf=65.06%)
+
+ERGO : ? -0.0004
+ORIGO : ✗ -0.0445
+DC : ? 0.0000
+
+----------389/396----------
+1 -> 30
+genotype -> PMG
+(supp=52, conf=67.53%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+----------390/396----------
+23 -> 32
+Pharv_>20 -> proteins
+(supp=61, conf=62.89%)
+
+ERGO : ✗ -0.0057
+ORIGO : ✗ -0.0126
+DC : ? 0.0000
+
+----------391/396----------
+9 -> 31
+P300_20-25 -> lipids
+(supp=56, conf=64.37%)
+
+ERGO : ? -0.0004
+ORIGO : ✗ -0.0445
+DC : ? 0.0000
+
+----------392/396----------
+32 -> 31
+proteins -> lipids
+(supp=57, conf=71.25%)
+
+ERGO : ✗ -0.0035
+ORIGO : ✓ 0.0359
+DC : ? 0.0000
+
+----------393/396----------
+3 -> 28
+Ptot_20-25 -> seed_yield
+(supp=59, conf=60.20%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------394/396----------
+5 -> 28
+Ptot_25-30 -> seed_yield
+(supp=52, conf=61.18%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------395/396----------
+2 -> 30
+Ptot_>20 -> PMG
+(supp=51, conf=60.00%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ? 0.0000
+
+----------396/396----------
+1 -> 30
+genotype -> PMG
+(supp=52, conf=66.67%)
+
+ERGO : ? 0.0000
+ORIGO : ? 0.0000
+DC : ✗ -1.0000
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 132/183 (72.1%)
+SCORE ORIGO : 107/192 (55.7%)
+SCORE DC : 375/378 (99.2%)
+Sauvegardé dans 'files/5_origo/coron_rules_v2_origo.txt'
+...terminé !
+999.669 secondes.
+
+>>> 

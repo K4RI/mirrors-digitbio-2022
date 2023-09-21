@@ -1,0 +1,28 @@
+--- Règles Ergo : ---
+harvest_30, seed_yield -> harvest_25, Ptot_25, Ptot_30 ;; (score Ergo= 0.110)
+lipids, P600_25, proteins, P1000_30 -> Ptot_30, P1000_25 ;; (score Ergo= 0.082)
+seed_yield, lipids, P1000_30 -> seed_nb, P1000_25 ;; (score Ergo= 0.070)
+seed_yield, lipids, proteins -> seed_nb ;; (score Ergo= 0.036)
+
+--- Règles Origo : ---
+seed_yield, lipids, P1000_30 -> seed_nb, P1000_25 ;; (score Origo= 6.494)
+harvest_30, P600_25 -> harvest_25, Ptot_25, Ptot_30 ;; (score Origo= 4.204)
+lipids, P600_25, proteins, P1000_30 -> Ptot_30, P1000_25 ;; (score Origo= 1.032)
+seed_nb -> PMG ;; (score Origo= 0.045)
+
+--- Règles DC : ---
+climate -> PMG ;; (score DC= 1.000)
+harvest_30, seed_yield -> harvest_25, Ptot_25, Ptot_30 ;; (score DC= 0.201)
+seed_yield, lipids, proteins -> seed_nb ;; (score DC= 0.052)
+harvest_30, P1000_30 -> harvest_25, Ptot_25, Ptot_30 ;; (score DC= 0.028)
+
+
+--- Règles communes : ---
+
+
+
+--------------------
+--------------------
+SCORE ERGO : 4/14 (28.6%)
+SCORE ORIGO : 4/11 (36.4%)
+SCORE DC : 4/12 (33.3%)

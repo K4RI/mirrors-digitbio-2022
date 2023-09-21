@@ -1,0 +1,1 @@
+BEGIN LOGGING FOR FILE: data/globe25_30.txt

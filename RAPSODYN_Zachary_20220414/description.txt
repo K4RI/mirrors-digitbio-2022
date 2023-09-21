@@ -1,0 +1,1 @@
+Comme convenu, ci-joint tu trouveras les diapos de restitution de mon séjour au LORIA en pdf et le script R qui nous a permis de créer les indicateurs agroclimatiques liés à la température à partir des jeux de données "plant.csv" et "climat.csv" (en pièce jointe également).
